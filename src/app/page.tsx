@@ -70,18 +70,18 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-500/20 via-transparent to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white animate-fade-up">
               Enterprise AI that{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
                 delivers real outcomes
               </span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+            <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl animate-fade-up-delay-1">
               Strategy to scale, built for your industry, on a fixed timeline.
               Veritas AI partners with mid-market and enterprise organizations to design,
               build, and scale AI solutions grounded in transparency, rigor, and measurable ROI.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up-delay-2">
               <Link
                 href="/assessment"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/25"
