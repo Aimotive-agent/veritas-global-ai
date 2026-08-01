@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const stats = [
-  { value: "40%", label: "Average cost reduction for clients" },
-  { value: "3x", label: "Faster AI deployment vs. in-house" },
-  { value: "200+", label: "Enterprise AI projects delivered" },
+  { value: "4–8 weeks", label: "Time to first production deployment" },
+  { value: "Fixed-price", label: "Transparent, outcome-based engagements" },
+  { value: "Platform-agnostic", label: "No vendor lock-in. Your stack, your choice." },
 ];
 
 const offerings = [
@@ -83,10 +83,10 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
+                href="/assessment"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/25"
               >
-                Start a Conversation
+                Get Your Free AI Readiness Assessment
               </Link>
               <Link
                 href="/solutions"

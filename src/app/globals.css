@@ -3,16 +3,16 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #1e3a5f;
-  --color-primary-light: #2c5282;
-  --color-accent: #c9a84c;
-  --color-accent-light: #e2c97e;
+  --color-primary: #4f46e5;
+  --color-primary-light: #6366f1;
+  --color-accent: #a78bfa;
+  --color-accent-light: #c4b5fd;
   --color-surface: #f8f9fb;
   --color-surface-dark: #0f172a;
   --color-muted: #64748b;
   --color-border: #e2e8f0;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 :root {
@@ -23,24 +23,20 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-inter, ui-sans-serif, system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Enterprise-grade utility classes */
 .gradient-primary {
-  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #1a365d 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #4338ca 100%);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #c9a84c 0%, #e2c97e 50%, #b8933a 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.glow-accent {
-  box-shadow: 0 0 40px rgba(201, 168, 76, 0.15);
 }
 

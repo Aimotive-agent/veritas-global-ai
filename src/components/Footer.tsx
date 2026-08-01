@@ -62,8 +62,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Veritas AI. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-sm text-slate-500 hover:text-slate-400">Privacy Policy</Link>
-            <Link href="#" className="text-sm text-slate-500 hover:text-slate-400">Terms of Service</Link>
+            <Link href="/privacy" className="text-sm text-slate-500 hover:text-slate-400">Privacy Policy</Link>
+            <Link href="/terms" className="text-sm text-slate-500 hover:text-slate-400">Terms of Service</Link>
           </div>
         </div>
       </div>

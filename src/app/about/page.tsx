@@ -92,25 +92,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team placeholder */}
+      {/* Team */}
       <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-slate-900">Leadership</h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-xl mx-auto">
+          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
             Our team brings deep experience from top AI labs, enterprise software companies,
-            and management consultancies. Full leadership profiles coming soon.
+            and management consultancies. We&apos;re building Veritas AI to be the consultancy
+            we always wished existed — one that puts truth, transparency, and measurable
+            impact at the center of every engagement.
           </p>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {["CEO & Co-Founder", "CTO & Co-Founder", "Head of AI Delivery", "Head of Strategy"].map((role) => (
-              <div key={role} className="text-center">
-                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
-                  {role[0]}
-                </div>
-                <div className="mt-4 font-semibold text-slate-900">{role}</div>
-                <div className="text-sm text-slate-500">Bio coming soon</div>
-              </div>
-            ))}
-          </div>
+          <p className="mt-4 text-indigo-600 font-medium">
+            Leadership profiles coming soon.
+          </p>
         </div>
       </section>
 
