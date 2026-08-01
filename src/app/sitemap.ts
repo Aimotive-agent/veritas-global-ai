@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/insights/mid-market-ai-gap", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/insights/fixed-price-ai", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/insights/truth-first-ai-governance", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/insights/insurance-ai-2026", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/insights/platform-agnostic-ai-architecture", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
   ];

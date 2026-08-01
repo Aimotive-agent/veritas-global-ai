@@ -26,7 +26,7 @@ const articles = [
     summary: "The global insurance industry is ripe for AI transformation. From automated claims processing to AI-powered underwriting — where the biggest wins are hiding.",
     category: "Industry",
     date: "August 2026",
-    slug: "#",
+    slug: "/insights/insurance-ai-2026",
   },
   {
     title: "Why 'Truth-First' AI Matters: Governance, Explainability, and Enterprise Trust",
@@ -40,7 +40,7 @@ const articles = [
     summary: "The lesson of cloud computing applies to AI: don't bet on a single vendor. How to build multi-model, portable AI architectures that survive platform shifts.",
     category: "Technical",
     date: "August 2026",
-    slug: "#",
+    slug: "/insights/platform-agnostic-ai-architecture",
   },
 ];
 
