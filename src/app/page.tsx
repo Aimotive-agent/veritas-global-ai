@@ -138,6 +138,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Studies — Client Impact */}
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+              Client Impact
+            </h2>
+            <p className="mt-4 text-lg text-slate-600">
+              Representative results from enterprise AI engagements.
+            </p>
+          </div>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                metric: "65%",
+                title: "Faster Claims Processing",
+                description:
+                  "Top-20 P&C insurer reduced claims triage from 4.2 days to 1.5 days using GenAI + document intelligence — deployed in 8 weeks.",
+                industry: "Insurance",
+              },
+              {
+                metric: "$12M",
+                title: "Saved Through Predictive Maintenance",
+                description:
+                  "Fortune 500 manufacturer achieved 68% reduction in unplanned downtime across 14 plants with ML + IoT integration.",
+                industry: "Manufacturing",
+              },
+              {
+                metric: "40%",
+                title: "More Fraud Detected",
+                description:
+                  "Regional bank ($40B AUM) caught $3.2M in additional fraud with zero false-positive increase using ML anomaly detection.",
+                industry: "Financial Services",
+              },
+            ].map((cs) => (
+              <div
+                key={cs.title}
+                className="group p-8 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/50 transition-all"
+              >
+                <div className="text-4xl font-bold text-indigo-600 mb-3">
+                  {cs.metric}
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  {cs.title}
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                  {cs.description}
+                </p>
+                <span className="inline-block text-xs font-medium text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full">
+                  {cs.industry}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Industries */}
       <section className="py-20 sm:py-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
