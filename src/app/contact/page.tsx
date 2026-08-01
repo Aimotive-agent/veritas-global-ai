@@ -2,202 +2,171 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact — Veritas AI",
-  description:
-    "Contact Veritas AI to discuss your enterprise AI transformation. Schedule a consultation with our team of AI strategy, engineering, and MLOps experts.",
+  description: "Start a conversation with Veritas AI. Schedule a discovery call, request an AI readiness assessment, or discuss your AI challenges with our team.",
 };
 
 export default function ContactPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="gradient-primary py-20 sm:py-28">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-widest text-accent-light">
-            Contact
-          </span>
-          <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Let&apos;s start the conversation
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-300">
-            Tell us about your AI goals, challenges, or questions. Our team
-            will respond within one business day to schedule an initial
-            consultation.
+      <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 py-20 sm:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white">Let&apos;s Talk</h1>
+          <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
+            Every great AI project starts with an honest conversation. Tell us about your
+            challenge and we&apos;ll tell you whether — and how — AI can help.
           </p>
         </div>
       </section>
 
-      {/* Contact form + info */}
-      <section className="py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-16 lg:grid-cols-3">
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-3 gap-16">
             {/* Form */}
             <div className="lg:col-span-2">
+              <h2 className="text-2xl font-bold text-slate-900 mb-8">Send us a message</h2>
               <form className="space-y-6">
-                <div className="grid gap-6 sm:grid-cols-2">
+                <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label
-                      htmlFor="first-name"
-                      className="block text-sm font-semibold text-primary"
-                    >
-                      First Name *
+                    <label htmlFor="first-name" className="block text-sm font-medium text-slate-700 mb-1">
+                      First name *
                     </label>
                     <input
                       type="text"
                       id="first-name"
+                      name="first-name"
                       required
-                      className="mt-2 block w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                      placeholder="John"
+                      className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      placeholder="Jane"
                     />
                   </div>
                   <div>
-                    <label
-                      htmlFor="last-name"
-                      className="block text-sm font-semibold text-primary"
-                    >
-                      Last Name *
+                    <label htmlFor="last-name" className="block text-sm font-medium text-slate-700 mb-1">
+                      Last name *
                     </label>
                     <input
                       type="text"
                       id="last-name"
+                      name="last-name"
                       required
-                      className="mt-2 block w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                       placeholder="Smith"
                     />
                   </div>
                 </div>
+
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-semibold text-primary"
-                  >
-                    Work Email *
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
+                    Work email *
                   </label>
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     required
-                    className="mt-2 block w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                    placeholder="john.smith@company.com"
+                    className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    placeholder="jane@company.com"
                   />
                 </div>
+
                 <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-semibold text-primary"
-                  >
+                  <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">
                     Company *
                   </label>
                   <input
                     type="text"
                     id="company"
+                    name="company"
                     required
-                    className="mt-2 block w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                    placeholder="Acme Corporation"
+                    className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    placeholder="Acme Corp"
                   />
                 </div>
+
                 <div>
-                  <label
-                    htmlFor="interest"
-                    className="block text-sm font-semibold text-primary"
-                  >
-                    Area of Interest *
+                  <label htmlFor="interest" className="block text-sm font-medium text-slate-700 mb-1">
+                    I&apos;m interested in *
                   </label>
                   <select
                     id="interest"
+                    name="interest"
                     required
-                    defaultValue=""
-                    className="mt-2 block w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                   >
-                    <option value="" disabled>
-                      Select an area
-                    </option>
-                    <option>AI Strategy & Advisory</option>
-                    <option>Custom AI Model Development</option>
-                    <option>MLOps & AI Infrastructure</option>
-                    <option>Enterprise Automation</option>
-                    <option>Multiple / Other</option>
+                    <option value="">Select an option</option>
+                    <option value="strategy">AI Strategy & Advisory</option>
+                    <option value="ml">Machine Learning Solutions</option>
+                    <option value="genai">Generative AI & LLMs</option>
+                    <option value="data">Data Engineering & Infrastructure</option>
+                    <option value="assessment">AI Readiness Assessment</option>
+                    <option value="other">Other / Multiple</option>
                   </select>
                 </div>
+
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-semibold text-primary"
-                  >
-                    Tell us about your project *
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
+                    Tell us about your challenge *
                   </label>
                   <textarea
                     id="message"
-                    required
+                    name="message"
                     rows={5}
-                    className="mt-2 block w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                    placeholder="Describe your AI goals, challenges, timeline, and any other relevant details..."
+                    required
+                    className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-y"
+                    placeholder="What business problem are you trying to solve? What have you tried so far?"
                   />
                 </div>
+
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 text-base font-semibold text-primary shadow-lg transition-all hover:bg-accent-light hover:shadow-xl"
+                  className="inline-flex items-center px-8 py-4 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/25"
                 >
-                  Send Message <span aria-hidden="true">→</span>
+                  Send Message
                 </button>
               </form>
             </div>
 
-            {/* Info sidebar */}
-            <div className="space-y-8">
-              <div className="rounded-2xl border border-border/60 bg-surface p-6">
-                <h3 className="text-base font-bold text-primary">
-                  What happens next?
-                </h3>
-                <ol className="mt-4 space-y-3">
+            {/* Sidebar */}
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-4">What to expect</h3>
+                <ul className="space-y-4">
                   {[
-                    "Submit the form with your project details.",
-                    "Our team reviews and matches you with the right experts.",
-                    "We schedule a 45-minute discovery call within 1 business day.",
-                    "You receive a tailored proposal with scope, timeline, and pricing.",
-                  ].map((step, i) => (
-                    <li key={step} className="flex items-start gap-3 text-sm text-muted">
-                      <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                        {i + 1}
+                    { step: "1", text: "We'll respond within 1 business day." },
+                    { step: "2", text: "A 30-minute discovery call to understand your challenge — no pitch, no deck." },
+                    { step: "3", text: "If there's a fit, we'll propose a fixed-price feasibility assessment or pilot." },
+                    { step: "4", text: "If AI isn't the right move, we'll tell you — and suggest alternatives." },
+                  ].map((item) => (
+                    <li key={item.step} className="flex gap-3">
+                      <span className="w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        {item.step}
                       </span>
-                      {step}
+                      <span className="text-sm text-slate-600">{item.text}</span>
                     </li>
                   ))}
-                </ol>
+                </ul>
               </div>
 
-              <div className="rounded-2xl border border-border/60 bg-surface p-6">
-                <h3 className="text-base font-bold text-primary">
-                  Direct Contact
-                </h3>
-                <div className="mt-4 space-y-3 text-sm text-muted">
-                  <p>
-                    <strong className="text-foreground">Email:</strong>{" "}
-                    <a
-                      href="mailto:contact@veritas-ai.com"
-                      className="text-primary underline decoration-accent/40 hover:text-accent"
-                    >
-                      contact@veritas-ai.com
-                    </a>
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Response time:</strong>{" "}
-                    Within 1 business day
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Office:</strong>{" "}
-                    Available for on-site meetings at client locations globally.
-                  </p>
-                </div>
+              <div className="bg-slate-50 rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-slate-900 mb-4">Prefer email?</h3>
+                <p className="text-sm text-slate-600">
+                  Reach us directly at{" "}
+                  <a href="mailto:hello@veritas-ai.com" className="text-indigo-600 hover:text-indigo-700 font-medium">
+                    hello@veritas-ai.com
+                  </a>
+                </p>
+                <p className="text-sm text-slate-600 mt-2">
+                  For press inquiries:{" "}
+                  <a href="mailto:press@veritas-ai.com" className="text-indigo-600 hover:text-indigo-700 font-medium">
+                    press@veritas-ai.com
+                  </a>
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-border/60 bg-surface p-6">
-                <h3 className="text-base font-bold text-primary">
-                  For Urgent Inquiries
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  If your organization has an urgent AI deployment need or
-                  critical infrastructure requirement, please indicate this in
-                  your message and we will prioritize your inquiry.
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-4">Location</h3>
+                <p className="text-sm text-slate-600">
+                  Remote-first team with presence in<br />
+                  San Francisco, New York, and London.
                 </p>
               </div>
             </div>

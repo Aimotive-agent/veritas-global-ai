@@ -6,7 +6,28 @@ export const metadata: Metadata = {
   description: "Deep AI expertise across financial services, healthcare, manufacturing, government, energy, and retail. Industry-specific solutions that deliver measurable outcomes.",
 };
 
-const industries = [
+const industries: {
+  name: string;
+  tag?: string;
+  description: string;
+  useCases: string[];
+  highlight: string;
+}[] = [
+  {
+    name: "Insurance",
+    tag: "Phase 1 Launch Vertical",
+    description:
+      "Our beachhead: AI that transforms underwriting, claims, and risk — the core of the $7T global insurance industry.",
+    useCases: [
+      "AI-powered claims processing & damage assessment",
+      "Fraud detection & suspicious claim scoring",
+      "Automated underwriting & risk modeling",
+      "Customer lifetime value & churn prediction",
+      "Policy document intelligence & extraction",
+      "Catastrophe modeling & exposure analytics",
+    ],
+    highlight: "65% faster claims processing and 30% fraud detection improvement for a top-20 P&C insurer.",
+  },
   {
     name: "Financial Services",
     description:
@@ -109,6 +130,11 @@ export default function IndustriesPage() {
                   0{i + 1}
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{ind.name}</h2>
+                {"tag" in ind && (
+                  <span className="inline-flex items-center mt-2 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">
+                    {ind.tag}
+                  </span>
+                )}
                 <p className="mt-4 text-lg text-slate-600 leading-relaxed">{ind.description}</p>
 
                 <ul className="mt-6 space-y-2">
