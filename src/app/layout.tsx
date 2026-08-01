@@ -11,6 +11,23 @@ export const metadata: Metadata = {
   description:
     "Veritas AI delivers enterprise-grade AI strategy, machine learning, and generative AI solutions that drive measurable business outcomes. Truth. Clarity. Results.",
   keywords: ["AI consulting", "enterprise AI", "machine learning", "generative AI", "AI strategy"],
+  metadataBase: new URL("https://veritas.ai"),
+  openGraph: {
+    title: "Veritas AI — Enterprise AI Consulting & Solutions",
+    description:
+      "Enterprise AI that delivers real outcomes. Strategy to scale, built for your industry.",
+    siteName: "Veritas AI",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Veritas AI — Enterprise AI Consulting & Solutions",
+    description:
+      "Enterprise AI that delivers real outcomes. Strategy to scale, built for your industry.",
+  },
+  icons: { icon: "/icon.svg", apple: "/icon.svg" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
