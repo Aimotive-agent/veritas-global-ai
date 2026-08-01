@@ -12,14 +12,14 @@ const articles = [
     summary: "Palantir targets the Fortune 100. SaaS AI tools target SMBs. The mid-market — where real AI ROI lives — is wide open. Here's how to seize it.",
     category: "Strategy",
     date: "August 2026",
-    slug: "#",
+    slug: "/insights/mid-market-ai-gap",
   },
   {
     title: "Fixed-Price AI: Why Outcome-Based Pricing Is the Future of Enterprise Consulting",
     summary: "Time-and-materials billing incentivizes the wrong behaviors. Fixed-price, outcome-based engagements align incentives and de-risk the buyer. Here's our model.",
     category: "Industry",
     date: "August 2026",
-    slug: "#",
+    slug: "/insights/fixed-price-ai",
   },
   {
     title: "Insurance AI in 2026: Claims, Underwriting, and the $7T Opportunity",
@@ -33,7 +33,7 @@ const articles = [
     summary: "As AI regulation tightens globally, enterprises need more than accurate models — they need auditable, explainable ones. How Veritas builds trust into every engagement.",
     category: "Governance",
     date: "August 2026",
-    slug: "#",
+    slug: "/insights/truth-first-ai-governance",
   },
   {
     title: "Platform-Agnostic AI Architecture: Avoiding Vendor Lock-In in the LLM Era",
