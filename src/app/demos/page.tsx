@@ -119,6 +119,28 @@ const demos = [
     metric2: "24/7",
     metric2Label: "Pet Care",
   },
+  {
+    title: "Smart Case AI (AILA Lawyers)",
+    category: "AI Legal Platform",
+    description:
+      "An AI-powered legal assistant platform — AILA Lawyers provides intelligent case management, legal research tools, and an AI assistant for legal professionals. Built on React.",
+    features: [
+      "AI legal case management",
+      "Document & case tracking",
+      "Legal professional dashboard",
+      "Multi-platform support",
+    ],
+    href: "https://smart-case-ai.netlify.app",
+    repo: "https://github.com/Aimotive-agent/smart-case-ai",
+    tag: "Live Demo",
+    terminal: "smart-case-ai",
+    q: "How does AILA assist with legal work?",
+    a: "AILA provides structured case management, legal research assistance, and document intelligence — built for the modern legal professional.",
+    metric1: "24/7",
+    metric1Label: "Availability",
+    metric2: "AI",
+    metric2Label: "Powered",
+  },
 ];
 
 export default function DemosPage() {
