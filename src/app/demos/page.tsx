@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Demos — Veritas Global AI",
   description:
-    "Live demonstrations of Veritas Global AI products — including the AI Wise Health Companion and the AI Horizon Ecosystem of AI-powered second opinion platforms. Explore the demos.",
+    "Live demonstrations of Veritas Global AI products — including the AI Wise Health Companion, the AI Horizon Ecosystem, and MindVault. Explore the demos.",
 };
 
 const demos = [
@@ -52,6 +52,28 @@ const demos = [
     metric1Label: "Live Platforms",
     metric2: "12+",
     metric2Label: "Coming Soon",
+  },
+  {
+    title: "MindVault",
+    category: "Neural Knowledge Platform",
+    description:
+      "A personal digital brain that travels with you — AI-powered knowledge management with secure, encrypted storage for notes, research, and ideas, available anywhere.",
+    features: [
+      "AI-powered knowledge management",
+      "Secure encrypted storage",
+      "Biometric authentication",
+      "Synced anywhere, on any device",
+    ],
+    href: "https://mindvault-digital-nexus.netlify.app",
+    repo: "https://github.com/Aimotive-agent/mindvault-digital-nexus",
+    tag: "Live Demo",
+    terminal: "mindvault",
+    q: "Never lose your knowledge again?",
+    a: "Exactly. MindVault combines advanced AI with secure storage \u2014 your personal digital brain, available anywhere.",
+    metric1: "AI",
+    metric1Label: "Powered",
+    metric2: "24/7",
+    metric2Label: "Synced",
   },
 ];
 
