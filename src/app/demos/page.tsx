@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Demos — Veritas Global AI",
   description:
-    "Live demonstrations of Veritas Global AI products — including the AI Wise Health Companion, the AI Horizon Ecosystem, and MindVault. Explore the demos.",
+    "Live demonstrations of Veritas Global AI products — including the AI Wise Health Companion, the AI Horizon Ecosystem, MindVault, and AI Vector Base. Explore the demos.",
 };
 
 const demos = [
@@ -74,6 +74,28 @@ const demos = [
     metric1Label: "Powered",
     metric2: "24/7",
     metric2Label: "Synced",
+  },
+  {
+    title: "AI Vector Base",
+    category: "AI Vector Database",
+    description:
+      "A real vector knowledge base — upload documents and ask questions through an AI assistant that searches and answers across your stored content. Built on React, Supabase, and DeepSeek.",
+    features: [
+      "Document upload & vectorization",
+      "Semantic search across chunks",
+      "DeepSeek-powered Q&A chat",
+      "Vector base management",
+    ],
+    href: "https://ai-vector-base.netlify.app",
+    repo: "https://github.com/Aimotive-agent/vector-garden-ai",
+    tag: "Live Demo",
+    terminal: "ai-vector-base",
+    q: "What's in my knowledge base?",
+    a: "Ask about any uploaded document — the assistant retrieves the most relevant chunks and answers from your stored content.",
+    metric1: "100%",
+    metric1Label: "DeepSeek AI",
+    metric2: "24/7",
+    metric2Label: "Vector Search",
   },
 ];
 
