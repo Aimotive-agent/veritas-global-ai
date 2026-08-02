@@ -35,6 +35,7 @@ export default function Footer() {
             <h4 className="font-serif font-semibold text-sm text-white mb-4">Company</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li><Link href="/why-veritas" className="hover:text-white transition-colors">Why Veritas</Link></li>
+              <li><Link href="/demos" className="hover:text-white transition-colors">Demos</Link></li>
               <li><Link href="/industries" className="hover:text-white transition-colors">Industries</Link></li>
               <li><Link href="/insights" className="hover:text-white transition-colors">Insights</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>

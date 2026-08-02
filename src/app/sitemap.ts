@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "", priority: 1.0, changeFrequency: "weekly" as const },
     { path: "/solutions", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/demos", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/industries", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/why-veritas", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
