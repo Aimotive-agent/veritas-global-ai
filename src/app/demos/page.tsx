@@ -97,6 +97,28 @@ const demos = [
     metric2: "24/7",
     metric2Label: "Vector Search",
   },
+  {
+    title: "AI Pawsitive Care",
+    category: "Neural Chatbot · Veterinary AI",
+    description:
+      "An AI-powered veterinary assistant platform for pet health management — medication tracking, appointment scheduling, health records, and AI-driven veterinary chat. Built on React and DeepSeek.",
+    features: [
+      "AI veterinary chat assistant",
+      "Pet health & medication tracking",
+      "Photo library & document analysis",
+      "Emergency vet finder",
+    ],
+    href: "https://ai-pawsitive-care.netlify.app",
+    repo: "https://github.com/Aimotive-agent/ai-pawsitive-care",
+    tag: "Live Demo",
+    terminal: "ai-pawsitive-care",
+    q: "Is my dog's lethargy something to worry about?",
+    a: "Lethargy can range from mild to serious. I'll help assess urgency — but always consult your real veterinarian for medical decisions.",
+    metric1: "DeepSeek",
+    metric1Label: "AI Engine",
+    metric2: "24/7",
+    metric2Label: "Pet Care",
+  },
 ];
 
 export default function DemosPage() {
