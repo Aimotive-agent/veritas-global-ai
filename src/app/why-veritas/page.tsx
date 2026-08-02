@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Why Veritas — Veritas AI",
+  title: "Why Veritas — Veritas Global AI",
   description: "Veritas means truth. We deliver AI differently — transparent pricing, fixed timelines, vendor-neutral architecture, and measurable outcomes from day one.",
 };
 
@@ -153,7 +153,7 @@ export default function WhyVeritasPage() {
               <thead>
                 <tr className="border-b border-slate-200">
                   <th className="text-left py-4 px-4 font-semibold text-slate-500">Dimension</th>
-                  <th className="text-left py-4 px-4 font-semibold text-indigo-600 bg-indigo-50 rounded-t-lg">Veritas AI</th>
+                  <th className="text-left py-4 px-4 font-semibold text-indigo-600 bg-indigo-50 rounded-t-lg">Veritas Global AI</th>
                   <th className="text-left py-4 px-4 font-semibold text-slate-700">Palantir</th>
                   <th className="text-left py-4 px-4 font-semibold text-slate-700">C3.ai</th>
                   <th className="text-left py-4 px-4 font-semibold text-slate-700">Scale AI</th>

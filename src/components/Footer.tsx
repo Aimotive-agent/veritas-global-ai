@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white mb-4">
               <span className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white text-sm font-bold">V</span>
-              Veritas AI
+              Veritas Global AI
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
               Enterprise AI that delivers truth, clarity, and measurable results.
@@ -59,7 +59,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Veritas AI. All rights reserved.
+            &copy; {new Date().getFullYear()} Veritas Global AI. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="text-sm text-slate-500 hover:text-slate-400">Privacy Policy</Link>

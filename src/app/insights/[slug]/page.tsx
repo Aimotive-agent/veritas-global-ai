@@ -27,7 +27,7 @@ export async function generateMetadata({
   const article = getArticle(slug);
   if (!article) return {};
   return {
-    title: `${article.title} — Veritas AI Insights`,
+    title: `${article.title} — Veritas Global AI Insights`,
     description: article.summary,
     openGraph: {
       title: article.title,

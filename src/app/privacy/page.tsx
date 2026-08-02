@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Veritas AI",
-  description: "Veritas AI privacy policy — how we collect, use, and protect your data.",
+  title: "Privacy Policy — Veritas Global AI",
+  description: "Veritas Global AI privacy policy — how we collect, use, and protect your data.",
 };
 
 export default function PrivacyPage() {
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
 
         <h2>1. Information We Collect</h2>
         <p>
-          Veritas AI (&ldquo;Veritas,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) collects information you voluntarily
+          Veritas Global AI (&ldquo;Veritas,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) collects information you voluntarily
           provide when you contact us through our website, including your name, email address,
           company name, and any other details you include in your message.
         </p>

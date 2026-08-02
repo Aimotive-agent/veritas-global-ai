@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Veritas AI",
-  description: "Start a conversation with Veritas AI. Schedule a discovery call, request an AI readiness assessment, or discuss your AI challenges with our team.",
+  title: "Contact — Veritas Global AI",
+  description: "Start a conversation with Veritas Global AI. Schedule a discovery call, request an AI readiness assessment, or discuss your AI challenges with our team.",
 };
 
 export default function ContactPage() {

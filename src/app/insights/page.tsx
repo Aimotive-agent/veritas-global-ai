@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Insights — Veritas AI",
-  description: "Thought leadership on enterprise AI — strategy, implementation, governance, and industry analysis from the Veritas AI team.",
+  title: "Insights — Veritas Global AI",
+  description: "Thought leadership on enterprise AI — strategy, implementation, governance, and industry analysis from the Veritas Global AI team.",
 };
 
 const articles = [
@@ -59,7 +59,7 @@ export default function InsightsPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white">Insights</h1>
           <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
             Thought leadership on enterprise AI — strategy, implementation, governance,
-            and industry analysis from the Veritas AI team.
+            and industry analysis from the Veritas Global AI team.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function InsightsPage() {
 
       <section className="py-20 bg-slate-950 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white">Want Veritas AI insights in your inbox?</h2>
+          <h2 className="text-3xl font-bold text-white">Want Veritas Global AI insights in your inbox?</h2>
           <p className="mt-4 text-lg text-slate-400 max-w-xl mx-auto">
             We publish regular analysis on enterprise AI strategy, governance, and
             industry transformation. No spam, just signal.

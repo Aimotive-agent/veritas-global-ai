@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Industries — Veritas AI",
+  title: "Industries — Veritas Global AI",
   description: "Deep AI expertise across financial services, healthcare, manufacturing, government, energy, and retail. Industry-specific solutions that deliver measurable outcomes.",
 };
 

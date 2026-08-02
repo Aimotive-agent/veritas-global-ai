@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Veritas AI",
-  description: "Terms of service for Veritas AI — governing your use of our website and services.",
+  title: "Terms of Service — Veritas Global AI",
+  description: "Terms of service for Veritas Global AI — governing your use of our website and services.",
 };
 
 export default function TermsPage() {
@@ -20,7 +20,7 @@ export default function TermsPage() {
 
         <h2>2. Services</h2>
         <p>
-          Veritas AI provides enterprise AI consulting, implementation, and managed
+          Veritas Global AI provides enterprise AI consulting, implementation, and managed
           services. All client engagements are governed by separate written agreements.
           Nothing on this Site constitutes a binding offer of services.
         </p>
@@ -28,14 +28,14 @@ export default function TermsPage() {
         <h2>3. Intellectual Property</h2>
         <p>
           All content on this Site — including text, graphics, logos, and designs — is the
-          property of Veritas AI and protected by applicable intellectual property laws.
+          property of Veritas Global AI and protected by applicable intellectual property laws.
         </p>
 
         <h2>4. Limitation of Liability</h2>
         <p>
-          Veritas AI provides this Site on an &ldquo;as-is&rdquo; basis. We make no warranties
+          Veritas Global AI provides this Site on an &ldquo;as-is&rdquo; basis. We make no warranties
           regarding the accuracy or completeness of Site content. To the fullest extent
-          permitted by law, Veritas AI shall not be liable for any damages arising from
+          permitted by law, Veritas Global AI shall not be liable for any damages arising from
           use of this Site.
         </p>
 

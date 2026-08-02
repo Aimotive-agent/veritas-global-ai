@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Veritas AI",
-  description: "Veritas AI is an enterprise AI consultancy built on truth, transparency, and measurable outcomes. We help mid-market and enterprise organizations deploy AI that works.",
+  title: "About — Veritas Global AI",
+  description: "Veritas Global AI is an enterprise AI consultancy built on truth, transparency, and measurable outcomes. We help mid-market and enterprise organizations deploy AI that works.",
 };
 
 const values = [
@@ -34,7 +34,7 @@ export default function AboutPage() {
     <>
       <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white">About Veritas AI</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white">About Veritas Global AI</h1>
           <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
             We&apos;re building the AI consultancy we wish existed — one that puts truth,
             transparency, and measurable impact at the center of every engagement.
@@ -49,7 +49,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-slate-900">Our Story</h2>
             <div className="mt-8 space-y-6 text-lg text-slate-600 leading-relaxed">
               <p>
-                Veritas AI was founded on a simple observation: the enterprise AI market is
+                Veritas Global AI was founded on a simple observation: the enterprise AI market is
                 broken. Large consultancies sell multi-year, multi-million-dollar
                 transformations that never reach production. SaaS vendors lock you into
                 proprietary platforms. And the mid-market — companies with real AI potential
@@ -98,7 +98,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-slate-900">Leadership</h2>
           <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
             Our team brings deep experience from top AI labs, enterprise software companies,
-            and management consultancies. We&apos;re building Veritas AI to be the consultancy
+            and management consultancies. We&apos;re building Veritas Global AI to be the consultancy
             we always wished existed — one that puts truth, transparency, and measurable
             impact at the center of every engagement.
           </p>

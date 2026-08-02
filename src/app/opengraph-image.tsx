@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Veritas AI — Enterprise AI Consulting & Solutions";
+export const alt = "Veritas Global AI — Enterprise AI Consulting & Solutions";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -38,7 +38,7 @@ export default function Image() {
             </span>
           </div>
           <span style={{ fontSize: 56, fontWeight: 800, color: "white", fontFamily: "system-ui,sans-serif" }}>
-            Veritas AI
+            Veritas Global AI
           </span>
         </div>
         <span

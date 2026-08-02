@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free AI Readiness Assessment — Veritas AI",
+  title: "Free AI Readiness Assessment — Veritas Global AI",
   description: "Get a free AI readiness assessment. We'll evaluate your data, infrastructure, and use cases, then deliver a prioritized roadmap with clear ROI estimates.",
 };
 

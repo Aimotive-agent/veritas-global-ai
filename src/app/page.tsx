@@ -78,7 +78,7 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl animate-fade-up-delay-1">
               Strategy to scale, built for your industry, on a fixed timeline.
-              Veritas AI partners with mid-market and enterprise organizations to design,
+              Veritas Global AI partners with mid-market and enterprise organizations to design,
               build, and scale AI solutions grounded in transparency, rigor, and measurable ROI.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up-delay-2">
