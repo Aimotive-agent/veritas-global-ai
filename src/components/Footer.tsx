@@ -8,6 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/veritas-logo.png" alt="Veritas Global AI logo" className="w-8 h-8 object-contain" />
               <span className="font-serif font-semibold text-base text-white">Veritas Global AI</span>
             </div>
