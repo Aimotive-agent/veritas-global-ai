@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Insights — Veritas Global AI",
-  description: "Thought leadership on enterprise AI — strategy, implementation, governance, and industry analysis from the Veritas Global AI team.",
+  description: "Analysis on enterprise AI — strategy, governance, architecture, and industry transformation from the Veritas Global AI team.",
 };
 
 const articles = [
@@ -16,7 +17,7 @@ const articles = [
   },
   {
     title: "Fixed-Price AI: Why Outcome-Based Pricing Is the Future of Enterprise Consulting",
-    summary: "Time-and-materials billing incentivizes the wrong behaviors. Fixed-price, outcome-based engagements align incentives and de-risk the buyer. Here's our model.",
+    summary: "Time-and-materials billing incentivizes the wrong behaviors. Fixed-price, outcome-based engagements align incentives and de-risk the buyer.",
     category: "Industry",
     date: "August 2026",
     slug: "/insights/fixed-price-ai",
@@ -30,7 +31,7 @@ const articles = [
   },
   {
     title: "Why 'Truth-First' AI Matters: Governance, Explainability, and Enterprise Trust",
-    summary: "As AI regulation tightens globally, enterprises need more than accurate models — they need auditable, explainable ones. How Veritas builds trust into every engagement.",
+    summary: "As AI regulation tightens globally, enterprises need more than accurate models — they need auditable, explainable ones.",
     category: "Governance",
     date: "August 2026",
     slug: "/insights/truth-first-ai-governance",
@@ -44,72 +45,63 @@ const articles = [
   },
 ];
 
-const categoryColors: Record<string, string> = {
-  Strategy: "bg-blue-100 text-blue-700",
-  Industry: "bg-emerald-100 text-emerald-700",
-  Governance: "bg-purple-100 text-purple-700",
-  Technical: "bg-amber-100 text-amber-700",
-};
-
 export default function InsightsPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white">Insights</h1>
-          <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
-            Thought leadership on enterprise AI — strategy, implementation, governance,
-            and industry analysis from the Veritas Global AI team.
-          </p>
+      <section className="pt-32 md:pt-40 pb-20 md:pb-24 px-6 lg:px-10 bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="max-w-3xl">
+            <div className="section-rule mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Insights</p>
+            <h1 className="font-serif text-4xl md:text-5xl text-ink mb-6 leading-tight">
+              Thought Leadership on Enterprise AI
+            </h1>
+            <p className="text-slate text-lg leading-relaxed">
+              Analysis on enterprise AI — strategy, governance, architecture, and industry
+              transformation from the Veritas Global AI team.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line">
             {articles.map((article) => (
               <Link
                 key={article.title}
                 href={article.slug}
-                className="group p-6 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg transition-all"
+                className="group card p-7 border-0"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColors[article.category] || "bg-slate-100 text-slate-600"}`}>
-                    {article.category}
-                  </span>
-                  <span className="text-xs text-slate-400">{article.date}</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gold">{article.category}</span>
+                  <span className="text-xs text-muted">{article.date}</span>
                 </div>
-                <h2 className="text-lg font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors mb-2">
+                <h2 className="font-serif font-semibold text-lg text-ink group-hover:text-navy transition-colors mb-2 leading-snug">
                   {article.title}
                 </h2>
-                <p className="text-sm text-slate-500 leading-relaxed">{article.summary}</p>
-                <span className="inline-flex items-center mt-4 text-sm font-medium text-indigo-600 group-hover:text-indigo-700">
+                <p className="text-sm text-slate leading-relaxed">{article.summary}</p>
+                <span className="inline-flex items-center mt-5 text-sm font-medium text-navy group-hover:underline">
                   Read more <span className="ml-1">→</span>
                 </span>
               </Link>
             ))}
           </div>
-
-          <div className="mt-16 text-center">
-            <p className="text-slate-500">
-              More articles coming soon. Subscribe to stay updated.
-            </p>
-          </div>
         </div>
       </section>
 
-      <section className="py-20 bg-slate-950 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white">Want Veritas Global AI insights in your inbox?</h2>
-          <p className="mt-4 text-lg text-slate-400 max-w-xl mx-auto">
-            We publish regular analysis on enterprise AI strategy, governance, and
-            industry transformation. No spam, just signal.
+      <section className="py-20 px-6 lg:px-10 bg-paper border-t border-line">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="font-serif text-3xl md:text-4xl text-ink mb-5 leading-tight">
+            Want Veritas insights in your inbox?
+          </h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto mb-10">
+            We publish regular analysis on enterprise AI strategy, governance, and industry
+            transformation. No spam, just signal.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center mt-8 px-8 py-4 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/25"
-          >
-            Subscribe for Updates
+          <Link href="/contact" className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2">
+            Get in Touch
+            <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
           </Link>
         </div>
       </section>

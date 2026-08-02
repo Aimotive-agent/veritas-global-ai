@@ -1,69 +1,77 @@
 import Link from "next/link";
 
-const footerLinks = {
-  Solutions: [
-    { href: "/solutions", label: "AI Strategy" },
-    { href: "/solutions", label: "Machine Learning" },
-    { href: "/solutions", label: "Generative AI" },
-    { href: "/solutions", label: "Data Engineering" },
-  ],
-  Industries: [
-    { href: "/industries", label: "Financial Services" },
-    { href: "/industries", label: "Healthcare" },
-    { href: "/industries", label: "Manufacturing" },
-    { href: "/industries", label: "Government" },
-  ],
-  Company: [
-    { href: "/about", label: "About Us" },
-    { href: "/why-veritas", label: "Why Veritas" },
-    { href: "/contact", label: "Contact" },
-  ],
-};
-
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="py-14 px-6 lg:px-10 bg-navy-deep">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white mb-4">
-              <span className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white text-sm font-bold">V</span>
-              Veritas Global AI
-            </Link>
-            <p className="text-sm text-slate-400 leading-relaxed">
-              Enterprise AI that delivers truth, clarity, and measurable results.
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/veritas-logo.png" alt="Veritas Global AI logo" className="w-8 h-8 object-contain" />
+              <span className="font-serif font-semibold text-base text-white">Veritas Global AI</span>
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Intelligence, engineered for the enterprise. Full-spectrum AI, secured to the standards of global institutions.
             </p>
           </div>
 
-          {Object.entries(footerLinks).map(([heading, links]) => (
-            <div key={heading}>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-                {heading}
-              </h3>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Solutions */}
+          <div>
+            <h4 className="font-serif font-semibold text-sm text-white mb-4">Solutions</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li><Link href="/solutions" className="hover:text-white transition-colors">Enterprise SaaS</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">AI Agents</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">Neural Chatbots</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">Intelligent Websites</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">RAG Systems</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">AI Marketing</Link></li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-serif font-semibold text-sm text-white mb-4">Company</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li><Link href="/why-veritas" className="hover:text-white transition-colors">Why Veritas</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">Industries</Link></li>
+              <li><Link href="/insights" className="hover:text-white transition-colors">Insights</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/assessment" className="hover:text-white transition-colors">Assessment</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Compliance */}
+          <div>
+            <h4 className="font-serif font-semibold text-sm text-white mb-4">Compliance</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li className="flex items-center gap-2">
+                <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                SOC 2 Type II
+              </li>
+              <li className="flex items-center gap-2">
+                <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                ISO 27001
+              </li>
+              <li className="flex items-center gap-2">
+                <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                GDPR &amp; HIPAA
+              </li>
+              <li className="flex items-center gap-2">
+                <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                FedRAMP-Ready
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Veritas Global AI. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="text-sm text-slate-500 hover:text-slate-400">Privacy Policy</Link>
-            <Link href="/terms" className="text-sm text-slate-500 hover:text-slate-400">Terms of Service</Link>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+          <p>&copy; 2026 Veritas Global AI. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <a href="#" className="hover:text-white transition-colors">Security Disclosure</a>
           </div>
         </div>
       </div>

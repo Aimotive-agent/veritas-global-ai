@@ -7,13 +7,6 @@ interface Params {
   slug: string;
 }
 
-const categoryColors: Record<string, string> = {
-  Strategy: "bg-blue-100 text-blue-700",
-  Industry: "bg-emerald-100 text-emerald-700",
-  Governance: "bg-purple-100 text-purple-700",
-  Technical: "bg-amber-100 text-amber-700",
-};
-
 export function generateStaticParams(): Params[] {
   return getAllArticleSlugs().map((slug) => ({ slug }));
 }
@@ -38,28 +31,42 @@ export async function generateMetadata({
 }
 
 function renderBody(paragraphs: string[]) {
-  return paragraphs.map((p, i) => {
-    if (p.startsWith("### ")) {
-      return (
-        <h3 key={i} className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-          {p.slice(4)}
-        </h3>
-      );
-    }
-    if (p.startsWith("1. ") || p.startsWith("2. ") || p.startsWith("3. ") || p.startsWith("4. ") || p.startsWith("5. ")) {
-      // Ordered list items — we'll collect in groups
-      return (
-        <li key={i} className="ml-6 mb-2 text-slate-700 leading-relaxed list-decimal">
-          {p.replace(/^\d+\.\s*/, "")}
-        </li>
-      );
-    }
+  const listItems: string[] = [];
+  const flushList = (key: number) => {
+    if (listItems.length === 0) return null;
+    const items = listItems.splice(0);
     return (
-      <p key={i} className="mb-4 text-slate-700 leading-relaxed">
-        {p}
-      </p>
+      <ol key={key} className="list-decimal ml-6 my-6 space-y-3">
+        {items.map((item, i) => (
+          <li key={i} className="text-slate leading-relaxed">{item}</li>
+        ))}
+      </ol>
     );
+  };
+
+  let listKey = 0;
+  const nodes: React.ReactNode[] = [];
+  paragraphs.forEach((p, i) => {
+    if (p.startsWith("### ")) {
+      nodes.push(flushList(listKey++));
+      nodes.push(
+        <h2 key={`h-${i}`} className="font-serif font-semibold text-2xl lg:text-3xl text-ink mt-12 mb-4 leading-tight">
+          {p.slice(4)}
+        </h2>
+      );
+    } else if (/^\d+\.\s/.test(p)) {
+      listItems.push(p.replace(/^\d+\.\s*/, ""));
+    } else {
+      nodes.push(flushList(listKey++));
+      nodes.push(
+        <p key={`p-${i}`} className="mb-5 text-slate leading-relaxed text-[16px]">
+          {p}
+        </p>
+      );
+    }
   });
+  nodes.push(flushList(listKey++));
+  return nodes;
 }
 
 export default async function ArticlePage({
@@ -72,39 +79,31 @@ export default async function ArticlePage({
   if (!article) notFound();
 
   return (
-    <>
-      <article className="py-20 sm:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <span
-              className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                categoryColors[article.category] || "bg-slate-100 text-slate-600"
-              }`}
-            >
-              {article.category}
-            </span>
-            <span className="text-sm text-slate-400">{article.date}</span>
-            <span className="text-sm text-slate-400">{article.readingTime}</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
-            {article.title}
-          </h1>
-
-          <div className="prose prose-slate max-w-none">
-            {renderBody(article.body)}
-          </div>
-
-          <div className="mt-16 pt-8 border-t border-slate-200">
-            <Link
-              href="/insights"
-              className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-700"
-            >
-              <span className="mr-1">←</span> Back to Insights
-            </Link>
-          </div>
+    <article className="pt-32 md:pt-40 pb-20 md:pb-28 bg-white">
+      <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center gap-4 mb-6">
+          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gold">{article.category}</span>
+          <span className="text-sm text-muted">{article.date}</span>
+          <span className="text-sm text-muted">{article.readingTime}</span>
         </div>
-      </article>
-    </>
+
+        <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink mb-10 leading-tight">
+          {article.title}
+        </h1>
+
+        <div className="border-t border-line pt-10">
+          {renderBody(article.body)}
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-line">
+          <Link
+            href="/insights"
+            className="inline-flex items-center text-navy font-semibold hover:underline"
+          >
+            <span className="mr-1">←</span> Back to Insights
+          </Link>
+        </div>
+      </div>
+    </article>
   );
 }

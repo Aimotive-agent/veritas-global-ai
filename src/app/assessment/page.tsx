@@ -1,112 +1,105 @@
 import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Free AI Readiness Assessment — Veritas Global AI",
-  description: "Get a free AI readiness assessment. We'll evaluate your data, infrastructure, and use cases, then deliver a prioritized roadmap with clear ROI estimates.",
+  title: "AI Readiness Assessment — Veritas Global AI",
+  description: "A confidential assessment of your enterprise AI readiness — data estates, regulatory constraints, and latency requirements, delivered as a target architecture and scoped engagement plan.",
 };
 
 const deliverables = [
-  "AI opportunity map — prioritized by ROI and feasibility",
-  "Data readiness scorecard with gap analysis",
-  "Build-vs-buy recommendations for your top 3 use cases",
-  "12-month AI roadmap with milestones and investment estimates",
-  "Executive summary suitable for board and investor presentation",
+  "Data estate and regulatory constraint mapping",
+  "AI readiness scorecard with gap analysis",
+  "Target architecture specification",
+  "Phased deployment roadmap with milestones",
+  "Compliance posture assessment — SOC 2, ISO 27001, HIPAA, GDPR",
+];
+
+const processSteps = [
+  { step: "1", title: "Discovery Call", text: "Confidential consultation to understand your goals, data estates, and regulatory constraints." },
+  { step: "2", title: "Architecture Review", text: "We map your infrastructure, data residency requirements, and latency needs (NDA-protected)." },
+  { step: "3", title: "Feasibility Analysis", text: "Technical assessment of each proposed pillar against your acceptance criteria — not our benchmarks." },
+  { step: "4", title: "Readout & Roadmap", text: "A target architecture and scoped engagement plan with your leadership team." },
 ];
 
 export default function AssessmentPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
-              Free Engagement
-            </span>
-            <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
+      <section className="pt-32 md:pt-40 pb-20 md:pb-24 px-6 lg:px-10 bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="max-w-3xl">
+            <div className="section-rule mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Enterprise Readiness</p>
+            <h1 className="font-serif text-4xl md:text-5xl text-ink mb-6 leading-tight">
               AI Readiness Assessment
             </h1>
-            <p className="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl">
-              A 2-week structured evaluation of your organization&apos;s AI potential.
-              We assess your data, infrastructure, team readiness, and use cases —
-              then deliver a prioritized roadmap with clear ROI estimates.
+            <p className="text-slate text-lg leading-relaxed">
+              A confidential structured evaluation of your enterprise&apos;s AI potential — your data
+              estates, regulatory constraints, and latency requirements. Delivered as a target
+              architecture, not a sales pitch.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">What You Get</h2>
-              <ul className="space-y-4">
-                {deliverables.map((item, i) => (
-                  <li key={item} className="flex gap-4">
-                    <span className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm font-bold flex-shrink-0">
-                      {i + 1}
-                    </span>
-                    <span className="text-slate-700 pt-1">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <Reveal>
+                <h2 className="font-serif font-semibold text-2xl lg:text-3xl text-ink mb-6">What You Get</h2>
+                <ul className="space-y-4">
+                  {deliverables.map((item, i) => (
+                    <li key={item} className="flex items-start gap-4">
+                      <span className="w-8 h-8 flex items-center justify-center bg-navy text-white text-sm font-semibold flex-shrink-0">{i + 1}</span>
+                      <span className="text-slate pt-1">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
 
-              <div className="mt-10 p-6 bg-indigo-50 rounded-2xl">
-                <h3 className="font-semibold text-slate-900 mb-2">How It Works</h3>
-                <ol className="space-y-3 text-sm text-slate-600">
-                  <li className="flex gap-3">
-                    <span className="font-bold text-indigo-600">1.</span>
-                    <span><strong>Discovery call</strong> — 30 minutes to understand your goals and current AI maturity.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="font-bold text-indigo-600">2.</span>
-                    <span><strong>Data & infrastructure review</strong> — we&apos;ll need read-access to your data catalog and architecture docs (NDA-protected).</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="font-bold text-indigo-600">3.</span>
-                    <span><strong>Stakeholder interviews</strong> — 3–5 conversations with business and technical leaders.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="font-bold text-indigo-600">4.</span>
-                    <span><strong>Assessment delivery</strong> — a 90-minute readout with your leadership team. You get the slide deck and all underlying analysis.</span>
-                  </li>
+              <Reveal className="mt-10 border border-line bg-paper p-6">
+                <h3 className="font-serif font-semibold text-lg text-ink mb-4">How It Works</h3>
+                <ol className="space-y-4 text-sm text-slate">
+                  {processSteps.map((s) => (
+                    <li key={s.step} className="flex gap-3">
+                      <span className="font-serif font-semibold text-gold flex-shrink-0">{s.step}.</span>
+                      <span><strong className="text-ink">{s.title}</strong> — {s.text}</span>
+                    </li>
+                  ))}
                 </ol>
-              </div>
+              </Reveal>
             </div>
 
             <div>
-              <div className="bg-slate-50 rounded-2xl p-8 lg:p-10 sticky top-24">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6">Request Your Assessment</h2>
-                <form className="space-y-5">
+              <Reveal className="border border-line bg-paper p-8 lg:p-10 lg:sticky lg:top-28">
+                <h2 className="font-serif font-semibold text-2xl text-ink mb-6">Request Your Assessment</h2>
+                <form method="POST" action="/contact" className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="first-name" className="block text-sm font-medium text-slate-700 mb-1">First name *</label>
-                      <input type="text" id="first-name" required className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Jane" />
+                      <label htmlFor="first-name" className="block text-sm font-medium text-ink mb-2">Full Name <span className="text-red-700">*</span></label>
+                      <input type="text" id="first-name" name="name" required placeholder="Jane Thornton" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
                     </div>
                     <div>
-                      <label htmlFor="last-name" className="block text-sm font-medium text-slate-700 mb-1">Last name *</label>
-                      <input type="text" id="last-name" required className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Smith" />
+                      <label htmlFor="company" className="block text-sm font-medium text-ink mb-2">Company <span className="text-red-700">*</span></label>
+                      <input type="text" id="company" name="company" required placeholder="Enterprise Corp" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Work email *</label>
-                    <input type="email" id="email" required className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="jane@company.com" />
+                    <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">Work Email <span className="text-red-700">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="jane@enterprise.com" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
                   </div>
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">Company *</label>
-                    <input type="text" id="company" required className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Company name" />
+                    <label htmlFor="context" className="block text-sm font-medium text-ink mb-2">Brief Description of Your Infrastructure & Challenges</label>
+                    <textarea id="context" name="message" rows={4} className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors resize-none" placeholder="Tell us about your use case or current infrastructure challenges…"></textarea>
                   </div>
-                  <div>
-                    <label htmlFor="context" className="block text-sm font-medium text-slate-700 mb-1">What AI challenges are you facing?</label>
-                    <textarea id="context" rows={3} className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-y" placeholder="Brief description of your goals or challenges" />
-                  </div>
-                  <button type="submit" className="w-full py-4 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/25">
+                  <button type="submit" className="w-full btn-primary font-medium px-8 py-3.5 text-sm tracking-wide">
                     Request Assessment
                   </button>
-                  <p className="text-xs text-slate-400 text-center">
-                    Free for qualified organizations. We&apos;ll respond within 1 business day.
+                  <p className="text-xs text-muted text-center">
+                    Confidential. Handled under strict NDA. We&apos;ll respond within one business day.
                   </p>
                 </form>
-              </div>
+              </Reveal>
             </div>
           </div>
         </div>

@@ -1,294 +1,615 @@
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import IndustryTabs from "@/components/IndustryTabs";
 
-const stats = [
-  { value: "4–8 weeks", label: "Time to first production deployment" },
-  { value: "Fixed-price", label: "Transparent, outcome-based engagements" },
-  { value: "Platform-agnostic", label: "No vendor lock-in. Your stack, your choice." },
+const trustMark = (
+  <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+);
+
+const industries = ["Financial Services", "Healthcare", "Legal & Compliance", "Logistics", "Energy", "Telecommunications"];
+
+const pillars = [
+  {
+    title: "Enterprise SaaS",
+    subtitle: "Platform Architecture",
+    description:
+      "Multi-tenant AI infrastructure deployed inside your VPC. Elastic auto-scaling, role-based access control, and 99.997% uptime SLA — without touching a public cloud you haven't authorized.",
+    features: ["VPC-native deployment", "Elastic tenant isolation", "SLA-backed availability"],
+    icon: <svg width="24" height="24" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12H3l9-9 9 9h-2M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7M9 21V9h6v12" /></svg>,
+  },
+  {
+    title: "AI Agents",
+    subtitle: "Autonomous Orchestration",
+    description:
+      "Deploy autonomous agent swarms that decompose complex workflows into parallel, auditable task graphs. Deterministic guardrails enforce governance policies on every action.",
+    features: ["Dynamic swarm topology", "Policy enforcement layer", "Immutable audit logs"],
+    icon: <svg width="24" height="24" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-8 0 4 4 0 008 0zm6 0a3 3 0 10-6 0 3 3 0 006 0z" /></svg>,
+  },
+  {
+    title: "Neural Chatbots",
+    subtitle: "Conversational Intelligence",
+    description:
+      "Context-aware neural chatbots integrated with legacy ERP, CRM, and ITSM systems. Role-based knowledge segmentation with automatic PII/PHI redaction at the inference edge.",
+    features: ["Omnichannel (Slack, Teams, API)", "Role-based access control", "PII redaction engine"],
+    icon: <svg width="24" height="24" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>,
+  },
+  {
+    title: "Intelligent Websites",
+    subtitle: "AI-Powered Web Platforms",
+    description:
+      "High-performance web platforms with embedded AI personalization, dynamic content optimization, and real-time visitor intelligence — delivered on the same hardened infrastructure as our enterprise stack.",
+    features: ["AI-driven personalization", "Dynamic content optimization", "Real-time analytics edge"],
+    icon: <svg width="24" height="24" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 0a2 2 0 012-2h2a2 2 0 012 2v10a2 2 0 01-2 2h-2a2 2 0 01-2-2m6-9V7a2 2 0 012-2h2a2 2 0 012 2v10a2 2 0 01-2 2h-2a2 2 0 01-2-2" /></svg>,
+  },
+  {
+    title: "RAG Systems",
+    subtitle: "Zero-Hallucination Retrieval",
+    description:
+      "Domain-locked retrieval pipelines grounded exclusively in your proprietary data. Citation-verified outputs with full cryptographic audit trails — built for legal, financial, and healthcare precision.",
+    features: ["Proprietary data grounding", "Citation-verified outputs", "Sub-50ms retrieval latency"],
+    icon: <svg width="24" height="24" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>,
+  },
+  {
+    title: "AI Marketing",
+    subtitle: "Autonomous Campaign Intelligence",
+    description:
+      "Predictive audience modeling, generative content workflows, and autonomous campaign optimization — all governed by enterprise compliance and brand safety guardrails at every output.",
+    features: ["Predictive audience modeling", "Generative content workflows", "Brand safety guardrails"],
+    icon: <svg width="24" height="24" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
+  },
 ];
 
-const offerings = [
+const differences = [
   {
-    title: "AI Strategy & Advisory",
+    number: "01",
+    title: "Sovereign by Default",
     description:
-      "Roadmap your AI transformation with confidence. We assess readiness, identify high-impact use cases, and build a phased execution plan aligned to business goals.",
-    href: "/solutions",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
+      "Your models, your data, and your inference logs live entirely inside your perimeter — VPC, on-premises, or air-gapped. No data transits a vendor cloud you haven't authorized. We deploy to you, not the other way around.",
+    footnote: "No shared tenancy. No multi-tenant inference path. No vendor-side model access.",
   },
   {
-    title: "Machine Learning Solutions",
+    number: "02",
+    title: "Zero-Hallucination Contract",
     description:
-      "Custom ML models for fraud detection, predictive maintenance, demand forecasting, and more — deployed at scale with MLOps best practices.",
-    href: "/solutions",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+      "Every output is grounded exclusively in your proprietary corpus and carries a verifiable citation. Ungrounded claims are rejected at the guardrail layer before they reach a user — not flagged after the fact.",
+    footnote: "Defensible in court, admissible to regulators, traceable to source.",
   },
   {
-    title: "Generative AI & LLMs",
+    number: "03",
+    title: "Never Trains on Your Data",
     description:
-      "Unlock productivity with secure, enterprise-grade GenAI. Custom RAG pipelines, fine-tuned models, AI agents, and intelligent document processing.",
-    href: "/solutions",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
+      "Your proprietary information is never used to train, fine-tune, or improve any shared or foundation model — contractually and architecturally. Per-tenant model isolation means zero cross-contamination, ever.",
+    footnote: "Enforced at the infrastructure layer, not the privacy policy.",
   },
   {
-    title: "Data Engineering & Infrastructure",
+    number: "04",
+    title: "Cryptographic Audit Trail",
     description:
-      "Modern data platforms that make AI possible. Data lakes, real-time pipelines, governance frameworks, and cloud-native architectures.",
-    href: "/solutions",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
-      </svg>
-    ),
+      "Every inference, agent action, and data access is cryptographically logged in an immutable chain-of-custody. Produce a defensible audit record for any query, any user, any moment — on demand.",
+    footnote: "Tamper-evident by design. Exportable to your SIEM in real time.",
   },
 ];
 
-const industries = [
-  "Financial Services",
-  "Healthcare & Life Sciences",
-  "Manufacturing & Industry 4.0",
-  "Government & Public Sector",
-  "Energy & Utilities",
-  "Retail & E-Commerce",
+const securityFeatures = [
+  {
+    title: "Data Sovereignty & Residency",
+    description: "Deploy within your VPC, on-premises, or air-gapped. Configurable data residency per namespace with cryptographic enforcement.",
+    icon: <svg width="20" height="20" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm4 0v-4" /></svg>,
+  },
+  {
+    title: "Zero-Trust Architecture",
+    description: "Every API call, agent action, and data access is authenticated, authorized, and logged. mTLS everywhere with no implicit trust.",
+    icon: <svg width="20" height="20" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>,
+  },
+  {
+    title: "Compliance-First Design",
+    description: "SOC 2 Type II, ISO 27001, HIPAA, GDPR, FedRAMP-ready. Full audit trail immutability with cryptographic chain-of-custody for every inference.",
+    icon: <svg width="20" height="20" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.94.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.94 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.94-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.94 3.42 3.42 0 013.138-3.138z" /></svg>,
+  },
+  {
+    title: "Low-Latency Execution",
+    description: "Sub-100ms inference via edge-deployed models. Local or hybrid execution eliminates WAN dependency for sensitive workloads.",
+    icon: <svg width="20" height="20" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
+  },
+  {
+    title: "Model Isolation",
+    description: "Per-tenant model instances with no cross-contamination. Your data never trains shared or foundation models.",
+    icon: <svg width="20" height="20" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2a4 4 0 014-4h2m-2 4l3 3m-3-3l-3 3M9 7v2a4 4 0 004 4h2" /></svg>,
+  },
+  {
+    title: "Granular Access Control",
+    description: "RBAC, ABAC, and SSO/SAML integration with fine-grained API-level permissions and full session audit trails.",
+    icon: <svg width="20" height="20" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>,
+  },
 ];
+
+const impactMetrics = [
+  { value: "99.997%", label: "Uptime SLA" },
+  { value: "1.8ms", label: "Inference Latency (p50)" },
+  { value: "2.4B+", label: "Documents Indexed" },
+  { value: "340+", label: "Enterprise Deployments" },
+];
+
+const impactTabs = [
+  {
+    id: "finance",
+    label: "Financial Services",
+    intro: "Real-time market intelligence, compliance automation, fraud detection with full audit traceability.",
+    stats: [
+      { value: "12× Faster", text: "Compliance report generation through autonomous agent orchestration, reducing quarterly audit cycles from weeks to days." },
+      { value: "99.7% Accuracy", text: "In document retrieval for regulatory research with zero-hallucination guardrails — eliminating costly misquoting." },
+      { value: "$340M", text: "In operational cost savings across fraud detection, risk modeling, and automated KYC workflows." },
+    ],
+  },
+  {
+    id: "healthcare",
+    label: "Healthcare",
+    intro: "HIPAA-compliant clinical decision support, literature synthesis, patient data de-identification at scale.",
+    stats: [
+      { value: "72% Reduction", text: "In clinical documentation time through context-aware chatbots integrated with EHR systems." },
+      { value: "3.2M Records", text: "Indexed in a HIPAA-compliant vector vault with real-time updates across multi-hospital networks." },
+      { value: "Sub-50ms", text: "Clinical decision support inference delivered at the point of care, fully air-gapped." },
+    ],
+  },
+  {
+    id: "legal",
+    label: "Legal & Compliance",
+    intro: "Contract intelligence, regulatory monitoring, e-discovery with citation-verified outputs.",
+    stats: [
+      { value: "100% Citations", text: "Every generated clause and assertion carries a verifiable source citation — no ungrounded claims survive validation." },
+      { value: "14× Faster", text: "Contract review cycles via autonomous agents that extract obligations, risks, and anomalies across million-document corpora." },
+      { value: "Cryptographic Chain", text: "Of-custody on every inference — defensible audit trail for regulators, courts, and internal counsel." },
+    ],
+  },
+  {
+    id: "industry4",
+    label: "Industry 4.0",
+    intro: "Predictive maintenance, supply chain intelligence, IoT data fusion with sub-second anomaly detection.",
+    stats: [
+      { value: "23% Uptime Gain", text: "In grid asset availability through predictive maintenance agents monitoring 50,000+ IoT endpoints." },
+      { value: "18-hour → 4-hour", text: "Forecast-to-execution cycle time via autonomous supply-chain agents with real-time rerouting." },
+      { value: "Zero Incidents", text: "In 24 months of autonomous grid-balancing agent deployment with human-in-the-loop oversight." },
+    ],
+  },
+];
+
+const pipelineSteps = [
+  { step: "1", title: "Ingest Query", subtitle: "Parse & classify intent" },
+  { step: "2", title: "Retrieve Context", subtitle: "Vector vault semantic search" },
+  { step: "3", title: "Generate Response", subtitle: "RAG-backed synthesis" },
+  { step: "4", title: "Validate & Audit", subtitle: "Hallucination check + log" },
+  { step: "5", title: "Deliver Result", subtitle: "Stream to client interface" },
+];
+
+const specRows = [
+  { key: "Orchestration runtime", value: "6 agents online" },
+  { key: "Vector store", value: "3.2M docs · us-east-pinned" },
+  { key: "Retrieval confidence", value: "0.94 avg" },
+  { key: "Hallucination guardrail", value: "0 ungrounded claims" },
+  { key: "Delivery latency", value: "38ms · session encrypted" },
+  { key: "Audit trail", value: "Cryptographically logged" },
+];
+
+const engagementSteps = [
+  { number: "01", title: "Discovery & Architecture Review", description: "Confidential consultation with our solutions engineering team. We map your data estates, regulatory constraints, and latency requirements — then specify the target architecture.", meta: "~2 weeks · Under NDA" },
+  { number: "02", title: "Pilot & Validation", description: "Scoped deployment on your infrastructure against a representative workload. Measure accuracy, latency, and compliance posture against your acceptance criteria — not our benchmarks.", meta: "4–8 weeks · Fixed scope" },
+  { number: "03", title: "Production Rollout", description: "Full sovereign deployment with dedicated engineering support. Phased tenant onboarding, SIEM integration, and operator training — your team runs the platform, we back it.", meta: "8–16 weeks · SLA-backed" },
+  { number: "04", title: "Ongoing Operations", description: "Continuous model governance, quarterly security reviews, and priority engineering. Your dedicated account team holds a recurring architecture review — not a ticket queue.", meta: "Continuous · Named contacts" },
+];
+
+const faqs = [
+  {
+    q: "Where does our data actually live?",
+    a: "Wherever you put it. Veritas deploys into your VPC, on-premises datacenter, or air-gapped environment. Data residency is jurisdiction-pinned per namespace and enforced at the infrastructure layer. Your data never transits a Veritas-controlled cloud unless you explicitly choose a private-cloud deployment — and even then, it is isolated to a single-tenant instance under your control.",
+  },
+  {
+    q: "Can you guarantee zero hallucination?",
+    a: "Every generated output is grounded exclusively in your proprietary corpus and carries a verifiable source citation. Ungrounded claims are rejected at the guardrail layer before delivery — not flagged after the fact. We do not claim zero error across all possible queries; we claim that no output reaches your users without a traceable, defensible source. That is the standard legal, financial, and healthcare teams require — and it is what we contract to.",
+  },
+  {
+    q: "Do you train your models on our data?",
+    a: "No — contractually and architecturally. Your proprietary data is never used to train, fine-tune, or improve any shared or foundation model. Per-tenant model isolation means your workloads never share inference paths or weight state with another customer. This is enforced at the infrastructure layer, not buried in a privacy policy clause.",
+  },
+  {
+    q: "How long does a full deployment take?",
+    a: "A typical production rollout runs 12–24 weeks end-to-end: ~2 weeks for discovery and architecture review, 4–8 weeks for a scoped pilot against a representative workload, then 8–16 weeks for full production rollout with phased tenant onboarding. Air-gapped and highly regulated environments trend toward the upper end. We do not rush compliance.",
+  },
+  {
+    q: "What does the audit trail actually prove?",
+    a: "Every inference, agent action, and data access is written to a tamper-evident, cryptographically chained log. For any query we can reconstruct: who asked it, what context was retrieved, what was generated, what guardrail validated it, and when each step occurred. The trail is exportable to your SIEM in real time and admissible as evidence to regulators and courts.",
+  },
+  {
+    q: "What happens if your company disappears?",
+    a: "Because Veritas runs inside your perimeter on your infrastructure, a vendor outage does not take your platform down. Source-availability and operational runbook escrow are standard contract terms — your team can operate the platform independently. Sovereign deployment means the platform's survival is not coupled to the vendor's.",
+  },
+];
+
+const sectionHeader = (eyebrow: string, title: string, description: string) => (
+  <Reveal className="max-w-3xl mb-16">
+    <div className="section-rule mb-6" />
+    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">{eyebrow}</p>
+    <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink mb-5 leading-tight">{title}</h2>
+    <p className="text-slate text-lg leading-relaxed">{description}</p>
+  </Reveal>
+);
 
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-500/20 via-transparent to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white animate-fade-up">
-              Enterprise AI that{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                delivers real outcomes
-              </span>
+      {/* HERO */}
+      <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-7 reveal">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-6">Enterprise AI Infrastructure</p>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.1] mb-7">
+              Intelligence, Engineered<br />for the Enterprise.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl animate-fade-up-delay-1">
-              Strategy to scale, built for your industry, on a fixed timeline.
-              Veritas Global AI partners with mid-market and enterprise organizations to design,
-              build, and scale AI solutions grounded in transparency, rigor, and measurable ROI.
+            <p className="text-lg md:text-xl text-slate leading-relaxed mb-10 max-w-xl">
+              Full-spectrum enterprise AI — deployed on your infrastructure, secured to institutional standards.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up-delay-2">
-              <Link
-                href="/assessment"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/25"
-              >
-                Get Your Free AI Readiness Assessment
+            <div className="flex flex-wrap gap-4 mb-12">
+              <Link href="/contact" className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2">
+                Request Private Briefing
+                <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
               </Link>
-              <Link
-                href="/solutions"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-slate-600 text-slate-200 font-semibold text-base hover:border-slate-400 hover:text-white transition-colors"
-              >
-                Explore Solutions
-              </Link>
+              <a href="#architecture" className="btn-secondary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2">
+                View Architecture
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-muted">
+              <span className="flex items-center gap-2">{trustMark} SOC 2 Type II</span>
+              <span className="flex items-center gap-2">{trustMark} ISO 27001</span>
+              <span className="flex items-center gap-2">{trustMark} GDPR &amp; HIPAA</span>
             </div>
           </div>
 
-          {/* Stats row */}
-          <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center sm:text-left">
-                <div className="text-3xl sm:text-4xl font-bold text-white">{stat.value}</div>
-                <div className="mt-1 text-sm text-slate-400">{stat.label}</div>
+          <div className="lg:col-span-5 reveal lg:pt-4">
+            <div className="border border-line bg-paper p-7 lg:p-8">
+              <div className="flex items-center justify-between pb-5 mb-5 border-b border-line">
+                <div>
+                  <p className="font-serif font-semibold text-ink text-base">Platform at a Glance</p>
+                  <p className="text-xs text-muted mt-0.5">veritas-core v4.3.0</p>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  <span className="text-emerald-700">All systems operational</span>
+                </div>
+              </div>
+              <dl className="space-y-4 text-sm">
+                <div className="flex justify-between items-baseline">
+                  <dt className="text-slate">Deployment model</dt>
+                  <dd className="font-semibold text-ink text-right">Sovereign · Hybrid · Air-gapped</dd>
+                </div>
+                <div className="flex justify-between items-baseline">
+                  <dt className="text-slate">Inference latency</dt>
+                  <dd className="font-semibold text-ink">1.8ms p50</dd>
+                </div>
+                <div className="flex justify-between items-baseline">
+                  <dt className="text-slate">Uptime SLA</dt>
+                  <dd className="font-semibold text-ink">99.997%</dd>
+                </div>
+                <div className="flex justify-between items-baseline">
+                  <dt className="text-slate">Data residency</dt>
+                  <dd className="font-semibold text-ink text-right">Jurisdiction-pinned</dd>
+                </div>
+                <div className="flex justify-between items-baseline">
+                  <dt className="text-slate">Model training</dt>
+                  <dd className="font-semibold text-ink">Never on your data</dd>
+                </div>
+                <div className="flex justify-between items-baseline">
+                  <dt className="text-slate">Audit trail</dt>
+                  <dd className="font-semibold text-ink">Cryptographic</dd>
+                </div>
+              </dl>
+              <div className="mt-6 pt-5 border-t border-line">
+                <p className="text-xs uppercase tracking-[0.18em] text-muted mb-3">Certifications</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2.5 py-1 border border-line text-xs text-ink font-medium">SOC 2</span>
+                  <span className="px-2.5 py-1 border border-line text-xs text-ink font-medium">ISO 27001</span>
+                  <span className="px-2.5 py-1 border border-line text-xs text-ink font-medium">HIPAA</span>
+                  <span className="px-2.5 py-1 border border-line text-xs text-ink font-medium">GDPR</span>
+                  <span className="px-2.5 py-1 border border-line text-xs text-ink font-medium">FedRAMP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST STRIP */}
+      <section className="py-10 px-6 lg:px-10 border-b border-line bg-paper">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-center text-xs uppercase tracking-[0.2em] text-muted mb-6">Operating across regulated industries</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
+            {industries.map((ind) => (
+              <span key={ind} className="font-serif font-semibold text-lg text-slate">{ind}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SOLUTIONS / SIX PILLARS */}
+      <section id="solutions" className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          {sectionHeader(
+            "Enterprise Capabilities",
+            "Six Integrated AI Pillars",
+            "Each pillar is a fully sovereign, deployment-flexible capability. Deploy independently or as a unified intelligence fabric across your organization."
+          )}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line">
+            {pillars.map((p) => (
+              <Reveal key={p.title} className="card p-8 lg:p-10 border-0">
+                <div className="flex items-start gap-5 mb-6">
+                  <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 bg-paper-2">{p.icon}</div>
+                  <div>
+                    <h3 className="font-serif font-semibold text-xl text-ink mb-1">{p.title}</h3>
+                    <p className="text-sm text-muted font-medium">{p.subtitle}</p>
+                  </div>
+                </div>
+                <p className="text-slate leading-relaxed mb-6 text-[15px]">{p.description}</p>
+                <ul className="space-y-2.5 text-sm text-ink-2">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3"><span className="text-gold mt-0.5">—</span> {f}</li>
+                  ))}
+                </ul>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* THE VERITAS DIFFERENCE */}
+      <section id="difference" className="py-20 md:py-28 px-6 lg:px-10 bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          {sectionHeader(
+            "Why Veritas",
+            "The Veritas Difference",
+            "Most enterprise AI vendors host your data on shared infrastructure and call it secure. We don't. Four commitments set the Veritas platform apart — and they are architectural, not promotional."
+          )}
+          <Reveal className="grid md:grid-cols-2 gap-px bg-line border border-line">
+            {differences.map((d) => (
+              <div key={d.number} className="bg-white p-8 lg:p-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="font-serif text-2xl font-semibold text-gold">{d.number}</span>
+                  <h3 className="font-serif font-semibold text-xl text-ink">{d.title}</h3>
+                </div>
+                <p className="text-slate leading-relaxed text-[15px] mb-4">{d.description}</p>
+                <p className="text-sm text-muted leading-relaxed">{d.footnote}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Offerings */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-              What We Do
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              End-to-end AI capabilities — from strategy to production.
-            </p>
-          </div>
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {offerings.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="group p-6 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/50 transition-all"
-              >
-                <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5 group-hover:bg-indigo-100 transition-colors">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{item.description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies — Client Impact */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-              Client Impact
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              Representative results from enterprise AI engagements.
-            </p>
-          </div>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                metric: "65%",
-                title: "Faster Claims Processing",
-                description:
-                  "Top-20 P&C insurer reduced claims triage from 4.2 days to 1.5 days using GenAI + document intelligence — deployed in 8 weeks.",
-                industry: "Insurance",
-              },
-              {
-                metric: "$12M",
-                title: "Saved Through Predictive Maintenance",
-                description:
-                  "Fortune 500 manufacturer achieved 68% reduction in unplanned downtime across 14 plants with ML + IoT integration.",
-                industry: "Manufacturing",
-              },
-              {
-                metric: "40%",
-                title: "More Fraud Detected",
-                description:
-                  "Regional bank ($40B AUM) caught $3.2M in additional fraud with zero false-positive increase using ML anomaly detection.",
-                industry: "Financial Services",
-              },
-            ].map((cs) => (
-              <div
-                key={cs.title}
-                className="group p-8 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/50 transition-all"
-              >
-                <div className="text-4xl font-bold text-indigo-600 mb-3">
-                  {cs.metric}
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                  {cs.title}
-                </h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-4">
-                  {cs.description}
-                </p>
-                <span className="inline-block text-xs font-medium text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full">
-                  {cs.industry}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="py-20 sm:py-28 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-              Industries We Serve
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              Deep domain expertise across the sectors where AI matters most.
-            </p>
-          </div>
-          <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {industries.map((industry) => (
-              <Link
-                key={industry}
-                href="/industries"
-                className="flex items-center justify-center p-4 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:shadow-sm transition-all text-center"
-              >
-                {industry}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Veritas */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-                Why Veritas?
+      {/* SECURITY */}
+      <section id="security" className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <Reveal className="lg:sticky lg:top-28">
+              <div className="section-rule mb-6" />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Enterprise Advantage</p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink mb-6 leading-tight">
+                Security Is Not a Feature.<br />It&apos;s the Foundation.
               </h2>
-              <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-                The AI consulting landscape is crowded with hype. Veritas stands apart through
-                an unwavering commitment to rigor, transparency, and outcomes — not just
-                proof-of-concepts that gather dust.
+              <p className="text-slate text-lg leading-relaxed mb-8">
+                Every layer of the Veritas stack is architected for the most regulated environments on earth. Your data never leaves your jurisdiction, your models never train on your proprietary information, and every inference is cryptographically verifiable.
               </p>
-              <ul className="mt-8 space-y-4">
-                {[
-                  { title: "Truth-first methodology", desc: "Every engagement begins with data audit and feasibility — never a sales pitch." },
-                  { title: "Enterprise operational experience", desc: "Our team has deployed AI inside Fortune 100 companies and government agencies." },
-                  { title: "Vendor-neutral architecture", desc: "We recommend what works for your stack, not our partnerships." },
-                  { title: "Measurable ROI from day one", desc: "Every project scoped with clear KPIs and a path to production." },
-                ].map((item) => (
-                  <li key={item.title} className="flex gap-3">
-                    <svg className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <div>
-                      <span className="font-semibold text-slate-900">{item.title}</span>
-                      <span className="text-slate-500"> — {item.desc}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/why-veritas"
-                className="inline-flex items-center mt-8 text-indigo-600 font-semibold hover:text-indigo-700"
-              >
-                Learn more about our approach <span className="ml-1">→</span>
-              </Link>
-            </div>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <div className="text-6xl font-bold mb-2">V</div>
-                  <div className="text-xl font-semibold">Veritas = Truth</div>
-                  <p className="mt-2 text-indigo-200 text-sm max-w-xs mx-auto">
-                    Our name reflects our core belief: AI decisions must be auditable,
-                    explainable, and grounded in reality.
-                  </p>
+              <div className="border border-line bg-white p-6">
+                <h4 className="font-serif font-semibold text-ink mb-4 flex items-center gap-2 text-base">
+                  <svg width="18" height="18" fill="none" stroke="#0F2A4A" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+                  Deployment Flexibility
+                </h4>
+                <div className="flex flex-wrap gap-3">
+                  {["On-Premise", "Hybrid", "Private Cloud", "Air-Gapped"].map((mode) => (
+                    <span key={mode} className="px-4 py-2 border border-line text-ink text-sm font-medium">{mode}</span>
+                  ))}
                 </div>
               </div>
+            </Reveal>
+            <div className="grid sm:grid-cols-2 gap-px bg-line border border-line">
+              {securityFeatures.map((f) => (
+                <div key={f.title} className="bg-white p-7">
+                  <div className="w-10 h-10 flex items-center justify-center mb-4 bg-paper-2">{f.icon}</div>
+                  <h3 className="font-serif font-semibold text-base text-ink mb-2">{f.title}</h3>
+                  <p className="text-sm text-slate leading-relaxed">{f.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 sm:py-28 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            Ready to build AI that matters?
-          </h2>
-          <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
-            Let&apos;s discuss your AI challenges and map a path to measurable impact.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center mt-8 px-8 py-4 rounded-xl bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/25"
-          >
-            Schedule a Consultation
-          </Link>
+      {/* INDUSTRY IMPACT */}
+      <section id="impact" className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          {sectionHeader(
+            "Industry Impact",
+            "Transforming the Regulated Enterprise",
+            "From global financial institutions to national healthcare systems — Veritas Global AI powers mission-critical intelligence where accuracy is non-negotiable."
+          )}
+          <Reveal className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-line border border-line mb-20">
+            {impactMetrics.map((m) => (
+              <div key={m.label} className="bg-white p-8 text-center">
+                <div className="metric-num text-4xl md:text-5xl mb-2">{m.value}</div>
+                <p className="text-sm text-slate leading-snug">{m.label}</p>
+              </div>
+            ))}
+          </Reveal>
+          <Reveal>
+            <IndustryTabs tabs={impactTabs} />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ARCHITECTURE */}
+      <section id="architecture" className="py-20 md:py-28 px-6 lg:px-10 bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          {sectionHeader(
+            "Platform Architecture",
+            "The Intelligence Layer in Motion",
+            "A static topology of the Veritas runtime — the agent workflow pipeline and data flow that governs every inference, from query intake to validated delivery."
+          )}
+          <Reveal className="grid lg:grid-cols-5 gap-px bg-line border border-line">
+            <div className="lg:col-span-3 bg-white p-8 lg:p-10">
+              <h3 className="font-serif font-semibold text-lg text-ink mb-2">Runtime Stack</h3>
+              <p className="text-sm text-muted mb-8">veritas-core — enterprise-shell — v4.3.0</p>
+              <div className="space-y-3">
+                {pipelineSteps.map((s) => (
+                  <div key={s.step} className="flex items-center gap-4 p-4 border border-line bg-paper-2">
+                    <div className="w-8 h-8 flex items-center justify-center bg-navy text-white text-xs font-semibold flex-shrink-0">{s.step}</div>
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-ink">{s.title}</div>
+                      <div className="text-xs text-muted">{s.subtitle}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-span-2 bg-white p-8 lg:p-10">
+              <h3 className="font-serif font-semibold text-lg text-ink mb-2">Pipeline Specification</h3>
+              <p className="text-sm text-muted mb-8">Multi-agent task decomposition with deterministic guardrails.</p>
+              <dl className="space-y-5">
+                {specRows.map((row) => (
+                  <div key={row.key} className="flex justify-between items-baseline pb-4 border-b border-line">
+                    <dt className="text-sm text-slate">{row.key}</dt>
+                    <dd className="text-sm font-semibold text-ink">{row.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="mt-8 pt-6 border-t border-line flex items-center gap-2 text-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                <span className="text-ink font-medium">Operational</span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* HOW WE ENGAGE */}
+      <section id="engage" className="py-20 md:py-28 px-6 lg:px-10 bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          {sectionHeader(
+            "Engagement Model",
+            "How We Engage",
+            "No self-service sign-up. No pricing page. Every engagement is a structured partnership — from confidential consultation to sovereign deployment, with white-glove engineering at every stage."
+          )}
+          <Reveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-line border border-line">
+            {engagementSteps.map((s) => (
+              <div key={s.number} className="bg-white p-8 lg:p-9">
+                <div className="font-serif text-3xl font-semibold text-navy mb-5">{s.number}</div>
+                <h3 className="font-serif font-semibold text-lg text-ink mb-3">{s.title}</h3>
+                <p className="text-sm text-slate leading-relaxed mb-4">{s.description}</p>
+                <p className="text-xs text-muted leading-relaxed">{s.meta}</p>
+              </div>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-3xl mx-auto">
+          <Reveal className="mb-14">
+            <div className="section-rule mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Frequently Asked</p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink mb-5 leading-tight">
+              Questions Enterprise Buyers Ask
+            </h2>
+            <p className="text-slate text-lg leading-relaxed">
+              The questions your security, legal, and infrastructure teams will ask in the first meeting — answered here so you arrive prepared.
+            </p>
+          </Reveal>
+          <div className="border-t border-line">
+            {faqs.map((f, i) => (
+              <details key={f.q} className="group border-b border-line py-6" open={i === 0}>
+                <summary className="flex items-center justify-between cursor-pointer list-none">
+                  <span className="font-serif font-semibold text-lg text-ink pr-4">{f.q}</span>
+                  <svg className="flex-shrink-0 text-muted group-open:rotate-45 transition-transform" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+                </summary>
+                <p className="text-slate leading-relaxed pt-4 text-[15px]">{f.a}</p>
+              </details>
+            ))}
+          </div>
+          <Reveal className="mt-12">
+            <p className="text-slate text-[15px] mb-5">Have a question that isn&apos;t here? Our solutions engineering team answers directly — no sales gatekeepers.</p>
+            <Link href="/contact" className="btn-secondary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2">
+              Ask a Question
+              <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-20 md:py-28 px-6 lg:px-10 bg-paper border-b border-line">
+        <div className="max-w-3xl mx-auto">
+          <Reveal className="mb-12">
+            <div className="section-rule mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Private Consultation</p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink mb-5 leading-tight">
+              Begin Your Enterprise AI Journey
+            </h2>
+            <p className="text-slate text-lg leading-relaxed">
+              Every engagement begins with a confidential architecture consultation. No pricing pages. No self-service tiers. A direct conversation with our solutions engineering team.
+            </p>
+          </Reveal>
+          <Reveal className="border border-line bg-paper p-8 lg:p-10">
+            <form method="POST" action="/contact" className="block">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">Full Name <span className="text-red-700">*</span></label>
+                  <input type="text" id="name" name="name" required placeholder="Jane Thornton" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-ink mb-2">Company <span className="text-red-700">*</span></label>
+                  <input type="text" id="company" name="company" required placeholder="Enterprise Corp" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">Work Email <span className="text-red-700">*</span></label>
+                  <input type="email" id="email" name="email" required placeholder="jane@enterprise.com" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
+                </div>
+                <div>
+                  <label htmlFor="role" className="block text-sm font-medium text-ink mb-2">Role</label>
+                  <select id="role" name="role" className="w-full px-4 py-3 bg-white border border-line text-ink text-sm focus:border-navy transition-colors">
+                    <option value="">Select your role…</option>
+                    <option value="c-level">C-Level Executive</option>
+                    <option value="vp">VP / Director</option>
+                    <option value="head-tech">Head of Technology</option>
+                    <option value="procurement">Procurement Lead</option>
+                    <option value="architect">Enterprise Architect</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div className="mt-6">
+                <label htmlFor="interest" className="block text-sm font-medium text-ink mb-2">Primary Area of Interest</label>
+                <select id="interest" name="interest" required className="w-full px-4 py-3 bg-white border border-line text-ink text-sm focus:border-navy transition-colors">
+                  <option value="">Select a solution…</option>
+                  <option value="saas">Enterprise SaaS</option>
+                  <option value="agents">AI Agents</option>
+                  <option value="chatbots">Neural Chatbots</option>
+                  <option value="websites">Intelligent Websites</option>
+                  <option value="rag">RAG Systems</option>
+                  <option value="marketing">AI Marketing</option>
+                  <option value="full">Full Platform Consultation</option>
+                </select>
+              </div>
+              <div className="mt-6">
+                <label htmlFor="message" className="block text-sm font-medium text-ink mb-2">Brief Description of Requirements <span className="text-red-700">*</span></label>
+                <textarea id="message" name="message" rows={4} required placeholder="Tell us about your use case or current infrastructure challenges…" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors resize-none"></textarea>
+              </div>
+              <div className="mt-6 flex items-start gap-3">
+                <input type="checkbox" id="consent" name="consent" required className="mt-1 w-4 h-4 border-line text-navy focus:ring-navy flex-shrink-0" />
+                <label htmlFor="consent" className="text-xs text-muted leading-relaxed">I agree to Veritas Global AI&apos;s <a href="/privacy" className="text-navy hover:underline">Privacy Policy</a> and consent to being contacted regarding enterprise AI solutions. All information is handled under strict confidentiality.</label>
+              </div>
+              <div className="mt-8">
+                <button type="submit" className="btn-primary font-medium px-8 py-3.5 text-sm tracking-wide inline-flex items-center gap-2 w-full sm:w-auto justify-center">
+                  Request Private Consultation
+                  <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </button>
+              </div>
+            </form>
+          </Reveal>
         </div>
       </section>
     </>

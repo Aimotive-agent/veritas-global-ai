@@ -1,124 +1,140 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About — Veritas Global AI",
-  description: "Veritas Global AI is an enterprise AI consultancy built on truth, transparency, and measurable outcomes. We help mid-market and enterprise organizations deploy AI that works.",
+  description: "Veritas Global AI — full-spectrum enterprise AI, deployed on your infrastructure and secured to the standards of global institutions.",
 };
 
 const values = [
   {
-    title: "Truth Over Hype",
-    desc: "We say no when AI isn't the answer. We celebrate honest feasibility assessments as much as successful deployments.",
+    title: "Sovereign by Default",
+    desc: "Your models, your data, and your inference logs live entirely inside your perimeter. We deploy to you, not the other way around.",
   },
   {
-    title: "Outcomes Over Outputs",
-    desc: "A model that scores well in a notebook but never reaches production is a failure. We measure success by business impact — revenue, savings, speed.",
+    title: "Zero-Hallucination Contract",
+    desc: "Every output is grounded exclusively in your proprietary corpus and carries a verifiable citation. No ungrounded claims reach your users.",
   },
   {
-    title: "Transparency as a Feature",
-    desc: "Open architecture, fixed pricing, clear timelines. No black boxes in our models or our contracts.",
+    title: "Never Trains on Your Data",
+    desc: "Your proprietary information is never used to train, fine-tune, or improve any shared or foundation model — contractually and architecturally.",
+  },
+  {
+    title: "Cryptographic Audit Trail",
+    desc: "Every inference, agent action, and data access is cryptographically logged in an immutable chain-of-custody.",
   },
   {
     title: "Client Enablement, Not Dependency",
-    desc: "We build your team's capability as we build your AI. You should be stronger after we leave, not weaker.",
-  },
-  {
-    title: "Rigor in Everything",
-    desc: "From data engineering to model evaluation to deployment — we apply the same standards we'd want if the model were making decisions about us.",
+    desc: "We build your team's capability as we build your platform. You should be stronger after we leave, not weaker.",
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white">About Veritas Global AI</h1>
-          <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
-            We&apos;re building the AI consultancy we wish existed — one that puts truth,
-            transparency, and measurable impact at the center of every engagement.
-          </p>
+      <section className="pt-32 md:pt-40 pb-20 md:pb-24 px-6 lg:px-10 bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="max-w-3xl">
+            <div className="section-rule mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">About Veritas Global AI</p>
+            <h1 className="font-serif text-4xl md:text-5xl text-ink mb-6 leading-tight">
+              Intelligence, Engineered for the Enterprise.
+            </h1>
+            <p className="text-slate text-lg leading-relaxed">
+              Full-spectrum enterprise AI — deployed on your infrastructure, secured to institutional
+              standards. From sovereign SaaS platforms to autonomous agent swarms, neural chatbots,
+              intelligent websites, RAG pipelines, and AI-driven marketing.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900">Our Story</h2>
-            <div className="mt-8 space-y-6 text-lg text-slate-600 leading-relaxed">
+      <section className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl">
+            <Reveal>
+              <div className="section-rule mb-6" />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Our Story</p>
+              <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6 leading-tight">Sovereign AI for the Regulated Enterprise</h2>
+            </Reveal>
+            <div className="space-y-6 text-lg text-slate leading-relaxed">
               <p>
-                Veritas Global AI was founded on a simple observation: the enterprise AI market is
-                broken. Large consultancies sell multi-year, multi-million-dollar
-                transformations that never reach production. SaaS vendors lock you into
-                proprietary platforms. And the mid-market — companies with real AI potential
-                and real budgets — gets ignored by everyone.
+                Veritas Global AI was founded on a simple observation: most enterprise AI vendors host
+                your data on shared infrastructure and call it secure. That wasn&apos;t good enough for the
+                institutions we&apos;d worked with — global financial firms, national healthcare systems,
+                and sovereign governments where accuracy is non-negotiable.
               </p>
               <p>
-                Our team came from the organizations we&apos;re now competing with. We&apos;ve
-                deployed AI inside Fortune 100 companies, government agencies, and
-                high-growth startups. We&apos;ve seen what works, what doesn&apos;t, and where the
-                waste happens. We built Veritas to do it better.
+                Our team has deployed mission-critical AI inside the most regulated environments on
+                earth. We&apos;ve seen what works, what doesn&apos;t, and where the waste happens. We built
+                Veritas to do it differently: deploy to the client, never the other way around.
               </p>
               <p>
-                The name — Veritas, Latin for truth — reflects our founding belief:
-                trustworthy AI starts with trustworthy people and transparent processes.
-                Every model we build is auditable. Every engagement has clear success
-                criteria. Every recommendation is platform-agnostic.
+                The name — Veritas, Latin for truth — reflects our founding belief. Every model we
+                deploy is grounded exclusively in your data. Every output carries a verifiable
+                citation. Every inference is cryptographically logged. Trustworthy AI starts with
+                trustworthy infrastructure.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 sm:py-28 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Our Values</h2>
-            <p className="mt-4 text-lg text-slate-600">
-              These aren&apos;t posters on a wall. They&apos;re how we make every decision.
+      <section className="py-20 md:py-28 px-6 lg:px-10 bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="max-w-3xl mb-16">
+            <div className="section-rule mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Our Commitments</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-ink mb-5 leading-tight">What We Stand For</h2>
+            <p className="text-slate text-lg leading-relaxed">
+              These aren&apos;t posters on a wall. They&apos;re architectural — enforced at the infrastructure
+              layer, not buried in a privacy policy.
             </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          </Reveal>
+          <Reveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line">
             {values.map((v) => (
-              <div key={v.title} className="bg-white rounded-2xl p-8 border border-slate-200">
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">{v.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{v.desc}</p>
+              <div key={v.title} className="bg-white p-8">
+                <h3 className="font-serif font-semibold text-lg text-ink mb-3">{v.title}</h3>
+                <p className="text-sm text-slate leading-relaxed">{v.desc}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-slate-900">Leadership</h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-            Our team brings deep experience from top AI labs, enterprise software companies,
-            and management consultancies. We&apos;re building Veritas Global AI to be the consultancy
-            we always wished existed — one that puts truth, transparency, and measurable
-            impact at the center of every engagement.
-          </p>
-          <p className="mt-4 text-indigo-600 font-medium">
-            Leadership profiles coming soon.
-          </p>
+      <section className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="max-w-3xl mb-16">
+            <div className="section-rule mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Compliance</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-ink mb-5 leading-tight">
+              Secured to the Standards of Global Institutions
+            </h2>
+            <p className="text-slate text-lg leading-relaxed">
+              SOC 2 Type II, ISO 27001, HIPAA, GDPR, and FedRAMP-ready — with cryptographic
+              chain-of-custody on every inference.
+            </p>
+          </Reveal>
+          <Reveal className="flex flex-wrap gap-3">
+            {["SOC 2 Type II", "ISO 27001", "HIPAA", "GDPR", "FedRAMP-Ready"].map((c) => (
+              <span key={c} className="px-4 py-2 border border-line text-ink text-sm font-medium">{c}</span>
+            ))}
+          </Reveal>
         </div>
       </section>
 
-      <section className="py-20 bg-slate-950 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white">Join us</h2>
-          <p className="mt-4 text-lg text-slate-400 max-w-xl mx-auto">
-            We&apos;re always looking for people who care about doing AI right.
+      <section className="py-20 px-6 lg:px-10 bg-paper border-t border-line">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="font-serif text-3xl md:text-4xl text-ink mb-5 leading-tight">
+            Begin your enterprise AI journey
+          </h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto mb-10">
+            Every engagement begins with a confidential architecture consultation.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center mt-8 px-8 py-4 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/25"
-          >
-            Get in Touch
+          <Link href="/contact" className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2">
+            Request Private Consultation
+            <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
           </Link>
         </div>
       </section>
