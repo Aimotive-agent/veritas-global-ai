@@ -181,14 +181,14 @@ export default function ContactPage() {
                 <h3 className="font-serif font-semibold text-lg text-ink mb-4">Prefer email?</h3>
                 <p className="text-sm text-slate">
                   Reach us directly at{" "}
-                  <a href="mailto:info@veritas-global-ai.com" className="text-navy hover:underline font-medium">
-                    info@veritas-global-ai.com
+                  <a href="mailto:info@veritasglobalai.tech" className="text-navy hover:underline font-medium">
+                    info@veritasglobalai.tech
                   </a>
                 </p>
                 <p className="text-sm text-slate mt-2">
                   For support:{" "}
-                  <a href="mailto:support@veritas-global-ai.com" className="text-navy hover:underline font-medium">
-                    support@veritas-global-ai.com
+                  <a href="mailto:support@veritasglobalai.tech" className="text-navy hover:underline font-medium">
+                    support@veritasglobalai.tech
                   </a>
                 </p>
               </Reveal>
