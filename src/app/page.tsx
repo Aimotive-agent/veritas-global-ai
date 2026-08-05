@@ -641,7 +641,7 @@ export default function Home() {
           <Reveal className="text-center">
             <div className="inline-flex flex-col sm:flex-row items-center gap-4">
               <a
-                href="https://docucon.netlify.app"
+                href="https://docucon.veritasglobalai.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-105"

@@ -10,6 +10,30 @@ export const metadata: Metadata = {
 
 const demos = [
   {
+    title: "DocuCon — AI Document Conversation",
+    category: "Document AI · Voice Interface",
+    description:
+      "Upload any document and have a spoken conversation with an AI that reads, understands, and researches your files. Voice input, voice output, live DuckDuckGo web search, multi-language support, and cross-session memory — all in a space-age interface with dark/light themes.",
+    features: [
+      "Drag & drop document parsing (PDF, DOCX, TXT, CSV)",
+      "Voice-to-voice conversation with TTS & STT",
+      "Live DuckDuckGo web search on every query",
+      "Cross-session memory & conversation history",
+      "14 languages with country flags",
+      "Space-age dark/light UI with collapsible panels",
+    ],
+    href: "https://docucon.veritasglobalai.com",
+    repo: "https://github.com/Aimotive-agent/doucon",
+    tag: "New — Live Demo",
+    terminal: "docucon",
+    q: "What can DocuCon do for me?",
+    a: "DocuCon reads your uploaded documents, then answers questions about them out loud using AI. It searches the web for context, remembers past conversations, and works in 14 languages — all through natural voice conversation.",
+    metric1: "14",
+    metric1Label: "Languages",
+    metric2: "DuckDuckGo",
+    metric2Label: "Web Search",
+  },
+  {
     title: "AI Wise Health Companion",
     category: "Neural Chatbot · AI Assistant",
     description:
