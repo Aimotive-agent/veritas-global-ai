@@ -70,10 +70,12 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>&copy; 2026 Veritas Global AI. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            <a href="/security" className="hover:text-white transition-colors">Security Disclosure</a>
+            <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <Link href="/data-policy" className="hover:text-white transition-colors">Data Policy</Link>
+            <a href="/security" className="hover:text-white transition-colors">Security</a>
           </div>
         </div>
       </div>
