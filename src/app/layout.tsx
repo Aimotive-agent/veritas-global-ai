@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-source-serif",
-  weight: ["400", "500", "600", "700"],
-});
+import ChatWidget from "@/components/ChatWidget";
 
 export const metadata: Metadata = {
   title: "Veritas Global AI — Enterprise AI Solutions",
@@ -40,10 +33,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${sourceSerif.variable} antialiased text-ink bg-paper`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      </head>
+      <body className="antialiased text-ink bg-paper">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <ChatWidget />
       </body>
     </html>
   );
