@@ -239,7 +239,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 px-6 lg:px-10 bg-white border-b border-line">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-7 reveal">
+          <Reveal className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-6">Enterprise AI Infrastructure</p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.1] mb-7">
               Intelligence, Engineered<br />for the Enterprise.
@@ -261,9 +261,9 @@ export default function Home() {
               <span className="flex items-center gap-2">{trustMark} ISO 27001</span>
               <span className="flex items-center gap-2">{trustMark} GDPR &amp; HIPAA</span>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-5 reveal lg:pt-4">
+          <Reveal className="lg:col-span-5 lg:pt-4">
             <div className="border border-line bg-paper p-7 lg:p-8">
               <div className="flex items-center justify-between pb-5 mb-5 border-b border-line">
                 <div>
@@ -312,7 +312,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -536,6 +536,126 @@ export default function Home() {
               Ask a Question
               <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
             </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* MASTER MILD WIZARD */}
+      <section className="py-20 md:py-28 px-6 lg:px-10 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a0533 0%, #2d1b69 30%, #4a0e4e 60%, #1a0533 100%)' }}>
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 60%), radial-gradient(circle at 70% 30%, rgba(180,130,255,0.15) 0%, transparent 50%)' }} />
+        <div className="max-w-6xl mx-auto relative z-10">
+          <Reveal className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300 mb-4">Featured Game</p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-5 leading-tight">
+                Master Mild Wizard
+              </h2>
+              <p className="text-lg text-purple-100/80 leading-relaxed mb-6">
+                Embark on an epic fantasy Idle-RPG adventure. Battle real-time monsters, collect legendary equipment, evolve through 14 unique character classes, and forge your destiny as the ultimate wizard.
+              </p>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 text-purple-200 text-sm">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  Real-time Combat
+                </div>
+                <div className="flex items-center gap-2 text-purple-200 text-sm">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                  14 Classes
+                </div>
+                <div className="flex items-center gap-2 text-purple-200 text-sm">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                  Epic Bosses
+                </div>
+              </div>
+              <Link
+                href="https://www.mastermildwizard.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2"
+                style={{ background: '#B08D57', color: '#fff' }}
+              >
+                Play Now — mastermildwizard.com
+                <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </Link>
+            </div>
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-md">
+                <div className="absolute -inset-4 bg-purple-500/20 rounded-2xl blur-2xl" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://drive.google.com/thumbnail?id=1t0g7HcI_2bgf3eVOlEJgHxCXCNEkSZHy&sz=w800"
+                  alt="Master Mild Wizard gameplay"
+                  className="relative w-full h-auto rounded-xl border-2 border-purple-400/30 shadow-2xl"
+                  loading="lazy"
+                />
+                <div className="mt-4 flex flex-wrap justify-center gap-3">
+                  <a href="https://youtube.com/@mastermildwizard" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:text-white text-xs transition-colors">YouTube</a>
+                  <span className="text-purple-500">·</span>
+                  <a href="https://www.tiktok.com/@master.mind_wizard" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:text-white text-xs transition-colors">TikTok</a>
+                  <span className="text-purple-500">·</span>
+                  <a href="https://www.facebook.com/share/1asTkDrEEA/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:text-white text-xs transition-colors">Facebook</a>
+                  <span className="text-purple-500">·</span>
+                  <a href="https://discord.gg/j7Hb3FhnM" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:text-white text-xs transition-colors">Discord</a>
+                  <span className="text-purple-500">·</span>
+                  <a href="https://www.instagram.com/mastermildwizard.pbm" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:text-white text-xs transition-colors">Instagram</a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* DOCUCON PROMO */}
+      <section className="py-20 md:py-28 px-6 lg:px-10 bg-gradient-to-br from-violet-950 via-indigo-950 to-slate-950 text-white border-b border-indigo-500/20">
+        <div className="max-w-5xl mx-auto">
+          <Reveal className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-xs font-semibold uppercase tracking-widest mb-6">
+              <span className="h-2 w-2 rounded-full bg-indigo-400 animate-pulse" />
+              New Product Launch
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-violet-300 via-indigo-200 to-cyan-300 bg-clip-text text-transparent leading-tight">
+              DocuCon — Your AI Document Conversation Agent
+            </h2>
+            <p className="text-lg md:text-xl text-indigo-100/80 max-w-3xl mx-auto leading-relaxed">
+              Upload any document and have a natural, spoken conversation with an AI that reads, understands, and researches your files. Voice input, voice output, live web search, and cross-session memory — all in a stunning space-age interface.
+            </p>
+          </Reveal>
+
+          <Reveal className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              { icon: "📄", title: "Document Upload", desc: "PDF, DOCX, TXT, CSV — drag and drop any file. Instant parsing and analysis." },
+              { icon: "🗣️", title: "Voice Conversation", desc: "Talk naturally. The AI speaks back. Full TTS and STT with multi-language support." },
+              { icon: "🌐", title: "Live Web Research", desc: "Built-in DuckDuckGo search. The AI researches the internet in real-time for every query." },
+              { icon: "🧠", title: "Cross-Session Memory", desc: "Conversations persist. Ask about something from last week and DocuCon remembers." },
+              { icon: "🎨", title: "Space-Age Interface", desc: "Dark/light themes, glassmorphism, collapsible panels. Feels like a sci-fi command center." },
+              { icon: "🔒", title: "Local-First & Private", desc: "Your documents and data stay on-device. No third-party data sharing." },
+            ].map((f, i) => (
+              <div key={i} className="rounded-2xl p-6 bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-[1.02]">
+                <div className="text-3xl mb-3">{f.icon}</div>
+                <h3 className="font-semibold text-white mb-2">{f.title}</h3>
+                <p className="text-sm text-indigo-200/70 leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </Reveal>
+
+          <Reveal className="text-center">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-4">
+              <a
+                href="https://docucon.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-105"
+              >
+                Try the Live Demo
+                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <span className="text-sm text-indigo-300/60">
+                Free demo · Full subscription platform coming soon
+              </span>
+            </div>
+            <p className="mt-6 text-xs text-indigo-300/40 max-w-md mx-auto">
+              This is a public demo. A full-featured paid subscription version with advanced analytics, team workspaces, and enterprise document processing is launching soon. Contact us for early access.
+            </p>
           </Reveal>
         </div>
       </section>
