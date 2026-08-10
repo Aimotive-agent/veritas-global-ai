@@ -8,7 +8,6 @@ import { useLocale } from "../context/LocaleContext";
 const languages = [
   { code: "en", label: "EN", flag: "🇺🇸" },
   { code: "th", label: "TH", flag: "🇹🇭" },
-  { code: "fr", label: "FR", flag: "🇫🇷" },
 ];
 
 export default function Navbar() {

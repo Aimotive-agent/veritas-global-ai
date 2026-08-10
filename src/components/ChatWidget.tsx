@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useLocale } from "@/context/LocaleContext";
 
 interface Message {
   role: "user" | "assistant";
@@ -9,13 +10,19 @@ interface Message {
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: "Hello! I'm Veritas AI. Ask me anything about our enterprise AI platform — deployment, security, capabilities, or how we work with your infrastructure." },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const chatRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const { t } = useLocale();
+  const initialized = useRef(false);
+
+  useEffect(() => {
+    if (messages.length === 0) {
+      setMessages([{ role: "assistant", content: t("chat.welcome") }]);
+    }
+  }, [t]);
 
   useEffect(() => {
     if (open && inputRef.current) inputRef.current.focus();
@@ -41,10 +48,10 @@ export default function ChatWidget() {
         body: JSON.stringify({ messages: [...messages, userMsg] }),
       });
       const data = await response.json();
-      const reply = data.response || "I'm sorry, I couldn't process that. Please try again.";
+      const reply = data.response || t("chat.error");
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch {
-      setMessages((prev) => [...prev, { role: "assistant", content: "I'm experiencing technical difficulties. Please try again or contact us directly." }]);
+      setMessages((prev) => [...prev, { role: "assistant", content: t("chat.technicalError") }]);
     } finally {
       setLoading(false);
     }
@@ -88,7 +95,7 @@ export default function ChatWidget() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold text-paper">Veritas AI</p>
-              <p className="text-[11px] text-paper/70">Enterprise AI Assistant</p>
+              <p className="text-[11px] text-paper/70">{t("chat.assistantTitle")}</p>
             </div>
           </div>
 
@@ -127,7 +134,7 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKey}
-                placeholder="Ask about Veritas Global AI..."
+                placeholder={t("chat.placeholder")}
                 className="flex-1 px-3 py-2 text-sm bg-paper border border-line rounded-lg text-ink placeholder-muted focus:outline-none focus:border-navy transition-colors"
               />
               <button
@@ -141,7 +148,7 @@ export default function ChatWidget() {
               </button>
             </div>
             <p className="mt-2 text-[10px] text-muted text-center">
-              Veritas Global AI — Enterprise Intelligence
+              {t("chat.footer")}
             </p>
           </div>
         </div>

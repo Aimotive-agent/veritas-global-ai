@@ -1,41 +1,43 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect } from "react";
 import Reveal from "@/components/Reveal";
-
-export const metadata: Metadata = {
-  title: "AI Readiness Assessment — Veritas Global AI",
-  description: "A confidential assessment of your enterprise AI readiness — data estates, regulatory constraints, and latency requirements, delivered as a target architecture and scoped engagement plan.",
-};
-
-const deliverables = [
-  "Data estate and regulatory constraint mapping",
-  "AI readiness scorecard with gap analysis",
-  "Target architecture specification",
-  "Phased deployment roadmap with milestones",
-  "Compliance posture assessment — SOC 2, ISO 27001, HIPAA, GDPR",
-];
-
-const processSteps = [
-  { step: "1", title: "Discovery Call", text: "Confidential consultation to understand your goals, data estates, and regulatory constraints." },
-  { step: "2", title: "Architecture Review", text: "We map your infrastructure, data residency requirements, and latency needs (NDA-protected)." },
-  { step: "3", title: "Feasibility Analysis", text: "Technical assessment of each proposed pillar against your acceptance criteria — not our benchmarks." },
-  { step: "4", title: "Readout & Roadmap", text: "A target architecture and scoped engagement plan with your leadership team." },
-];
+import { useLocale } from "@/context/LocaleContext";
 
 export default function AssessmentPage() {
+  const { t } = useLocale();
+
+  useEffect(() => {
+    document.title = `${t("assessment.title")} — Veritas Global AI`;
+  }, [t]);
+
+  const deliverables = [
+    t("assessment.deliverables.0"),
+    t("assessment.deliverables.1"),
+    t("assessment.deliverables.2"),
+    t("assessment.deliverables.3"),
+    t("assessment.deliverables.4"),
+  ];
+
+  const processSteps = [
+    { step: t("assessment.processSteps.0.step"), title: t("assessment.processSteps.0.title"), text: t("assessment.processSteps.0.text") },
+    { step: t("assessment.processSteps.1.step"), title: t("assessment.processSteps.1.title"), text: t("assessment.processSteps.1.text") },
+    { step: t("assessment.processSteps.2.step"), title: t("assessment.processSteps.2.title"), text: t("assessment.processSteps.2.text") },
+    { step: t("assessment.processSteps.3.step"), title: t("assessment.processSteps.3.title"), text: t("assessment.processSteps.3.text") },
+  ];
+
   return (
     <>
       <section className="pt-32 md:pt-40 pb-20 md:pb-24 px-6 lg:px-10 bg-paper border-b border-line">
         <div className="max-w-6xl mx-auto">
           <Reveal className="max-w-3xl">
             <div className="section-rule mb-6" />
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Enterprise Readiness</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">{t("assessment.eyebrow")}</p>
             <h1 className="font-serif text-4xl md:text-5xl text-ink mb-6 leading-tight">
-              AI Readiness Assessment
+              {t("assessment.title")}
             </h1>
             <p className="text-slate text-lg leading-relaxed">
-              A confidential structured evaluation of your enterprise&apos;s AI potential — your data
-              estates, regulatory constraints, and latency requirements. Delivered as a target
-              architecture, not a sales pitch.
+              {t("assessment.subtitle")}
             </p>
           </Reveal>
         </div>
@@ -46,7 +48,7 @@ export default function AssessmentPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <Reveal>
-                <h2 className="font-serif font-semibold text-2xl lg:text-3xl text-ink mb-6">What You Get</h2>
+                <h2 className="font-serif font-semibold text-2xl lg:text-3xl text-ink mb-6">{t("assessment.whatYouGet")}</h2>
                 <ul className="space-y-4">
                   {deliverables.map((item, i) => (
                     <li key={item} className="flex items-start gap-4">
@@ -58,7 +60,7 @@ export default function AssessmentPage() {
               </Reveal>
 
               <Reveal className="mt-10 border border-line bg-paper p-6">
-                <h3 className="font-serif font-semibold text-lg text-ink mb-4">How It Works</h3>
+                <h3 className="font-serif font-semibold text-lg text-ink mb-4">{t("assessment.howItWorks")}</h3>
                 <ol className="space-y-4 text-sm text-slate">
                   {processSteps.map((s) => (
                     <li key={s.step} className="flex gap-3">
@@ -72,31 +74,31 @@ export default function AssessmentPage() {
 
             <div>
               <Reveal className="border border-line bg-paper p-8 lg:p-10 lg:sticky lg:top-28">
-                <h2 className="font-serif font-semibold text-2xl text-ink mb-6">Request Your Assessment</h2>
+                <h2 className="font-serif font-semibold text-2xl text-ink mb-6">{t("assessment.requestTitle")}</h2>
                 <form method="POST" action="/contact" className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="first-name" className="block text-sm font-medium text-ink mb-2">Full Name <span className="text-red-700">*</span></label>
+                      <label htmlFor="first-name" className="block text-sm font-medium text-ink mb-2">{t("assessment.nameLabel")} <span className="text-red-700">*</span></label>
                       <input type="text" id="first-name" name="name" required placeholder="Jane Thornton" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
                     </div>
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-ink mb-2">Company <span className="text-red-700">*</span></label>
+                      <label htmlFor="company" className="block text-sm font-medium text-ink mb-2">{t("assessment.companyLabel")} <span className="text-red-700">*</span></label>
                       <input type="text" id="company" name="company" required placeholder="Enterprise Corp" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">Work Email <span className="text-red-700">*</span></label>
+                    <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">{t("assessment.emailLabel")} <span className="text-red-700">*</span></label>
                     <input type="email" id="email" name="email" required placeholder="jane@enterprise.com" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
                   </div>
                   <div>
-                    <label htmlFor="context" className="block text-sm font-medium text-ink mb-2">Brief Description of Your Infrastructure & Challenges</label>
-                    <textarea id="context" name="message" rows={4} className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors resize-none" placeholder="Tell us about your use case or current infrastructure challenges…"></textarea>
+                    <label htmlFor="context" className="block text-sm font-medium text-ink mb-2">{t("assessment.contextLabel")}</label>
+                    <textarea id="context" name="message" rows={4} className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors resize-none" placeholder={t("assessment.contextPlaceholder")}></textarea>
                   </div>
                   <button type="submit" className="w-full btn-primary font-medium px-8 py-3.5 text-sm tracking-wide">
-                    Request Assessment
+                    {t("assessment.submitButton")}
                   </button>
                   <p className="text-xs text-muted text-center">
-                    Confidential. Handled under strict NDA. We&apos;ll respond within one business day.
+                    {t("assessment.confidentialNote")}
                   </p>
                 </form>
               </Reveal>

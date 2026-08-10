@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
 
 export default function Footer() {
+  const { t } = useLocale();
+
   return (
     <footer className="py-14 px-6 lg:px-10 bg-navy-deep">
       <div className="max-w-6xl mx-auto">
@@ -13,40 +18,40 @@ export default function Footer() {
               <span className="font-serif font-semibold text-base text-white">Veritas Global AI</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Intelligence, engineered for the enterprise. Full-spectrum AI, secured to the standards of global institutions.
+              {t("footer.tagline")}
             </p>
           </div>
 
           {/* Solutions */}
           <div>
-            <h4 className="font-serif font-semibold text-sm text-white mb-4">Solutions</h4>
+            <h4 className="font-serif font-semibold text-sm text-white mb-4">{t("footer.solutionsTitle")}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/solutions" className="hover:text-white transition-colors">Enterprise SaaS</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">AI Agents</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">Neural Chatbots</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">Intelligent Websites</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">RAG Systems</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">AI Marketing</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.0.title")}</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.1.title")}</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.2.title")}</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.3.title")}</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.4.title")}</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.5.title")}</Link></li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="font-serif font-semibold text-sm text-white mb-4">Company</h4>
+            <h4 className="font-serif font-semibold text-sm text-white mb-4">{t("footer.companyTitle")}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/why-veritas" className="hover:text-white transition-colors">Why Veritas</Link></li>
-              <li><Link href="/demos" className="hover:text-white transition-colors">Demos</Link></li>
-              <li><Link href="/industries" className="hover:text-white transition-colors">Industries</Link></li>
-              <li><Link href="/insights" className="hover:text-white transition-colors">Insights</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-              <li><Link href="/assessment" className="hover:text-white transition-colors">Assessment</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/why-veritas" className="hover:text-white transition-colors">{t("navbar.whyVeritas")}</Link></li>
+              <li><Link href="/demos" className="hover:text-white transition-colors">{t("navbar.demos")}</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">{t("navbar.industries")}</Link></li>
+              <li><Link href="/insights" className="hover:text-white transition-colors">{t("navbar.insights")}</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">{t("navbar.about")}</Link></li>
+              <li><Link href="/assessment" className="hover:text-white transition-colors">{t("footer.assessment")}</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">{t("footer.contact")}</Link></li>
             </ul>
           </div>
 
           {/* Compliance */}
           <div>
-            <h4 className="font-serif font-semibold text-sm text-white mb-4">Compliance</h4>
+            <h4 className="font-serif font-semibold text-sm text-white mb-4">{t("footer.complianceTitle")}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-center gap-2">
                 <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -62,20 +67,20 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                FedRAMP-Ready
+                {t("footer.fedrampReady")}
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-          <p>&copy; 2026 Veritas Global AI. All rights reserved.</p>
+          <p>&copy; 2026 Veritas Global AI. {t("footer.rightsReserved")}</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
-            <Link href="/data-policy" className="hover:text-white transition-colors">Data Policy</Link>
-            <a href="/security" className="hover:text-white transition-colors">Security</a>
+            <Link href="/privacy" className="hover:text-white transition-colors">{t("footer.privacyPolicy")}</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">{t("footer.termsOfService")}</Link>
+            <Link href="/cookies" className="hover:text-white transition-colors">{t("footer.cookiePolicy")}</Link>
+            <Link href="/data-policy" className="hover:text-white transition-colors">{t("footer.dataPolicy")}</Link>
+            <a href="/security" className="hover:text-white transition-colors">{t("footer.security")}</a>
           </div>
         </div>
       </div>
