@@ -14,6 +14,7 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,6 +27,14 @@ export default function Reveal({
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
     observer.observe(el);
+
+    // Immediately check if already in view (page loads with element visible)
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("visible");
+      observer.unobserve(el);
+    }
+
     return () => observer.disconnect();
   }, []);
 

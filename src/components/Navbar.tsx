@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,15 +13,34 @@ const links = [
   { href: "/about", label: "About" },
 ];
 
+const languages = [
+  { code: "en", label: "EN" },
+  { code: "th", label: "TH" },
+  { code: "fr", label: "FR" },
+];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState("en");
+  const langRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
   const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href));
@@ -56,6 +75,29 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="flex items-center gap-4">
+          <div className="relative" ref={langRef}>
+            <button
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate hover:text-ink transition-colors border border-line rounded-sm"
+              onClick={() => setLangOpen(!langOpen)}
+              aria-expanded={langOpen}
+            >
+              <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10A15.3 15.3 0 018 2"/></svg>
+              {currentLang.toUpperCase()}
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 mt-1 w-24 bg-white border border-line rounded-sm shadow-sm z-50">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    className={`w-full text-left px-3 py-2 text-sm hover:bg-paper transition-colors ${currentLang === lang.code ? "font-semibold text-ink" : "text-slate"}`}
+                    onClick={() => { setCurrentLang(lang.code); setLangOpen(false); }}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <Link
             href="/contact"
             className="hidden md:inline-flex items-center px-5 py-2.5 btn-primary text-sm font-medium"
@@ -99,6 +141,18 @@ export default function Navbar() {
             >
               Private Consultation
             </Link>
+            <div className="flex items-center gap-2 pt-2 border-t border-line mt-2">
+              <span className="text-xs text-muted">Language:</span>
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  className={`px-2 py-1 text-xs rounded-sm ${currentLang === lang.code ? "bg-navy text-paper" : "text-slate hover:text-ink"}`}
+                  onClick={() => setCurrentLang(lang.code)}
+                >
+                  {lang.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
