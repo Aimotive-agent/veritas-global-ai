@@ -154,7 +154,7 @@ const demos = [
       "Legal professional dashboard",
       "Multi-platform support",
     ],
-    href: "https://aila-lawyers.netlify.app",
+    href: "https://smart-case-ai.netlify.app",
     repo: "https://github.com/Aimotive-agent/smart-case-ai",
     tag: "Live Demo",
     terminal: "smart-case-ai",
