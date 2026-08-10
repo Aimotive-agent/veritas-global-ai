@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
+import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "Veritas Global AI — Enterprise AI Solutions",
@@ -39,10 +40,12 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased text-ink bg-paper">
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <ChatWidget />
+        <Providers>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+          <ChatWidget />
+        </Providers>
       </body>
     </html>
   );

@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "solutions": "Solutions",
+    "demos": "Demos",
+    "whyVeritas": "Why Veritas",
+    "industries": "Industries",
+    "insights": "Insights",
+    "about": "About",
+    "contact": "Private Consultation"
+  },
+  "home": {
+    "heroTitle": "Transforming Global Challenges with AI",
+    "heroSubtitle": "Veritas Global AI delivers cutting-edge artificial intelligence solutions tailored for industries worldwide.",
+    "cta": "Explore Our Solutions"
+  }
+}

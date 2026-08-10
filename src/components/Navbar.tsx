@@ -3,29 +3,30 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const links = [
-  { href: "/solutions", label: "Solutions" },
-  { href: "/demos", label: "Demos" },
-  { href: "/why-veritas", label: "Why Veritas" },
-  { href: "/industries", label: "Industries" },
-  { href: "/insights", label: "Insights" },
-  { href: "/about", label: "About" },
-];
+import { useLocale } from "../context/LocaleContext";
 
 const languages = [
-  { code: "en", label: "EN" },
-  { code: "th", label: "TH" },
-  { code: "fr", label: "FR" },
+  { code: "en", label: "EN", flag: "🇺🇸" },
+  { code: "th", label: "TH", flag: "🇹🇭" },
+  { code: "fr", label: "FR", flag: "🇫🇷" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState("en");
   const langRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const { locale, setLocale, t } = useLocale();
+
+  const links = [
+    { href: "/solutions", label: t("navbar.solutions") },
+    { href: "/demos", label: t("navbar.demos") },
+    { href: "/why-veritas", label: t("navbar.whyVeritas") },
+    { href: "/industries", label: t("navbar.industries") },
+    { href: "/insights", label: t("navbar.insights") },
+    { href: "/about", label: t("navbar.about") },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -81,29 +82,30 @@ export default function Navbar() {
               onClick={() => setLangOpen(!langOpen)}
               aria-expanded={langOpen}
             >
-              <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10A15.3 15.3 0 018 2"/></svg>
-              {currentLang.toUpperCase()}
+              <span className="text-base leading-none">{languages.find((l) => l.code === locale)?.flag}</span>
+              {locale.toUpperCase()}
             </button>
             {langOpen && (
-              <div className="absolute right-0 mt-1 w-24 bg-white border border-line rounded-sm shadow-sm z-50">
+              <div className="absolute right-0 mt-1 w-32 bg-white border border-line rounded-sm shadow-sm z-50">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    className={`w-full text-left px-3 py-2 text-sm hover:bg-paper transition-colors ${currentLang === lang.code ? "font-semibold text-ink" : "text-slate"}`}
-                    onClick={() => { setCurrentLang(lang.code); setLangOpen(false); }}
+                    className={`w-full text-left px-3 py-2 text-sm hover:bg-paper transition-colors flex items-center gap-2 ${locale === lang.code ? "font-semibold text-ink" : "text-slate"}`}
+                    onClick={() => { setLocale(lang.code as any); setLangOpen(false); }}
                   >
+                    <span className="text-base leading-none">{lang.flag}</span>
                     {lang.label}
                   </button>
                 ))}
               </div>
             )}
           </div>
-          <Link
-            href="/contact"
-            className="hidden md:inline-flex items-center px-5 py-2.5 btn-primary text-sm font-medium"
-          >
-            Private Consultation
-          </Link>
+            <Link
+              href="/contact"
+              className="hidden md:inline-flex items-center px-5 py-2.5 btn-primary text-sm font-medium"
+            >
+              {t("navbar.contact")}
+            </Link>
           <button
             id="menuBtn"
             className="lg:hidden text-ink p-2"
@@ -139,16 +141,17 @@ export default function Navbar() {
               className="btn-primary text-center px-5 py-2.5 font-medium mt-2"
               onClick={() => setOpen(false)}
             >
-              Private Consultation
+              {t("navbar.contact")}
             </Link>
             <div className="flex items-center gap-2 pt-2 border-t border-line mt-2">
               <span className="text-xs text-muted">Language:</span>
               {languages.map((lang) => (
                 <button
                   key={lang.code}
-                  className={`px-2 py-1 text-xs rounded-sm ${currentLang === lang.code ? "bg-navy text-paper" : "text-slate hover:text-ink"}`}
-                  onClick={() => setCurrentLang(lang.code)}
+                  className={`px-2 py-1 text-xs rounded-sm flex items-center gap-1 ${locale === lang.code ? "bg-navy text-paper" : "text-slate hover:text-ink"}`}
+                  onClick={() => setLocale(lang.code as any)}
                 >
+                  <span className="text-xs leading-none">{lang.flag}</span>
                   {lang.label}
                 </button>
               ))}
