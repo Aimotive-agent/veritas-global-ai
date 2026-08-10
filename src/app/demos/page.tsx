@@ -220,7 +220,7 @@ const demos = [
       "Veterinary & goal-coaching AI",
       "12+ coming-soon sectors",
     ],
-    href: "https://ai-horizon-ecosystem.netlify.app",
+    href: "https://second-opinion.veritasglobalai.com",
     repo: "https://github.com/Aimotive-agent/ais2nd-opinion-main",
     tag: "Live Demo",
     terminal: "ai-horizon",
