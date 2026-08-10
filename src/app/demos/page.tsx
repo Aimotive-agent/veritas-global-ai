@@ -1,12 +1,8 @@
-import Link from "next/link";
-import type { Metadata } from "next";
-import Reveal from "@/components/Reveal";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Demos — Veritas Global AI",
-  description:
-    "Live demonstrations of Veritas Global AI products — including the AI Wise Health Companion, the AI Horizon Ecosystem, MindVault, and AI Vector Base. Explore the demos.",
-};
+import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { useLocale } from "@/context/LocaleContext";
 
 const demos = [
   {
@@ -520,19 +516,20 @@ const demos = [
 ];
 
 export default function DemosPage() {
+  const { t } = useLocale();
+
   return (
     <>
       <section className="pt-32 md:pt-40 pb-20 md:pb-24 px-6 lg:px-10 bg-paper border-b border-line">
         <div className="max-w-6xl mx-auto">
           <Reveal className="max-w-3xl">
             <div className="section-rule mb-6" />
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Live Demonstrations</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">{t("demos.eyebrow")}</p>
             <h1 className="font-serif text-4xl md:text-5xl text-ink mb-6 leading-tight">
-              See the Intelligence, Working.
+              {t("demos.title")}
             </h1>
             <p className="text-slate text-lg leading-relaxed">
-              Working products, deployed and running. Explore live demonstrations of the platforms
-              Veritas Global AI builds — from neural chatbots to autonomous agent systems.
+              {t("demos.subtitle")}
             </p>
           </Reveal>
         </div>
@@ -545,7 +542,7 @@ export default function DemosPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>
-              <strong>Demo Mode:</strong> These are live demonstrations. Some features may be limited or unavailable — full functionality requires a production deployment with your own infrastructure and API keys.
+              <strong>{t("demos.demoMode")}:</strong> {t("demos.demoModeDesc")}
             </span>
           </div>
         </div>
@@ -585,7 +582,7 @@ export default function DemosPage() {
                         rel="noopener noreferrer"
                         className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2"
                       >
-                        Launch the Demo
+                        {t("demos.launchDemo")}
                         <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
                         </svg>
@@ -597,7 +594,7 @@ export default function DemosPage() {
                           rel="noopener noreferrer"
                           className="btn-secondary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2"
                         >
-                          View Source
+                          {t("demos.viewSource")}
                           <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a9 9 0 00-2.85 17.54c.45.08.62-.2.62-.44v-1.72c-2.52.55-3.05-1.09-3.05-1.09-.41-1.05-1-1.33-1-1.33-.82-.56.06-.55.06-.55.91.06 1.39.94 1.39.94.81 1.38 2.12.98 2.64.75.08-.59.32-.98.57-1.21-1.99-.23-4.09-1-4.09-4.42 0-.98.35-1.78.92-2.4-.09-.23-.4-1.15.09-2.39 0 0 .75-.24 2.45.92a8.53 8.53 0 014.46 0c1.7-1.16 2.45-.92 2.45-.92.49 1.24.18 2.16.09 2.39.57.62.92 1.42.92 2.4 0 3.43-2.1 4.18-4.1 4.4.32.28.61.83.61 1.67v2.48c0 .24.17.52.62.44A9 9 0 0012 3z" />
                           </svg>
@@ -615,7 +612,7 @@ export default function DemosPage() {
                         <span className="ml-2 text-[10px] uppercase tracking-[0.2em] text-gray-400">{demo.terminal}</span>
                       </div>
                       <div className="space-y-3">
-                        <div className="text-xs uppercase tracking-[0.15em] text-gray-400">AI Assistant</div>
+                        <div className="text-xs uppercase tracking-[0.15em] text-gray-400">{t("demos.aiAssistant")}</div>
                         <div className="text-sm leading-relaxed text-gray-200">
                           &ldquo;{demo.q}&rdquo;
                         </div>
@@ -646,13 +643,12 @@ export default function DemosPage() {
         <div className="max-w-6xl mx-auto text-center">
           <Reveal>
             <div className="section-rule mx-auto mb-6" />
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">More to come</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">{t("demos.moreToCome.eyebrow")}</p>
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-5 leading-tight">
-              A growing portfolio of working products
+              {t("demos.moreToCome.title")}
             </h2>
             <p className="text-slate text-lg max-w-2xl mx-auto">
-              New demonstrations are deployed continuously. Each one is a real, running product — not
-              a mockup.
+              {t("demos.moreToCome.subtitle")}
             </p>
           </Reveal>
         </div>
@@ -661,13 +657,13 @@ export default function DemosPage() {
       <section className="py-20 px-6 lg:px-10 bg-paper border-t border-line">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-ink mb-5 leading-tight">
-            Want a product like this for your organization?
+            {t("demos.cta.title")}
           </h2>
           <p className="text-slate text-lg max-w-2xl mx-auto mb-10">
-            Every Veritas engagement begins with a confidential architecture consultation.
+            {t("demos.cta.subtitle")}
           </p>
           <Link href="/contact" className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2">
-            Request Private Consultation
+            {t("demos.cta.button")}
             <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
             </svg>

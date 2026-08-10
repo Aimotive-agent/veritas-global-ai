@@ -2,11 +2,9 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-export type Locale = 'en' | 'th' | 'fr';
+export type Locale = 'en' | 'th';
 
-export type Translations = {
-  [key: string]: string | Translations;
-};
+export type Translations = Record<string, any>;
 
 type LocaleContextType = {
   locale: Locale;
@@ -16,18 +14,38 @@ type LocaleContextType = {
 
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
+function getInitialLocale(): Locale {
+  if (typeof window !== 'undefined') {
+    const stored = localStorage.getItem('veritas-locale');
+    if (stored === 'en' || stored === 'th') return stored;
+  }
+  return 'en';
+}
+
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>('en');
+  const [locale, setLocaleState] = useState<Locale>('en');
   const [translations, setTranslations] = useState<Translations>({});
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setLocaleState(getInitialLocale());
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    document.documentElement.lang = locale;
+    localStorage.setItem('veritas-locale', locale);
+  }, [locale, mounted]);
+
+  useEffect(() => {
+    if (!mounted) return;
     async function loadTranslations() {
       try {
         const data = await import(`../messages/${locale}.json`);
         setTranslations(data.default);
       } catch (error) {
         console.error(`Failed to load translations for ${locale}:`, error);
-        // Fallback to English if translation file is missing
         if (locale !== 'en') {
           const fallbackData = await import(`../messages/en.json`);
           setTranslations(fallbackData.default);
@@ -36,7 +54,11 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     }
 
     loadTranslations();
-  }, [locale]);
+  }, [locale, mounted]);
+
+  const setLocale = (newLocale: Locale) => {
+    setLocaleState(newLocale);
+  };
 
   const t = (key: string): string => {
     const keys = key.split('.');
@@ -46,7 +68,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
       if (result && typeof result === 'object' && k in result) {
         result = result[k];
       } else {
-        return key; // Return the key if translation not found
+        return key;
       }
     }
     

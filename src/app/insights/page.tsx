@@ -1,11 +1,8 @@
-import Link from "next/link";
-import type { Metadata } from "next";
-import Reveal from "@/components/Reveal";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Insights — Veritas Global AI",
-  description: "Analysis on enterprise AI — strategy, governance, architecture, and industry transformation from the Veritas Global AI team.",
-};
+import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { useLocale } from "@/context/LocaleContext";
 
 const articles = [
   {
@@ -46,19 +43,20 @@ const articles = [
 ];
 
 export default function InsightsPage() {
+  const { t } = useLocale();
+
   return (
     <>
       <section className="pt-32 md:pt-40 pb-20 md:pb-24 px-6 lg:px-10 bg-paper border-b border-line">
         <div className="max-w-6xl mx-auto">
           <Reveal className="max-w-3xl">
             <div className="section-rule mb-6" />
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">Insights</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">{t("insights.eyebrow")}</p>
             <h1 className="font-serif text-4xl md:text-5xl text-ink mb-6 leading-tight">
-              Thought Leadership on Enterprise AI
+              {t("insights.title")}
             </h1>
             <p className="text-slate text-lg leading-relaxed">
-              Analysis on enterprise AI — strategy, governance, architecture, and industry
-              transformation from the Veritas Global AI team.
+              {t("insights.subtitle")}
             </p>
           </Reveal>
         </div>
@@ -82,7 +80,7 @@ export default function InsightsPage() {
                 </h2>
                 <p className="text-sm text-slate leading-relaxed">{article.summary}</p>
                 <span className="inline-flex items-center mt-5 text-sm font-medium text-navy group-hover:underline">
-                  Read more <span className="ml-1">→</span>
+                  {t("insights.readMore")} <span className="ml-1">→</span>
                 </span>
               </Link>
             ))}
@@ -93,14 +91,13 @@ export default function InsightsPage() {
       <section className="py-20 px-6 lg:px-10 bg-paper border-t border-line">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-ink mb-5 leading-tight">
-            Want Veritas insights in your inbox?
+            {t("insights.cta.title")}
           </h2>
           <p className="text-slate text-lg max-w-2xl mx-auto mb-10">
-            We publish regular analysis on enterprise AI strategy, governance, and industry
-            transformation. No spam, just signal.
+            {t("insights.cta.subtitle")}
           </p>
           <Link href="/contact" className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2">
-            Get in Touch
+            {t("insights.cta.button")}
             <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
           </Link>
         </div>
