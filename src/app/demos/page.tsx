@@ -141,6 +141,28 @@ const demos = [
     metric2: "AI",
     metric2Label: "Powered",
   },
+  {
+    title: "AI Local File Search",
+    category: "AI File System · Semantic Search",
+    description:
+      "Search your PC and network drives with AI — find files by what's inside them, not just their name. View, pin, and summarize file contents with an integrated AI assistant. Supports local and networked filesystems across your homelab.",
+    features: [
+      "AI-powered content-based file search",
+      "Network & local filesystem browsing",
+      "Copy full directory paths to clipboard",
+      "AI summarization & Q&A on file contents",
+    ],
+    href: "https://ailsearch.veritasglobalai.com",
+    repo: "https://github.com/Aimotive-agent/local-search",
+    tag: "Live Demo",
+    terminal: "local-search",
+    q: "Find all files containing 'financial report Q3' anywhere on the network?",
+    a: "Searching across your configured folders and network drives now — here are the matching files with their full paths. Click any file to view its contents or ask me to summarize it.",
+    metric1: "AI",
+    metric1Label: "Powered",
+    metric2: "Multi",
+    metric2Label: "Providers",
+  },
 ];
 
 export default function DemosPage() {
