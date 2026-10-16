@@ -47,7 +47,14 @@
     "trustStrip": {
       "eyebrow": "Operating across regulated industries"
     },
-    "trustIndustries": ["Financial Services", "Healthcare", "Legal & Compliance", "Logistics", "Energy", "Telecommunications"],
+    "trustIndustries": [
+      "Financial Services",
+      "Healthcare",
+      "Legal & Compliance",
+      "Logistics",
+      "Energy",
+      "Telecommunications"
+    ],
     "platformAtGlance": {
       "title": "Platform at a Glance",
       "status": "All systems operational",
@@ -72,37 +79,61 @@
           "title": "Enterprise SaaS",
           "subtitle": "Platform Architecture",
           "description": "Multi-tenant AI infrastructure deployed inside your VPC. Elastic auto-scaling, role-based access control, and 99.997% uptime SLA — without touching a public cloud you haven't authorized.",
-          "features": ["VPC-native deployment", "Elastic tenant isolation", "SLA-backed availability"]
+          "features": [
+            "VPC-native deployment",
+            "Elastic tenant isolation",
+            "SLA-backed availability"
+          ]
         },
         {
           "title": "AI Agents",
           "subtitle": "Autonomous Orchestration",
           "description": "Deploy autonomous agent swarms that decompose complex workflows into parallel, auditable task graphs. Deterministic guardrails enforce governance policies on every action.",
-          "features": ["Dynamic swarm topology", "Policy enforcement layer", "Immutable audit logs"]
+          "features": [
+            "Dynamic swarm topology",
+            "Policy enforcement layer",
+            "Immutable audit logs"
+          ]
         },
         {
           "title": "Neural Chatbots",
           "subtitle": "Conversational Intelligence",
           "description": "Context-aware neural chatbots integrated with legacy ERP, CRM, and ITSM systems. Role-based knowledge segmentation with automatic PII/PHI redaction at the inference edge.",
-          "features": ["Omnichannel (Slack, Teams, API)", "Role-based access control", "PII redaction engine"]
+          "features": [
+            "Omnichannel (Slack, Teams, API)",
+            "Role-based access control",
+            "PII redaction engine"
+          ]
         },
         {
           "title": "Intelligent Websites",
           "subtitle": "AI-Powered Web Platforms",
           "description": "High-performance web platforms with embedded AI personalization, dynamic content optimization, and real-time visitor intelligence — delivered on the same hardened infrastructure as our enterprise stack.",
-          "features": ["AI-driven personalization", "Dynamic content optimization", "Real-time analytics edge"]
+          "features": [
+            "AI-driven personalization",
+            "Dynamic content optimization",
+            "Real-time analytics edge"
+          ]
         },
         {
           "title": "RAG Systems",
           "subtitle": "Zero-Hallucination Retrieval",
           "description": "Domain-locked retrieval pipelines grounded exclusively in your proprietary data. Citation-verified outputs with full cryptographic audit trails — built for legal, financial, and healthcare precision.",
-          "features": ["Proprietary data grounding", "Citation-verified outputs", "Sub-50ms retrieval latency"]
+          "features": [
+            "Proprietary data grounding",
+            "Citation-verified outputs",
+            "Sub-50ms retrieval latency"
+          ]
         },
         {
           "title": "AI Marketing",
           "subtitle": "Autonomous Campaign Intelligence",
           "description": "Predictive audience modeling, generative content workflows, and autonomous campaign optimization — all governed by enterprise compliance and brand safety guardrails at every output.",
-          "features": ["Predictive audience modeling", "Generative content workflows", "Brand safety guardrails"]
+          "features": [
+            "Predictive audience modeling",
+            "Generative content workflows",
+            "Brand safety guardrails"
+          ]
         }
       ]
     },
@@ -142,7 +173,12 @@
       "title": "Security Is Not a Feature.<br />It's the Foundation.",
       "subtitle": "Every layer of the Veritas stack is architected for the most regulated environments on earth. Your data never leaves your jurisdiction, your models never train on your proprietary information, and every inference is cryptographically verifiable.",
       "deploymentTitle": "Deployment Flexibility",
-      "deploymentModes": ["On-Premise", "Hybrid", "Private Cloud", "Air-Gapped"],
+      "deploymentModes": [
+        "On-Premise",
+        "Hybrid",
+        "Private Cloud",
+        "Air-Gapped"
+      ],
       "features": [
         {
           "title": "Data Sovereignty & Residency",
@@ -175,10 +211,22 @@
       "title": "Transforming the Regulated Enterprise",
       "subtitle": "From global financial institutions to national healthcare systems — Veritas Global AI powers mission-critical intelligence where accuracy is non-negotiable.",
       "metrics": [
-        {"value": "99.997%", "label": "Uptime SLA"},
-        {"value": "1.8ms", "label": "Inference Latency (p50)"},
-        {"value": "2.4B+", "label": "Documents Indexed"},
-        {"value": "340+", "label": "Enterprise Deployments"}
+        {
+          "value": "99.997%",
+          "label": "Uptime SLA"
+        },
+        {
+          "value": "1.8ms",
+          "label": "Inference Latency (p50)"
+        },
+        {
+          "value": "2.4B+",
+          "label": "Documents Indexed"
+        },
+        {
+          "value": "340+",
+          "label": "Enterprise Deployments"
+        }
       ],
       "industries": [
         {
@@ -186,9 +234,18 @@
           "label": "Financial Services",
           "intro": "Real-time market intelligence, compliance automation, fraud detection with full audit traceability.",
           "stats": [
-            {"value": "12× Faster", "text": "Compliance report generation through autonomous agent orchestration, reducing quarterly audit cycles from weeks to days."},
-            {"value": "99.7% Accuracy", "text": "In document retrieval for regulatory research with zero-hallucination guardrails — eliminating costly misquoting."},
-            {"value": "$340M", "text": "In operational cost savings across fraud detection, risk modeling, and automated KYC workflows."}
+            {
+              "value": "12× Faster",
+              "text": "Compliance report generation through autonomous agent orchestration, reducing quarterly audit cycles from weeks to days."
+            },
+            {
+              "value": "99.7% Accuracy",
+              "text": "In document retrieval for regulatory research with zero-hallucination guardrails — eliminating costly misquoting."
+            },
+            {
+              "value": "$340M",
+              "text": "In operational cost savings across fraud detection, risk modeling, and automated KYC workflows."
+            }
           ]
         },
         {
@@ -196,9 +253,18 @@
           "label": "Healthcare",
           "intro": "HIPAA-compliant clinical decision support, literature synthesis, patient data de-identification at scale.",
           "stats": [
-            {"value": "72% Reduction", "text": "In clinical documentation time through context-aware chatbots integrated with EHR systems."},
-            {"value": "3.2M Records", "text": "Indexed in a HIPAA-compliant vector vault with real-time updates across multi-hospital networks."},
-            {"value": "Sub-50ms", "text": "Clinical decision support inference delivered at the point of care, fully air-gapped."}
+            {
+              "value": "72% Reduction",
+              "text": "In clinical documentation time through context-aware chatbots integrated with EHR systems."
+            },
+            {
+              "value": "3.2M Records",
+              "text": "Indexed in a HIPAA-compliant vector vault with real-time updates across multi-hospital networks."
+            },
+            {
+              "value": "Sub-50ms",
+              "text": "Clinical decision support inference delivered at the point of care, fully air-gapped."
+            }
           ]
         },
         {
@@ -206,9 +272,18 @@
           "label": "Legal & Compliance",
           "intro": "Contract intelligence, regulatory monitoring, e-discovery with citation-verified outputs.",
           "stats": [
-            {"value": "100% Citations", "text": "Every generated clause and assertion carries a verifiable source citation — no ungrounded claims survive validation."},
-            {"value": "14× Faster", "text": "Contract review cycles via autonomous agents that extract obligations, risks, and anomalies across million-document corpora."},
-            {"value": "Cryptographic Chain", "text": "Of-custody on every inference — defensible audit trail for regulators, courts, and internal counsel."}
+            {
+              "value": "100% Citations",
+              "text": "Every generated clause and assertion carries a verifiable source citation — no ungrounded claims survive validation."
+            },
+            {
+              "value": "14× Faster",
+              "text": "Contract review cycles via autonomous agents that extract obligations, risks, and anomalies across million-document corpora."
+            },
+            {
+              "value": "Cryptographic Chain",
+              "text": "Of-custody on every inference — defensible audit trail for regulators, courts, and internal counsel."
+            }
           ]
         },
         {
@@ -216,9 +291,18 @@
           "label": "Industry 4.0",
           "intro": "Predictive maintenance, supply chain intelligence, IoT data fusion with sub-second anomaly detection.",
           "stats": [
-            {"value": "23% Uptime Gain", "text": "In grid asset availability through predictive maintenance agents monitoring 50,000+ IoT endpoints."},
-            {"value": "18-hour → 4-hour", "text": "Forecast-to-execution cycle time via autonomous supply-chain agents with real-time rerouting."},
-            {"value": "Zero Incidents", "text": "In 24 months of autonomous grid-balancing agent deployment with human-in-the-loop oversight."}
+            {
+              "value": "23% Uptime Gain",
+              "text": "In grid asset availability through predictive maintenance agents monitoring 50,000+ IoT endpoints."
+            },
+            {
+              "value": "18-hour → 4-hour",
+              "text": "Forecast-to-execution cycle time via autonomous supply-chain agents with real-time rerouting."
+            },
+            {
+              "value": "Zero Incidents",
+              "text": "In 24 months of autonomous grid-balancing agent deployment with human-in-the-loop oversight."
+            }
           ]
         }
       ]
@@ -232,19 +316,57 @@
       "pipelineTitle": "Pipeline Specification",
       "pipelineSubtitle": "Multi-agent task decomposition with deterministic guardrails.",
       "pipelineSteps": [
-        {"step": "1", "title": "Ingest Query", "subtitle": "Parse & classify intent"},
-        {"step": "2", "title": "Retrieve Context", "subtitle": "Vector vault semantic search"},
-        {"step": "3", "title": "Generate Response", "subtitle": "RAG-backed synthesis"},
-        {"step": "4", "title": "Validate & Audit", "subtitle": "Hallucination check + log"},
-        {"step": "5", "title": "Deliver Result", "subtitle": "Stream to client interface"}
+        {
+          "step": "1",
+          "title": "Ingest Query",
+          "subtitle": "Parse & classify intent"
+        },
+        {
+          "step": "2",
+          "title": "Retrieve Context",
+          "subtitle": "Vector vault semantic search"
+        },
+        {
+          "step": "3",
+          "title": "Generate Response",
+          "subtitle": "RAG-backed synthesis"
+        },
+        {
+          "step": "4",
+          "title": "Validate & Audit",
+          "subtitle": "Hallucination check + log"
+        },
+        {
+          "step": "5",
+          "title": "Deliver Result",
+          "subtitle": "Stream to client interface"
+        }
       ],
       "specRows": [
-        {"key": "Orchestration runtime", "value": "6 agents online"},
-        {"key": "Vector store", "value": "3.2M docs · us-east-pinned"},
-        {"key": "Retrieval confidence", "value": "0.94 avg"},
-        {"key": "Hallucination guardrail", "value": "0 ungrounded claims"},
-        {"key": "Delivery latency", "value": "38ms · session encrypted"},
-        {"key": "Audit trail", "value": "Cryptographically logged"}
+        {
+          "key": "Orchestration runtime",
+          "value": "6 agents online"
+        },
+        {
+          "key": "Vector store",
+          "value": "3.2M docs · us-east-pinned"
+        },
+        {
+          "key": "Retrieval confidence",
+          "value": "0.94 avg"
+        },
+        {
+          "key": "Hallucination guardrail",
+          "value": "0 ungrounded claims"
+        },
+        {
+          "key": "Delivery latency",
+          "value": "38ms · session encrypted"
+        },
+        {
+          "key": "Audit trail",
+          "value": "Cryptographically logged"
+        }
       ],
       "operationalStatus": "Operational"
     },
@@ -316,7 +438,11 @@
       "eyebrow": "Featured Game",
       "title": "Master Mild Wizard",
       "subtitle": "Embark on an epic fantasy Idle-RPG adventure. Battle real-time monsters, collect legendary equipment, evolve through 14 unique character classes, and forge your destiny as the ultimate wizard.",
-      "features": ["Real-time Combat", "14 Classes", "Epic Bosses"],
+      "features": [
+        "Real-time Combat",
+        "14 Classes",
+        "Epic Bosses"
+      ],
       "cta": "Play Now — mastermildwizard.com"
     },
     "docucon": {
@@ -324,16 +450,56 @@
       "title": "DocuCon — Your AI Document Conversation Agent",
       "subtitle": "Upload any document and have a natural, spoken conversation with an AI that reads, understands, and researches your files. Voice input, voice output, live web search, and cross-session memory — all in a stunning space-age interface.",
       "features": [
-        {"icon": "📄", "title": "Document Upload", "desc": "PDF, DOCX, TXT, CSV — drag and drop any file. Instant parsing and analysis."},
-        {"icon": "🗣️", "title": "Voice Conversation", "desc": "Talk naturally. The AI speaks back. Full TTS and STT with multi-language support."},
-        {"icon": "🌐", "title": "Live Web Research", "desc": "Built-in DuckDuckGo search. The AI researches the internet in real-time for every query."},
-        {"icon": "🧠", "title": "Cross-Session Memory", "desc": "Conversations persist. Ask about something from last week and DocuCon remembers."},
-        {"icon": "🎨", "title": "Space-Age Interface", "desc": "Dark/light themes, glassmorphism, collapsible panels. Feels like a sci-fi command center."},
-        {"icon": "🔒", "title": "Local-First & Private", "desc": "Your documents and data stay on-device. No third-party data sharing."}
+        {
+          "icon": "📄",
+          "title": "Document Upload",
+          "desc": "PDF, DOCX, TXT, CSV — drag and drop any file. Instant parsing and analysis."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Voice Conversation",
+          "desc": "Talk naturally. The AI speaks back. Full TTS and STT with multi-language support."
+        },
+        {
+          "icon": "🌐",
+          "title": "Live Web Research",
+          "desc": "Built-in DuckDuckGo search. The AI researches the internet in real-time for every query."
+        },
+        {
+          "icon": "🧠",
+          "title": "Cross-Session Memory",
+          "desc": "Conversations persist. Ask about something from last week and DocuCon remembers."
+        },
+        {
+          "icon": "🎨",
+          "title": "Space-Age Interface",
+          "desc": "Dark/light themes, glassmorphism, collapsible panels. Feels like a sci-fi command center."
+        },
+        {
+          "icon": "🔒",
+          "title": "Local-First & Private",
+          "desc": "Your documents and data stay on-device. No third-party data sharing."
+        }
       ],
       "cta": "Try the Live Demo",
       "ctaSubtitle": "Free demo · Full subscription platform coming soon",
       "footer": "This is a public demo. A full-featured paid subscription version with advanced analytics, team workspaces, and enterprise document processing is launching soon. Contact us for early access."
+    },
+    "veritasOS": {
+      "eyebrow": "Flagship Product",
+      "title": "Veritas OS — The Agent-Native Desktop Shell",
+      "subtitle": "Turn one agent into a control room for all of them. Veritas OS is a full desktop environment built around AI agents — dock, windows, spaces, files, canvas, terminal — but the center of gravity is a multi-agent hub: run Hermes, OpenCode, and any CLI agent side by side, and control every one of them from the same shell.",
+      "features": [
+        "Multi-Agent Hub — every agent as a live card: phase, port, start/stop/restart, log tail, pair",
+        "Agents in the sidebar — connected agents sit with Hermes at the top",
+        "Embedded agent UIs — OpenCode rendered inside the shell in a native view",
+        "Any agent you want — drop a JSON spec in agents.json and it appears in the sidebar",
+        "A real shell — windows, dock, spaces, files, canvas, capture, terminal, automations",
+        "Themes, plugins, voice, memory, missions, connections, and BrowserOS integration"
+      ],
+      "cta": "View on GitHub",
+      "ctaUrl": "https://github.com/Aimotive-agent/veritas-os",
+      "repoText": "Aimotive-agent/veritas-os"
     },
     "contact": {
       "eyebrow": "Private Consultation",
@@ -387,10 +553,26 @@
       "title": "How We Engage",
       "subtitle": "No self-service sign-up. Every engagement is a structured partnership — from confidential consultation to sovereign deployment.",
       "steps": [
-        {"number": "01", "title": "Discovery & Architecture Review", "meta": "~2 weeks · Under NDA"},
-        {"number": "02", "title": "Pilot & Validation", "meta": "4–8 weeks · Fixed scope"},
-        {"number": "03", "title": "Production Rollout", "meta": "8–16 weeks · SLA-backed"},
-        {"number": "04", "title": "Ongoing Operations", "meta": "Continuous · Named contacts"}
+        {
+          "number": "01",
+          "title": "Discovery & Architecture Review",
+          "meta": "~2 weeks · Under NDA"
+        },
+        {
+          "number": "02",
+          "title": "Pilot & Validation",
+          "meta": "4–8 weeks · Fixed scope"
+        },
+        {
+          "number": "03",
+          "title": "Production Rollout",
+          "meta": "8–16 weeks · SLA-backed"
+        },
+        {
+          "number": "04",
+          "title": "Ongoing Operations",
+          "meta": "Continuous · Named contacts"
+        }
       ]
     },
     "pillars": [
@@ -528,12 +710,30 @@
       "title": "Security Is Not a Feature. It's the Foundation.",
       "subtitle": "Every layer of the Veritas stack is architected for the most regulated environments on earth. Your data never leaves your jurisdiction, your models never train on your proprietary information, and every inference is cryptographically verifiable.",
       "features": [
-        {"title": "Data Sovereignty & Residency", "desc": "Deploy within your VPC, on-premises, or air-gapped. Configurable data residency per namespace with cryptographic enforcement."},
-        {"title": "Zero-Trust Architecture", "desc": "Every API call, agent action, and data access is authenticated, authorized, and logged. mTLS everywhere with no implicit trust."},
-        {"title": "Compliance-First Design", "desc": "SOC 2 Type II, ISO 27001, HIPAA, GDPR, FedRAMP-ready. Full audit trail immutability for every inference."},
-        {"title": "Low-Latency Execution", "desc": "Sub-100ms inference via edge-deployed models. Local or hybrid execution eliminates WAN dependency."},
-        {"title": "Model Isolation", "desc": "Per-tenant model instances with no cross-contamination. Your data never trains shared or foundation models."},
-        {"title": "Granular Access Control", "desc": "RBAC, ABAC, and SSO/SAML integration with fine-grained API-level permissions and full session audit trails."}
+        {
+          "title": "Data Sovereignty & Residency",
+          "desc": "Deploy within your VPC, on-premises, or air-gapped. Configurable data residency per namespace with cryptographic enforcement."
+        },
+        {
+          "title": "Zero-Trust Architecture",
+          "desc": "Every API call, agent action, and data access is authenticated, authorized, and logged. mTLS everywhere with no implicit trust."
+        },
+        {
+          "title": "Compliance-First Design",
+          "desc": "SOC 2 Type II, ISO 27001, HIPAA, GDPR, FedRAMP-ready. Full audit trail immutability for every inference."
+        },
+        {
+          "title": "Low-Latency Execution",
+          "desc": "Sub-100ms inference via edge-deployed models. Local or hybrid execution eliminates WAN dependency."
+        },
+        {
+          "title": "Model Isolation",
+          "desc": "Per-tenant model instances with no cross-contamination. Your data never trains shared or foundation models."
+        },
+        {
+          "title": "Granular Access Control",
+          "desc": "RBAC, ABAC, and SSO/SAML integration with fine-grained API-level permissions and full session audit trails."
+        }
       ]
     },
     "advantage": {
@@ -541,10 +741,22 @@
       "title": "Built for the Most Regulated Environments",
       "subtitle": "Global financial institutions, national healthcare systems, and sovereign governments rely on Veritas for mission-critical intelligence where accuracy is non-negotiable.",
       "metrics": [
-        {"value": "99.997%", "label": "Uptime SLA"},
-        {"value": "1.8ms", "label": "Inference Latency (p50)"},
-        {"value": "2.4B+", "label": "Documents Indexed"},
-        {"value": "340+", "label": "Enterprise Deployments"}
+        {
+          "value": "99.997%",
+          "label": "Uptime SLA"
+        },
+        {
+          "value": "1.8ms",
+          "label": "Inference Latency (p50)"
+        },
+        {
+          "value": "2.4B+",
+          "label": "Documents Indexed"
+        },
+        {
+          "value": "340+",
+          "label": "Enterprise Deployments"
+        }
       ]
     },
     "ctaBlock": {
@@ -556,14 +768,38 @@
     "allSystemsOperational": "All systems operational",
     "certificationsLabel": "Certifications",
     "specs": [
-      {"key": "Deployment model", "value": "Sovereign · Hybrid · Air-gapped"},
-      {"key": "Inference latency", "value": "1.8ms p50"},
-      {"key": "Uptime SLA", "value": "99.997%"},
-      {"key": "Data residency", "value": "Jurisdiction-pinned"},
-      {"key": "Model training", "value": "Never on your data"},
-      {"key": "Audit trail", "value": "Cryptographic"}
+      {
+        "key": "Deployment model",
+        "value": "Sovereign · Hybrid · Air-gapped"
+      },
+      {
+        "key": "Inference latency",
+        "value": "1.8ms p50"
+      },
+      {
+        "key": "Uptime SLA",
+        "value": "99.997%"
+      },
+      {
+        "key": "Data residency",
+        "value": "Jurisdiction-pinned"
+      },
+      {
+        "key": "Model training",
+        "value": "Never on your data"
+      },
+      {
+        "key": "Audit trail",
+        "value": "Cryptographic"
+      }
     ],
-    "certifications": ["SOC 2", "ISO 27001", "HIPAA", "GDPR", "FedRAMP"]
+    "certifications": [
+      "SOC 2",
+      "ISO 27001",
+      "HIPAA",
+      "GDPR",
+      "FedRAMP"
+    ]
   },
   "about": {
     "eyebrow": "About Veritas Global AI",
@@ -583,18 +819,39 @@
       "title": "What We Stand For",
       "subtitle": "These aren't posters on a wall. They're architectural — enforced at the infrastructure layer, not buried in a privacy policy.",
       "values": [
-        {"title": "Sovereign by Default", "desc": "Your models, your data, and your inference logs live entirely inside your perimeter. We deploy to you, not the other way around."},
-        {"title": "Zero-Hallucination Contract", "desc": "Every output is grounded exclusively in your proprietary corpus and carries a verifiable citation. No ungrounded claims reach your users."},
-        {"title": "Never Trains on Your Data", "desc": "Your proprietary information is never used to train, fine-tune, or improve any shared or foundation model — contractually and architecturally."},
-        {"title": "Cryptographic Audit Trail", "desc": "Every inference, agent action, and data access is cryptographically logged in an immutable chain-of-custody."},
-        {"title": "Client Enablement, Not Dependency", "desc": "We build your team's capability as we build your platform. You should be stronger after we leave, not weaker."}
+        {
+          "title": "Sovereign by Default",
+          "desc": "Your models, your data, and your inference logs live entirely inside your perimeter. We deploy to you, not the other way around."
+        },
+        {
+          "title": "Zero-Hallucination Contract",
+          "desc": "Every output is grounded exclusively in your proprietary corpus and carries a verifiable citation. No ungrounded claims reach your users."
+        },
+        {
+          "title": "Never Trains on Your Data",
+          "desc": "Your proprietary information is never used to train, fine-tune, or improve any shared or foundation model — contractually and architecturally."
+        },
+        {
+          "title": "Cryptographic Audit Trail",
+          "desc": "Every inference, agent action, and data access is cryptographically logged in an immutable chain-of-custody."
+        },
+        {
+          "title": "Client Enablement, Not Dependency",
+          "desc": "We build your team's capability as we build your platform. You should be stronger after we leave, not weaker."
+        }
       ]
     },
     "compliance": {
       "eyebrow": "Compliance",
       "title": "Secured to the Standards of Global Institutions",
       "subtitle": "SOC 2 Type II, ISO 27001, HIPAA, GDPR, and FedRAMP-ready — with cryptographic chain-of-custody on every inference.",
-      "badges": ["SOC 2 Type II", "ISO 27001", "HIPAA", "GDPR", "FedRAMP-Ready"]
+      "badges": [
+        "SOC 2 Type II",
+        "ISO 27001",
+        "HIPAA",
+        "GDPR",
+        "FedRAMP-Ready"
+      ]
     },
     "cta": {
       "title": "Begin your enterprise AI journey",
@@ -749,10 +1006,22 @@
     "consentLabel": "I agree to Veritas Global AI's Privacy Policy and consent to being contacted regarding enterprise AI solutions. All information is handled under strict confidentiality.",
     "whatToExpect": "What to expect",
     "expectSteps": [
-      {"step": "1", "text": "We'll respond within one business day to schedule your confidential consultation."},
-      {"step": "2", "text": "A direct conversation with our solutions engineering team — no sales gatekeepers."},
-      {"step": "3", "text": "We map your data estates, regulatory constraints, and latency requirements."},
-      {"step": "4", "text": "You receive a target architecture and a scoped engagement plan."}
+      {
+        "step": "1",
+        "text": "We'll respond within one business day to schedule your confidential consultation."
+      },
+      {
+        "step": "2",
+        "text": "A direct conversation with our solutions engineering team — no sales gatekeepers."
+      },
+      {
+        "step": "3",
+        "text": "We map your data estates, regulatory constraints, and latency requirements."
+      },
+      {
+        "step": "4",
+        "text": "You receive a target architecture and a scoped engagement plan."
+      }
     ],
     "preferEmail": "Prefer email?",
     "reachUsAt": "Reach us directly at",
@@ -773,10 +1042,26 @@
     ],
     "howItWorks": "How It Works",
     "processSteps": [
-      {"step": "1", "title": "Discovery Call", "text": "Confidential consultation to understand your goals, data estates, and regulatory constraints."},
-      {"step": "2", "title": "Architecture Review", "text": "We map your infrastructure, data residency requirements, and latency needs (NDA-protected)."},
-      {"step": "3", "title": "Feasibility Analysis", "text": "Technical assessment of each proposed pillar against your acceptance criteria — not our benchmarks."},
-      {"step": "4", "title": "Readout & Roadmap", "text": "A target architecture and scoped engagement plan with your leadership team."}
+      {
+        "step": "1",
+        "title": "Discovery Call",
+        "text": "Confidential consultation to understand your goals, data estates, and regulatory constraints."
+      },
+      {
+        "step": "2",
+        "title": "Architecture Review",
+        "text": "We map your infrastructure, data residency requirements, and latency needs (NDA-protected)."
+      },
+      {
+        "step": "3",
+        "title": "Feasibility Analysis",
+        "text": "Technical assessment of each proposed pillar against your acceptance criteria — not our benchmarks."
+      },
+      {
+        "step": "4",
+        "title": "Readout & Roadmap",
+        "text": "A target architecture and scoped engagement plan with your leadership team."
+      }
     ],
     "requestTitle": "Request Your Assessment",
     "nameLabel": "Full Name",
@@ -803,16 +1088,125 @@
     "title": "Security Disclosure",
     "lastUpdated": "Last updated: August 5, 2026",
     "sections": [
-      {"title": "1. Our Commitment to Security", "paragraphs": ["At Veritas Global AI, security is foundational to everything we build. As a provider of enterprise AI infrastructure deployed inside our clients' perimeters, we understand that trust is earned through rigorous security practices, transparent disclosure, and continuous improvement.", "This Security Disclosure outlines our security posture, the measures we take to protect data, and how security researchers and the public can responsibly report vulnerabilities."]},
-      {"title": "2. Security Architecture", "paragraphs": ["Our enterprise platform is built on the following security principles:"], "items": ["Sovereign Deployment: All client AI workloads run inside the client's own VPC, on-premises infrastructure, or air-gapped environment. No data transits a vendor cloud the client has not authorized.", "Zero Shared Tenancy: Each client deployment operates in complete isolation. There is no shared tenancy, no shared inference path, and no vendor-side model access to client data.", "Data-at-Rest Encryption: All stored data is encrypted using AES-256 encryption.", "Data-in-Transit Encryption: All network communications use TLS 1.3 with strong cipher suites.", "Role-Based Access Control: Granular, auditable access controls at every layer of the stack.", "Immutable Audit Logs: All actions are logged to tamper-evident audit trails with cryptographic verification.", "Never Trains on Client Data: Client data is never used to train, fine-tune, or improve our models."]},
-      {"title": "3. Compliance Framework", "paragraphs": ["Our platform is designed to meet or exceed the following standards:"], "items": ["SOC 2 Type II", "ISO 27001", "GDPR", "HIPAA (where applicable)", "FedRAMP-Ready architecture"]},
-      {"title": "4. Responsible Disclosure Policy", "paragraphs": ["We believe that working with skilled security researchers helps us identify and address vulnerabilities before they can be exploited. If you discover a security vulnerability in our systems, websites, or products, we encourage you to report it to us responsibly."]},
-      {"title": "5. Guidelines for Researchers", "paragraphs": ["When conducting security research, we ask that you:"], "items": ["Make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our services.", "Do not access, modify, or delete data that does not belong to you.", "Give us a reasonable amount of time to address the issue before public disclosure.", "Do not exploit a vulnerability beyond what is necessary to demonstrate its existence.", "Do not engage in social engineering, phishing, or physical security testing of our offices or data centers."]},
-      {"title": "6. Scope", "paragraphs": ["This disclosure policy applies to:"], "items": ["veritasglobalai.tech and all associated subdomains", "Veritas Global AI web applications and APIs", "Veritas Global AI enterprise platform software"], "extraParagraphs": ["The following are out of scope:"], "extraItems": ["Third-party services and applications not operated by Veritas Global AI", "Vulnerabilities in client-managed infrastructure or configurations", "Social engineering attacks targeting our employees or contractors", "Denial of service (DoS) attacks"]},
-      {"title": "7. How to Report a Vulnerability", "paragraphs": ["Please send vulnerability reports to:", "Your report should include:"], "items": ["A detailed description of the vulnerability", "Steps to reproduce the issue", "Affected systems, URLs, or software versions", "Any proof-of-concept code or screenshots", "Your contact information for follow-up"], "extraParagraphs": ["We aim to acknowledge receipt within 48 hours and provide an initial assessment within 5 business days. We will keep you informed of our progress and coordinate public disclosure timing if desired."]},
-      {"title": "8. Recognition", "paragraphs": ["We appreciate the contributions of the security research community. At our discretion, we may publicly acknowledge researchers who have responsibly disclosed valid vulnerabilities, with their consent. We do not currently offer a monetary bug bounty program, but we are grateful for every responsible disclosure."]},
-      {"title": "9. Safe Harbor", "paragraphs": ["When conducting vulnerability research in accordance with this policy, we consider such research to be:"], "items": ["Authorized under applicable anti-hacking laws, and we will not initiate legal action against researchers who comply with this policy.", "Exempt from restrictions in our Terms of Service that would otherwise prohibit such activity, solely for the purpose of security research under this policy."], "extraParagraphs": ["If a third party initiates legal action against you for activities conducted in compliance with this policy, we will make it known that your actions were authorized."]},
-      {"title": "10. Contact", "paragraphs": ["For all security-related inquiries:"], "extraParagraphs": ["PGP key available upon request for encrypted communications."]}
+      {
+        "title": "1. Our Commitment to Security",
+        "paragraphs": [
+          "At Veritas Global AI, security is foundational to everything we build. As a provider of enterprise AI infrastructure deployed inside our clients' perimeters, we understand that trust is earned through rigorous security practices, transparent disclosure, and continuous improvement.",
+          "This Security Disclosure outlines our security posture, the measures we take to protect data, and how security researchers and the public can responsibly report vulnerabilities."
+        ]
+      },
+      {
+        "title": "2. Security Architecture",
+        "paragraphs": [
+          "Our enterprise platform is built on the following security principles:"
+        ],
+        "items": [
+          "Sovereign Deployment: All client AI workloads run inside the client's own VPC, on-premises infrastructure, or air-gapped environment. No data transits a vendor cloud the client has not authorized.",
+          "Zero Shared Tenancy: Each client deployment operates in complete isolation. There is no shared tenancy, no shared inference path, and no vendor-side model access to client data.",
+          "Data-at-Rest Encryption: All stored data is encrypted using AES-256 encryption.",
+          "Data-in-Transit Encryption: All network communications use TLS 1.3 with strong cipher suites.",
+          "Role-Based Access Control: Granular, auditable access controls at every layer of the stack.",
+          "Immutable Audit Logs: All actions are logged to tamper-evident audit trails with cryptographic verification.",
+          "Never Trains on Client Data: Client data is never used to train, fine-tune, or improve our models."
+        ]
+      },
+      {
+        "title": "3. Compliance Framework",
+        "paragraphs": [
+          "Our platform is designed to meet or exceed the following standards:"
+        ],
+        "items": [
+          "SOC 2 Type II",
+          "ISO 27001",
+          "GDPR",
+          "HIPAA (where applicable)",
+          "FedRAMP-Ready architecture"
+        ]
+      },
+      {
+        "title": "4. Responsible Disclosure Policy",
+        "paragraphs": [
+          "We believe that working with skilled security researchers helps us identify and address vulnerabilities before they can be exploited. If you discover a security vulnerability in our systems, websites, or products, we encourage you to report it to us responsibly."
+        ]
+      },
+      {
+        "title": "5. Guidelines for Researchers",
+        "paragraphs": [
+          "When conducting security research, we ask that you:"
+        ],
+        "items": [
+          "Make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our services.",
+          "Do not access, modify, or delete data that does not belong to you.",
+          "Give us a reasonable amount of time to address the issue before public disclosure.",
+          "Do not exploit a vulnerability beyond what is necessary to demonstrate its existence.",
+          "Do not engage in social engineering, phishing, or physical security testing of our offices or data centers."
+        ]
+      },
+      {
+        "title": "6. Scope",
+        "paragraphs": [
+          "This disclosure policy applies to:"
+        ],
+        "items": [
+          "veritasglobalai.tech and all associated subdomains",
+          "Veritas Global AI web applications and APIs",
+          "Veritas Global AI enterprise platform software"
+        ],
+        "extraParagraphs": [
+          "The following are out of scope:"
+        ],
+        "extraItems": [
+          "Third-party services and applications not operated by Veritas Global AI",
+          "Vulnerabilities in client-managed infrastructure or configurations",
+          "Social engineering attacks targeting our employees or contractors",
+          "Denial of service (DoS) attacks"
+        ]
+      },
+      {
+        "title": "7. How to Report a Vulnerability",
+        "paragraphs": [
+          "Please send vulnerability reports to:",
+          "Your report should include:"
+        ],
+        "items": [
+          "A detailed description of the vulnerability",
+          "Steps to reproduce the issue",
+          "Affected systems, URLs, or software versions",
+          "Any proof-of-concept code or screenshots",
+          "Your contact information for follow-up"
+        ],
+        "extraParagraphs": [
+          "We aim to acknowledge receipt within 48 hours and provide an initial assessment within 5 business days. We will keep you informed of our progress and coordinate public disclosure timing if desired."
+        ]
+      },
+      {
+        "title": "8. Recognition",
+        "paragraphs": [
+          "We appreciate the contributions of the security research community. At our discretion, we may publicly acknowledge researchers who have responsibly disclosed valid vulnerabilities, with their consent. We do not currently offer a monetary bug bounty program, but we are grateful for every responsible disclosure."
+        ]
+      },
+      {
+        "title": "9. Safe Harbor",
+        "paragraphs": [
+          "When conducting vulnerability research in accordance with this policy, we consider such research to be:"
+        ],
+        "items": [
+          "Authorized under applicable anti-hacking laws, and we will not initiate legal action against researchers who comply with this policy.",
+          "Exempt from restrictions in our Terms of Service that would otherwise prohibit such activity, solely for the purpose of security research under this policy."
+        ],
+        "extraParagraphs": [
+          "If a third party initiates legal action against you for activities conducted in compliance with this policy, we will make it known that your actions were authorized."
+        ]
+      },
+      {
+        "title": "10. Contact",
+        "paragraphs": [
+          "For all security-related inquiries:"
+        ],
+        "extraParagraphs": [
+          "PGP key available upon request for encrypted communications."
+        ]
+      }
     ],
     "emailSubjectLine": "SECURITY DISCLOSURE",
     "websiteLabel": "Website: veritasglobalai.tech"
@@ -821,18 +1215,108 @@
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: August 5, 2026",
     "sections": [
-      {"title": "1. Introduction", "paragraphs": ["Veritas Global AI (\"Veritas,\" \"we,\" \"us,\" or \"our\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website veritasglobalai.tech (the \"Site\") or engage with our services.", "By using the Site, you consent to the data practices described in this policy. If you do not agree, please discontinue use of the Site immediately."]},
-      {"title": "2. Information We Collect", "paragraphs": ["We collect information you voluntarily provide when you contact us through our website, including your name, work email address, company name, role, phone number, and any other details you include in consultation requests or contact forms.", "When you access the Site, we may automatically collect certain information about your device and usage, including your IP address, browser type, operating system, referring URLs, pages viewed, and time spent on pages. This data is collected through privacy-respecting analytics and server logs.", "We use minimal, functional cookies necessary for the operation of the Site. We do not use tracking cookies for advertising purposes. You can control cookie preferences through your browser settings."]},
-      {"title": "3. How We Use Your Information", "paragraphs": ["We use the information we collect to:"], "items": ["Respond to your inquiries and provide information about our enterprise AI services", "Schedule and conduct private architecture consultations", "Improve our website, services, and user experience", "Send relevant communications about our services (with your consent)", "Comply with legal obligations and enforce our agreements", "Detect and prevent fraudulent or unauthorized activity"], "extraParagraphs": ["We do not sell your personal information to third parties. Period."]},
-      {"title": "4. Data Sharing and Disclosure", "paragraphs": ["We may share your information in the following limited circumstances:"], "items": ["With trusted third-party vendors who assist us in operating our website and business, under strict confidentiality agreements.", "When required by law, court order, or governmental regulation.", "In connection with a merger, acquisition, or sale of assets, with notice to affected users.", "In any other circumstance with your explicit permission."]},
-      {"title": "5. Data Security", "paragraphs": ["We implement industry-standard technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include encryption, access controls, regular security audits, and secure infrastructure. However, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security."]},
-      {"title": "6. Data Retention", "paragraphs": ["We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, or as required by applicable law. When your information is no longer needed, we securely delete or anonymize it."]},
-      {"title": "7. International Data Transfers", "paragraphs": ["Your information may be transferred to and processed in countries other than your country of residence. We ensure that any such transfers comply with applicable data protection laws and that appropriate safeguards are in place."]},
-      {"title": "8. Your Data Rights", "paragraphs": ["Depending on your jurisdiction, you may have the following rights regarding your personal data:"], "items": ["Access: Request a copy of the personal data we hold about you.", "Correction: Request that we correct inaccurate or incomplete data.", "Deletion: Request that we delete your personal data, subject to legal retention requirements.", "Portability: Request a copy of your data in a structured, machine-readable format.", "Objection: Object to the processing of your personal data in certain circumstances."], "extraParagraphs": ["To exercise any of these rights, contact us at info@veritasglobalai.tech. We will respond within 30 days."]},
-      {"title": "9. Children's Privacy", "paragraphs": ["Our Site and services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us immediately."]},
-      {"title": "10. Third-Party Links", "paragraphs": ["Our Site may contain links to third-party websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any third-party sites you visit."]},
-      {"title": "11. Changes to This Policy", "paragraphs": ["We may update this Privacy Policy from time to time to reflect changes in our practices or legal obligations. Material changes will be posted on this page with an updated effective date. Continued use of the Site after changes constitutes acceptance of the revised policy."]},
-      {"title": "12. Contact Us", "paragraphs": ["If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:"]}
+      {
+        "title": "1. Introduction",
+        "paragraphs": [
+          "Veritas Global AI (\"Veritas,\" \"we,\" \"us,\" or \"our\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website veritasglobalai.tech (the \"Site\") or engage with our services.",
+          "By using the Site, you consent to the data practices described in this policy. If you do not agree, please discontinue use of the Site immediately."
+        ]
+      },
+      {
+        "title": "2. Information We Collect",
+        "paragraphs": [
+          "We collect information you voluntarily provide when you contact us through our website, including your name, work email address, company name, role, phone number, and any other details you include in consultation requests or contact forms.",
+          "When you access the Site, we may automatically collect certain information about your device and usage, including your IP address, browser type, operating system, referring URLs, pages viewed, and time spent on pages. This data is collected through privacy-respecting analytics and server logs.",
+          "We use minimal, functional cookies necessary for the operation of the Site. We do not use tracking cookies for advertising purposes. You can control cookie preferences through your browser settings."
+        ]
+      },
+      {
+        "title": "3. How We Use Your Information",
+        "paragraphs": [
+          "We use the information we collect to:"
+        ],
+        "items": [
+          "Respond to your inquiries and provide information about our enterprise AI services",
+          "Schedule and conduct private architecture consultations",
+          "Improve our website, services, and user experience",
+          "Send relevant communications about our services (with your consent)",
+          "Comply with legal obligations and enforce our agreements",
+          "Detect and prevent fraudulent or unauthorized activity"
+        ],
+        "extraParagraphs": [
+          "We do not sell your personal information to third parties. Period."
+        ]
+      },
+      {
+        "title": "4. Data Sharing and Disclosure",
+        "paragraphs": [
+          "We may share your information in the following limited circumstances:"
+        ],
+        "items": [
+          "With trusted third-party vendors who assist us in operating our website and business, under strict confidentiality agreements.",
+          "When required by law, court order, or governmental regulation.",
+          "In connection with a merger, acquisition, or sale of assets, with notice to affected users.",
+          "In any other circumstance with your explicit permission."
+        ]
+      },
+      {
+        "title": "5. Data Security",
+        "paragraphs": [
+          "We implement industry-standard technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include encryption, access controls, regular security audits, and secure infrastructure. However, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security."
+        ]
+      },
+      {
+        "title": "6. Data Retention",
+        "paragraphs": [
+          "We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, or as required by applicable law. When your information is no longer needed, we securely delete or anonymize it."
+        ]
+      },
+      {
+        "title": "7. International Data Transfers",
+        "paragraphs": [
+          "Your information may be transferred to and processed in countries other than your country of residence. We ensure that any such transfers comply with applicable data protection laws and that appropriate safeguards are in place."
+        ]
+      },
+      {
+        "title": "8. Your Data Rights",
+        "paragraphs": [
+          "Depending on your jurisdiction, you may have the following rights regarding your personal data:"
+        ],
+        "items": [
+          "Access: Request a copy of the personal data we hold about you.",
+          "Correction: Request that we correct inaccurate or incomplete data.",
+          "Deletion: Request that we delete your personal data, subject to legal retention requirements.",
+          "Portability: Request a copy of your data in a structured, machine-readable format.",
+          "Objection: Object to the processing of your personal data in certain circumstances."
+        ],
+        "extraParagraphs": [
+          "To exercise any of these rights, contact us at info@veritasglobalai.tech. We will respond within 30 days."
+        ]
+      },
+      {
+        "title": "9. Children's Privacy",
+        "paragraphs": [
+          "Our Site and services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us immediately."
+        ]
+      },
+      {
+        "title": "10. Third-Party Links",
+        "paragraphs": [
+          "Our Site may contain links to third-party websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any third-party sites you visit."
+        ]
+      },
+      {
+        "title": "11. Changes to This Policy",
+        "paragraphs": [
+          "We may update this Privacy Policy from time to time to reflect changes in our practices or legal obligations. Material changes will be posted on this page with an updated effective date. Continued use of the Site after changes constitutes acceptance of the revised policy."
+        ]
+      },
+      {
+        "title": "12. Contact Us",
+        "paragraphs": [
+          "If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:"
+        ]
+      }
     ],
     "websiteLabel": "Website: veritasglobalai.tech"
   },
@@ -840,19 +1324,109 @@
     "title": "Terms of Service",
     "lastUpdated": "Last updated: August 5, 2026",
     "sections": [
-      {"title": "1. Acceptance of Terms", "paragraphs": ["By accessing or using veritasglobalai.tech (the \"Site\") and any services, products, or content provided by Veritas Global AI (\"Veritas,\" \"we,\" \"us,\" or \"our\"), you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree to these Terms, you must not access or use the Site or our services.", "These Terms apply to all visitors, users, and others who access or use the Site. By using the Site, you represent that you are at least 18 years of age and have the legal capacity to enter into a binding agreement."]},
-      {"title": "2. Description of Services", "paragraphs": ["Veritas Global AI provides enterprise artificial intelligence infrastructure, platforms, and implementation services, including but not limited to enterprise SaaS deployment, AI agent orchestration, neural chatbot systems, intelligent web platforms, retrieval-augmented generation (RAG) systems, and AI-powered marketing solutions.", "Information provided on this Site is for general informational purposes only. All client engagements are governed by separate written agreements, including master services agreements, statements of work, and service level agreements. Nothing on this Site constitutes a binding offer of services or creates a client relationship."]},
-      {"title": "3. User Obligations", "paragraphs": ["When using our Site, you agree not to:"], "items": ["Use the Site for any unlawful purpose or in violation of any applicable laws or regulations", "Attempt to gain unauthorized access to any part of the Site, its servers, or associated systems", "Interfere with or disrupt the Site, its security features, or any networks connected to the Site", "Submit false, misleading, or fraudulent information through our contact forms", "Scrape, data-mine, or use automated systems to extract data from the Site without prior written consent", "Use the Site to transmit malware, viruses, or any other malicious code"]},
-      {"title": "4. Intellectual Property Rights", "paragraphs": ["All content on this Site — including but not limited to text, graphics, logos, icons, images, audio clips, video, data compilations, software, and the overall design and arrangement — is the exclusive property of Veritas Global AI or its content suppliers and is protected by United States and international copyright, trademark, patent, and other intellectual property laws.", "The Veritas Global AI name, logo, and all related product and service names are trademarks of Veritas Global AI. You may not use these marks without our prior written permission. All other trademarks appearing on the Site are the property of their respective owners.", "You are granted a limited, non-exclusive, non-transferable, revocable license to access and view the Site content for personal, non-commercial purposes. Any other use requires our express written consent."]},
-      {"title": "5. Confidentiality", "paragraphs": ["Any information you share with us through the Site, including through consultation requests, contact forms, or direct communication, will be treated as confidential. We will not disclose such information to third parties except as required to provide our services, as required by law, or with your explicit consent. For more details, see our Privacy Policy."]},
-      {"title": "6. Disclaimer of Warranties", "paragraphs": ["THE SITE AND ALL CONTENT, MATERIALS, AND SERVICES PROVIDED THROUGH IT ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, VERITAS GLOBAL AI DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.", "We do not warrant that the Site will be uninterrupted, error-free, secure, or free of viruses or other harmful components. We do not warrant the accuracy, completeness, or reliability of any content on the Site."]},
-      {"title": "7. Limitation of Liability", "paragraphs": ["TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VERITAS GLOBAL AI, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING FROM:"], "items": ["Your use or inability to use the Site", "Any conduct or content of any third party on the Site", "Unauthorized access, use, or alteration of your transmissions or content", "Any other matter relating to the Site or our services"], "extraParagraphs": ["Our total liability for any claim arising from these Terms or your use of the Site shall not exceed the amount you have paid to us, if any, in the twelve months preceding the claim."]},
-      {"title": "8. Indemnification", "paragraphs": ["You agree to indemnify, defend, and hold harmless Veritas Global AI, its officers, directors, employees, agents, and affiliates from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising from your use of the Site, your violation of these Terms, or your infringement of any third-party rights."]},
-      {"title": "9. Termination", "paragraphs": ["We reserve the right to terminate or suspend your access to the Site, without prior notice or liability, for any reason, including if you breach these Terms. All provisions of these Terms that by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability."]},
-      {"title": "10. Governing Law and Dispute Resolution", "paragraphs": ["These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law principles. Any dispute arising from or relating to these Terms or the Site shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association, with the arbitration to take place in Wilmington, Delaware. Each party shall bear its own costs of arbitration. This does not preclude either party from seeking injunctive relief in a court of competent jurisdiction."]},
-      {"title": "11. Changes to Terms", "paragraphs": ["We reserve the right to modify or replace these Terms at any time. Material changes will be communicated by posting the updated Terms on this page with a revised effective date. Your continued use of the Site after any changes constitutes your acceptance of the new Terms. If you do not agree to the modified Terms, you must discontinue use of the Site."]},
-      {"title": "12. General Provisions", "paragraphs": ["Severability: If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.", "Waiver: Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision.", "Entire Agreement: These Terms, together with our Privacy Policy, constitute the entire agreement between you and Veritas Global AI regarding the Site and supersede all prior agreements and understandings.", "Assignment: You may not assign or transfer these Terms without our prior written consent. We may assign or transfer these Terms without restriction."]},
-      {"title": "13. Contact", "paragraphs": ["For questions about these Terms of Service, please contact us:"]}
+      {
+        "title": "1. Acceptance of Terms",
+        "paragraphs": [
+          "By accessing or using veritasglobalai.tech (the \"Site\") and any services, products, or content provided by Veritas Global AI (\"Veritas,\" \"we,\" \"us,\" or \"our\"), you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree to these Terms, you must not access or use the Site or our services.",
+          "These Terms apply to all visitors, users, and others who access or use the Site. By using the Site, you represent that you are at least 18 years of age and have the legal capacity to enter into a binding agreement."
+        ]
+      },
+      {
+        "title": "2. Description of Services",
+        "paragraphs": [
+          "Veritas Global AI provides enterprise artificial intelligence infrastructure, platforms, and implementation services, including but not limited to enterprise SaaS deployment, AI agent orchestration, neural chatbot systems, intelligent web platforms, retrieval-augmented generation (RAG) systems, and AI-powered marketing solutions.",
+          "Information provided on this Site is for general informational purposes only. All client engagements are governed by separate written agreements, including master services agreements, statements of work, and service level agreements. Nothing on this Site constitutes a binding offer of services or creates a client relationship."
+        ]
+      },
+      {
+        "title": "3. User Obligations",
+        "paragraphs": [
+          "When using our Site, you agree not to:"
+        ],
+        "items": [
+          "Use the Site for any unlawful purpose or in violation of any applicable laws or regulations",
+          "Attempt to gain unauthorized access to any part of the Site, its servers, or associated systems",
+          "Interfere with or disrupt the Site, its security features, or any networks connected to the Site",
+          "Submit false, misleading, or fraudulent information through our contact forms",
+          "Scrape, data-mine, or use automated systems to extract data from the Site without prior written consent",
+          "Use the Site to transmit malware, viruses, or any other malicious code"
+        ]
+      },
+      {
+        "title": "4. Intellectual Property Rights",
+        "paragraphs": [
+          "All content on this Site — including but not limited to text, graphics, logos, icons, images, audio clips, video, data compilations, software, and the overall design and arrangement — is the exclusive property of Veritas Global AI or its content suppliers and is protected by United States and international copyright, trademark, patent, and other intellectual property laws.",
+          "The Veritas Global AI name, logo, and all related product and service names are trademarks of Veritas Global AI. You may not use these marks without our prior written permission. All other trademarks appearing on the Site are the property of their respective owners.",
+          "You are granted a limited, non-exclusive, non-transferable, revocable license to access and view the Site content for personal, non-commercial purposes. Any other use requires our express written consent."
+        ]
+      },
+      {
+        "title": "5. Confidentiality",
+        "paragraphs": [
+          "Any information you share with us through the Site, including through consultation requests, contact forms, or direct communication, will be treated as confidential. We will not disclose such information to third parties except as required to provide our services, as required by law, or with your explicit consent. For more details, see our Privacy Policy."
+        ]
+      },
+      {
+        "title": "6. Disclaimer of Warranties",
+        "paragraphs": [
+          "THE SITE AND ALL CONTENT, MATERIALS, AND SERVICES PROVIDED THROUGH IT ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, VERITAS GLOBAL AI DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.",
+          "We do not warrant that the Site will be uninterrupted, error-free, secure, or free of viruses or other harmful components. We do not warrant the accuracy, completeness, or reliability of any content on the Site."
+        ]
+      },
+      {
+        "title": "7. Limitation of Liability",
+        "paragraphs": [
+          "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VERITAS GLOBAL AI, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING FROM:"
+        ],
+        "items": [
+          "Your use or inability to use the Site",
+          "Any conduct or content of any third party on the Site",
+          "Unauthorized access, use, or alteration of your transmissions or content",
+          "Any other matter relating to the Site or our services"
+        ],
+        "extraParagraphs": [
+          "Our total liability for any claim arising from these Terms or your use of the Site shall not exceed the amount you have paid to us, if any, in the twelve months preceding the claim."
+        ]
+      },
+      {
+        "title": "8. Indemnification",
+        "paragraphs": [
+          "You agree to indemnify, defend, and hold harmless Veritas Global AI, its officers, directors, employees, agents, and affiliates from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising from your use of the Site, your violation of these Terms, or your infringement of any third-party rights."
+        ]
+      },
+      {
+        "title": "9. Termination",
+        "paragraphs": [
+          "We reserve the right to terminate or suspend your access to the Site, without prior notice or liability, for any reason, including if you breach these Terms. All provisions of these Terms that by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability."
+        ]
+      },
+      {
+        "title": "10. Governing Law and Dispute Resolution",
+        "paragraphs": [
+          "These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law principles. Any dispute arising from or relating to these Terms or the Site shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association, with the arbitration to take place in Wilmington, Delaware. Each party shall bear its own costs of arbitration. This does not preclude either party from seeking injunctive relief in a court of competent jurisdiction."
+        ]
+      },
+      {
+        "title": "11. Changes to Terms",
+        "paragraphs": [
+          "We reserve the right to modify or replace these Terms at any time. Material changes will be communicated by posting the updated Terms on this page with a revised effective date. Your continued use of the Site after any changes constitutes your acceptance of the new Terms. If you do not agree to the modified Terms, you must discontinue use of the Site."
+        ]
+      },
+      {
+        "title": "12. General Provisions",
+        "paragraphs": [
+          "Severability: If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.",
+          "Waiver: Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision.",
+          "Entire Agreement: These Terms, together with our Privacy Policy, constitute the entire agreement between you and Veritas Global AI regarding the Site and supersede all prior agreements and understandings.",
+          "Assignment: You may not assign or transfer these Terms without our prior written consent. We may assign or transfer these Terms without restriction."
+        ]
+      },
+      {
+        "title": "13. Contact",
+        "paragraphs": [
+          "For questions about these Terms of Service, please contact us:"
+        ]
+      }
     ],
     "websiteLabel": "Website: veritasglobalai.tech"
   },
@@ -860,14 +1434,87 @@
     "title": "Cookie Policy",
     "lastUpdated": "Last updated: August 5, 2026",
     "sections": [
-      {"title": "1. Introduction", "paragraphs": ["This Cookie Policy explains how Veritas Global AI (\"we,\" \"us,\" or \"our\") uses cookies and similar tracking technologies on our website veritasglobalai.tech (the \"Site\"). It explains what these technologies are, why we use them, and your rights to control our use of them.", "This policy complies with the EU General Data Protection Regulation (GDPR), the ePrivacy Directive (Cookie Law), the UK GDPR, the California Consumer Privacy Act (CCPA), and other applicable privacy and data protection laws."]},
-      {"title": "2. What Are Cookies?", "paragraphs": ["Cookies are small text files that are placed on your device (computer, smartphone, tablet) when you visit a website. They are widely used to make websites work efficiently, to remember your preferences, and to provide information to the website owners.", "Cookies may be either:"], "items": ["First-party cookies: Set directly by the website you are visiting. Only that website can read them.", "Third-party cookies: Set by a domain other than the website you are visiting, typically used for advertising, analytics, or embedded content.", "Session cookies: Temporary cookies that expire when you close your browser.", "Persistent cookies: Remain on your device for a set period or until you manually delete them."], "extraParagraphs": ["In addition to cookies, we may also use similar technologies such as local storage, session storage, and server logs. In this policy, we refer to all these technologies collectively as \"cookies.\""]},
-      {"title": "4. Third-Party Cookies", "paragraphs": ["Our Site may include content or functionality from trusted third-party service providers. These third parties may set their own cookies when you interact with their embedded content. We do not control the placement of these cookies, and we recommend reviewing the cookie policies of any third-party services. Currently, our Site uses:"], "items": ["Netlify: Our hosting provider may set essential cookies for load balancing, security, and site delivery optimization.", "Google Fonts: We use Google Fonts for typography. Google may collect information about your use of this service."], "extraParagraphs": ["We regularly review our third-party integrations and will update this list as our service providers change. We select providers that comply with applicable data protection laws and provide adequate safeguards."]},
-      {"title": "5. Cookie Consent and Control", "paragraphs": ["When you first visit our Site, you are presented with a cookie consent banner that allows you to accept or manage your cookie preferences. You can change your preferences at any time.", "In addition to our consent management tool, you can control cookies through:"], "items": ["Browser Settings: Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all or some cookies, or to alert you when cookies are being sent. Note that disabling strictly necessary cookies may affect Site functionality.", "Browser Extensions: Privacy-focused browser extensions can help you manage and block tracking cookies.", "Do Not Track (DNT): Some browsers include a Do Not Track feature. Our Site currently does not respond to DNT signals, but we respect cookie consent preferences set through our consent management tool.", "Opt-Out Tools: Industry bodies such as the Network Advertising Initiative (NAI) and the Digital Advertising Alliance (DAA) provide opt-out tools for targeted advertising cookies."], "extraParagraphs": ["For instructions on managing cookies in specific browsers, please refer to your browser's help documentation:"]},
-      {"title": "6. Legal Basis for Processing (EU/UK Users)", "paragraphs": ["Under the GDPR and UK GDPR, our legal bases for using cookies are:"], "items": ["Consent (Art. 6(1)(a)): For non-essential cookies (functional preferences, analytics). You may withdraw consent at any time through our cookie settings.", "Legitimate Interests (Art. 6(1)(f)): For strictly necessary cookies essential to Site operation and security. We have conducted a legitimate interest assessment and determined that these cookies are necessary and proportionate."]},
-      {"title": "7. International Data Transfers", "paragraphs": ["Cookies and related data may be stored and processed in servers located in the United States, European Economic Area (EEA), United Kingdom, and other jurisdictions where our service providers operate. Where personal data is transferred outside the EEA or UK, we ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the European Commission and UK International Data Transfer Agreement."]},
-      {"title": "8. Changes to This Cookie Policy", "paragraphs": ["We may update this Cookie Policy from time to time to reflect changes in our cookie practices, technology, or legal requirements. We will post the updated version on this page and, where material changes occur, provide prominent notice on our Site or seek renewed consent where required."]},
-      {"title": "9. Contact and Supervisory Authority", "paragraphs": ["If you have questions about our use of cookies or wish to exercise your data protection rights:", "You also have the right to lodge a complaint with your local data protection supervisory authority. For EU residents, a list of supervisory authorities is available at the EDPB website. For UK residents, you may contact the Information Commissioner's Office (ICO)."]}
+      {
+        "title": "1. Introduction",
+        "paragraphs": [
+          "This Cookie Policy explains how Veritas Global AI (\"we,\" \"us,\" or \"our\") uses cookies and similar tracking technologies on our website veritasglobalai.tech (the \"Site\"). It explains what these technologies are, why we use them, and your rights to control our use of them.",
+          "This policy complies with the EU General Data Protection Regulation (GDPR), the ePrivacy Directive (Cookie Law), the UK GDPR, the California Consumer Privacy Act (CCPA), and other applicable privacy and data protection laws."
+        ]
+      },
+      {
+        "title": "2. What Are Cookies?",
+        "paragraphs": [
+          "Cookies are small text files that are placed on your device (computer, smartphone, tablet) when you visit a website. They are widely used to make websites work efficiently, to remember your preferences, and to provide information to the website owners.",
+          "Cookies may be either:"
+        ],
+        "items": [
+          "First-party cookies: Set directly by the website you are visiting. Only that website can read them.",
+          "Third-party cookies: Set by a domain other than the website you are visiting, typically used for advertising, analytics, or embedded content.",
+          "Session cookies: Temporary cookies that expire when you close your browser.",
+          "Persistent cookies: Remain on your device for a set period or until you manually delete them."
+        ],
+        "extraParagraphs": [
+          "In addition to cookies, we may also use similar technologies such as local storage, session storage, and server logs. In this policy, we refer to all these technologies collectively as \"cookies.\""
+        ]
+      },
+      {
+        "title": "4. Third-Party Cookies",
+        "paragraphs": [
+          "Our Site may include content or functionality from trusted third-party service providers. These third parties may set their own cookies when you interact with their embedded content. We do not control the placement of these cookies, and we recommend reviewing the cookie policies of any third-party services. Currently, our Site uses:"
+        ],
+        "items": [
+          "Netlify: Our hosting provider may set essential cookies for load balancing, security, and site delivery optimization.",
+          "Google Fonts: We use Google Fonts for typography. Google may collect information about your use of this service."
+        ],
+        "extraParagraphs": [
+          "We regularly review our third-party integrations and will update this list as our service providers change. We select providers that comply with applicable data protection laws and provide adequate safeguards."
+        ]
+      },
+      {
+        "title": "5. Cookie Consent and Control",
+        "paragraphs": [
+          "When you first visit our Site, you are presented with a cookie consent banner that allows you to accept or manage your cookie preferences. You can change your preferences at any time.",
+          "In addition to our consent management tool, you can control cookies through:"
+        ],
+        "items": [
+          "Browser Settings: Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all or some cookies, or to alert you when cookies are being sent. Note that disabling strictly necessary cookies may affect Site functionality.",
+          "Browser Extensions: Privacy-focused browser extensions can help you manage and block tracking cookies.",
+          "Do Not Track (DNT): Some browsers include a Do Not Track feature. Our Site currently does not respond to DNT signals, but we respect cookie consent preferences set through our consent management tool.",
+          "Opt-Out Tools: Industry bodies such as the Network Advertising Initiative (NAI) and the Digital Advertising Alliance (DAA) provide opt-out tools for targeted advertising cookies."
+        ],
+        "extraParagraphs": [
+          "For instructions on managing cookies in specific browsers, please refer to your browser's help documentation:"
+        ]
+      },
+      {
+        "title": "6. Legal Basis for Processing (EU/UK Users)",
+        "paragraphs": [
+          "Under the GDPR and UK GDPR, our legal bases for using cookies are:"
+        ],
+        "items": [
+          "Consent (Art. 6(1)(a)): For non-essential cookies (functional preferences, analytics). You may withdraw consent at any time through our cookie settings.",
+          "Legitimate Interests (Art. 6(1)(f)): For strictly necessary cookies essential to Site operation and security. We have conducted a legitimate interest assessment and determined that these cookies are necessary and proportionate."
+        ]
+      },
+      {
+        "title": "7. International Data Transfers",
+        "paragraphs": [
+          "Cookies and related data may be stored and processed in servers located in the United States, European Economic Area (EEA), United Kingdom, and other jurisdictions where our service providers operate. Where personal data is transferred outside the EEA or UK, we ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the European Commission and UK International Data Transfer Agreement."
+        ]
+      },
+      {
+        "title": "8. Changes to This Cookie Policy",
+        "paragraphs": [
+          "We may update this Cookie Policy from time to time to reflect changes in our cookie practices, technology, or legal requirements. We will post the updated version on this page and, where material changes occur, provide prominent notice on our Site or seek renewed consent where required."
+        ]
+      },
+      {
+        "title": "9. Contact and Supervisory Authority",
+        "paragraphs": [
+          "If you have questions about our use of cookies or wish to exercise your data protection rights:",
+          "You also have the right to lodge a complaint with your local data protection supervisory authority. For EU residents, a list of supervisory authorities is available at the EDPB website. For UK residents, you may contact the Information Commissioner's Office (ICO)."
+        ]
+      }
     ],
     "websiteLabel": "Website: veritasglobalai.tech"
   },
@@ -875,8 +1522,19 @@
     "title": "Data Processing Agreement",
     "lastUpdated": "Last updated: August 5, 2026",
     "sections": [
-      {"title": "1. Scope and Definitions", "paragraphs": ["This Data Processing Agreement (\"DPA\") forms part of the agreement between Veritas Global AI (\"Processor,\" \"we,\" \"us\") and our clients (\"Controller,\" \"you\") for the provision of enterprise AI services. This DPA applies where we process personal data on your behalf as part of delivering our enterprise AI infrastructure and platform services."]},
-      {"title": "15. Contact", "paragraphs": ["For questions about this Data Processing Agreement, to exercise data subject rights, or to request a signed copy of this DPA:", "You have the right to lodge a complaint with a supervisory authority. EU residents may contact their local data protection authority."]}
+      {
+        "title": "1. Scope and Definitions",
+        "paragraphs": [
+          "This Data Processing Agreement (\"DPA\") forms part of the agreement between Veritas Global AI (\"Processor,\" \"we,\" \"us\") and our clients (\"Controller,\" \"you\") for the provision of enterprise AI services. This DPA applies where we process personal data on your behalf as part of delivering our enterprise AI infrastructure and platform services."
+        ]
+      },
+      {
+        "title": "15. Contact",
+        "paragraphs": [
+          "For questions about this Data Processing Agreement, to exercise data subject rights, or to request a signed copy of this DPA:",
+          "You have the right to lodge a complaint with a supervisory authority. EU residents may contact their local data protection authority."
+        ]
+      }
     ],
     "websiteLabel": "Website: veritasglobalai.tech"
   }

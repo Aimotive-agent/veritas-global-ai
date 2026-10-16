@@ -492,6 +492,29 @@ const demos = [
     metric2Label: "Powered",
   },
   {
+    title: "Veritas OS — Agent-Native Desktop Shell",
+    category: "Desktop Platform · Multi-Agent",
+    description:
+      "A full desktop environment built around AI agents. Run Hermes, OpenCode, and any CLI agent side by side — control and monitor every one of them from the same shell. Dock, windows, spaces, files, canvas, terminal, and a multi-agent hub.",
+    features: [
+      "Multi-Agent Hub with live agent cards",
+      "Embedded agent UIs (OpenCode in native view)",
+      "Add any agent via JSON spec",
+      "Windows, dock, spaces, files, canvas, terminal",
+      "Themes, plugins, voice, memory & missions",
+    ],
+    href: "https://github.com/Aimotive-agent/veritas-os",
+    repo: "https://github.com/Aimotive-agent/veritas-os",
+    tag: "Flagship",
+    terminal: "veritas-os",
+    q: "What makes Veritas OS different?",
+    a: "Veritas OS turns one agent into a control room for all of them. Run Hermes, OpenCode, and any CLI agent side by side — with a real shell: dock, windows, spaces, files, canvas, and terminal.",
+    metric1: "Multi",
+    metric1Label: "Agent",
+    metric2: "Full",
+    metric2Label: "Desktop",
+  },
+  {
     title: "AI Local File Search",
     category: "AI File System · Semantic Search",
     description:
