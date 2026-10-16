@@ -528,6 +528,7 @@ const demos = [
       "Fully self-hosted on our own homelab",
     ],
     href: "https://mininoted.veritasglobalai.com",
+    repo: "https://github.com/Aimotive-agent/mininotebook",
     tag: "Live — Homelab",
     terminal: "mininotebook",
     q: "Can I ask questions across all my documents at once?",
