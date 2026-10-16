@@ -683,6 +683,97 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MININOTEBOOK */}
+      <section className="py-20 md:py-28 px-6 lg:px-10 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #081614 0%, #0d2521 35%, #0f2b26 65%, #081614 100%)' }}>
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(176,141,87,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 60%, rgba(30,140,120,0.22) 0%, transparent 50%)' }} />
+        <div className="max-w-6xl mx-auto relative z-10">
+          <Reveal className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold mb-4">{t("home.miniNotebook.eyebrow")}</p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-5 leading-tight">
+                {t("home.miniNotebook.title")}
+              </h2>
+              <p className="text-lg text-slate-300/80 leading-relaxed mb-8">
+                {t("home.miniNotebook.subtitle")}
+              </p>
+              <ul className="space-y-3 mb-10">
+                {[
+                  "Notebooks with PDF, DOCX, TXT and text sources",
+                  "Grounded chat that answers only from your sources",
+                  "Full-corpus analysis across every indexed chunk",
+                  "Automatic summaries and related-source discovery",
+                  "Studio: podcast-style audio and narrated video overviews",
+                  "Fully self-hosted on our own hardware",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-slate-300/90 text-[15px]">
+                    <svg width="16" height="16" fill="none" stroke="#B08D57" strokeWidth="2" viewBox="0 0 24 24" className="mt-0.5 shrink-0">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="http://192.168.1.42:8095"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2"
+                style={{ background: '#B08D57', color: '#fff' }}
+              >
+                {t("home.miniNotebook.cta")}
+                <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </Link>
+            </div>
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-lg">
+                <div className="absolute -inset-4 bg-emerald-500/10 rounded-2xl blur-2xl" />
+                <div className="relative bg-navy-deep border border-white/10 rounded-xl p-8 text-paper">
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
+                    <span className="ml-2 text-[10px] uppercase tracking-[0.2em] text-gray-400">mininotebook</span>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="border border-white/10 rounded-lg p-4 bg-white/5">
+                      <div className="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2">Notebook · Research</div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-gray-200">mri-scan.pdf</span>
+                          <span className="text-emerald-400 text-xs">Indexed</span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-gray-200">sample.txt</span>
+                          <span className="text-emerald-400 text-xs">Indexed</span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-emerald-400 text-xs">6862 chunks</span>
+                          <span className="text-gray-400 text-xs">full corpus</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border border-white/10 rounded-lg p-4 bg-white/5">
+                      <div className="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2">Studio</div>
+                      <div className="grid grid-cols-2 gap-2 text-xs text-gray-300">
+                        <div className="border border-white/10 rounded px-2 py-1.5">Audio Overview</div>
+                        <div className="border border-white/10 rounded px-2 py-1.5">Video Overview</div>
+                        <div className="border border-white/10 rounded px-2 py-1.5">Summaries</div>
+                        <div className="border border-white/10 rounded px-2 py-1.5">Related</div>
+                      </div>
+                    </div>
+                    <div className="text-xs text-gray-500 text-center">
+                      Self-hosted · ChromaDB · Ollama embeddings
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-20 md:py-28 px-6 lg:px-10 bg-paper border-b border-line">
         <div className="max-w-3xl mx-auto">

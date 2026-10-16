@@ -501,6 +501,21 @@
       "ctaUrl": "https://github.com/Aimotive-agent/veritas-os",
       "repoText": "Aimotive-agent/veritas-os"
     },
+    "miniNotebook": {
+      "eyebrow": "Homelab Native",
+      "title": "MiniNotebook — The Self-Hosted AI Notebook",
+      "subtitle": "Turn a pile of documents into a private research workspace. Build notebooks, drop in PDFs and text, then chat with an AI that answers only from your sources — with automatic summaries, related-source discovery, and a full-corpus analysis mode that reads every indexed chunk instead of a lucky few. Studio turns any notebook into a two-host podcast overview or a narrated video slideshow.",
+      "features": [
+        "Notebooks with PDF, DOCX, TXT and text sources",
+        "Grounded chat that answers only from your sources",
+        "Full-corpus analysis across every indexed chunk",
+        "Automatic summaries and related-source discovery",
+        "Studio: podcast-style audio and narrated video overviews",
+        "Fully self-hosted on our own hardware"
+      ],
+      "cta": "Open the Notebook",
+      "ctaUrl": "http://192.168.1.42:8095"
+    },
     "contact": {
       "eyebrow": "Private Consultation",
       "title": "Begin Your Enterprise AI Journey",

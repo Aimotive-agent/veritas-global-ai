@@ -515,6 +515,29 @@ const demos = [
     metric2Label: "Desktop",
   },
   {
+    title: "MiniNotebook — Self-Hosted AI Notebook",
+    category: "AI Notebook · RAG Workspace",
+    description:
+      "Turn a pile of documents into a private research workspace. Build notebooks, drop in PDFs and text, then chat with an AI that answers only from your sources — with automatic summaries, related-source discovery, and a full-corpus analysis mode that reads every indexed chunk instead of a lucky few. Studio turns any notebook into a two-host podcast overview or a narrated video slideshow.",
+    features: [
+      "Notebooks with PDF, DOCX, TXT & text sources",
+      "Grounded chat that answers only from your sources",
+      "Full-corpus analysis across every indexed chunk",
+      "Automatic summaries & related-source discovery",
+      "Studio: podcast-style audio & narrated video overviews",
+      "Fully self-hosted on our own homelab",
+    ],
+    href: "http://192.168.1.42:8095",
+    tag: "Live — Homelab",
+    terminal: "mininotebook",
+    q: "Can I ask questions across all my documents at once?",
+    a: "Yes. MiniNotebook indexes every source into vector chunks, then a full-corpus analysis mode reads across the whole collection instead of just the top few. It answers only from what you gave it — and Studio can turn the result into a podcast or a narrated video.",
+    metric1: "6862",
+    metric1Label: "Chunks",
+    metric2: "Audio",
+    metric2Label: "& Video",
+  },
+  {
     title: "AI Local File Search",
     category: "AI File System · Semantic Search",
     description:
