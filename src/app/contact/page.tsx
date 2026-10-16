@@ -170,14 +170,14 @@ export default function ContactPage() {
                 <h3 className="font-serif font-semibold text-lg text-ink mb-4">{t("contact.preferEmail")}</h3>
                 <p className="text-sm text-slate">
                   {t("contact.reachUsAt")}{" "}
-                  <a href="mailto:info@veritasglobalai.tech" className="text-navy hover:underline font-medium">
-                    info@veritasglobalai.tech
+                  <a href="mailto:info@veritasglobal.tech" className="text-navy hover:underline font-medium">
+                    info@veritasglobal.tech
                   </a>
                 </p>
                 <p className="text-sm text-slate mt-2">
                   {t("contact.forSupport")}{" "}
-                  <a href="mailto:support@veritasglobalai.tech" className="text-navy hover:underline font-medium">
-                    support@veritasglobalai.tech
+                  <a href="mailto:info@veritasglobal.tech" className="text-navy hover:underline font-medium">
+                    info@veritasglobal.tech
                   </a>
                 </p>
               </Reveal>

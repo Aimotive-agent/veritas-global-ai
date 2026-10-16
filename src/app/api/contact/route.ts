@@ -2,14 +2,14 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  host: "mail.veritasglobalai.tech",
+  host: "mail.veritasglobal.tech",
   port: 587,
   secure: false,
   requireTLS: true,
   tls: { rejectUnauthorized: false },
   connectionTimeout: 10000,
   auth: {
-    user: "postmaster@veritasglobalai.tech",
+    user: "info@veritasglobal.tech",
     pass: "Tok7qlQoF74GfW7t3WexYTTO",
   },
 });
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
     `;
 
     await transporter.sendMail({
-      from: '"Veritas Global AI Website" <postmaster@veritasglobalai.tech>',
+      from: '"Veritas Global AI Website" <info@veritasglobal.tech>',
       to: "info@veritasglobal.tech",
       replyTo: email,
       subject: `New Contact: ${name} from ${company}`,

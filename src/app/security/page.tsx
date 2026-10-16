@@ -96,8 +96,8 @@ export default function SecurityPage() {
                   <div className="mt-3 space-y-2">
                     <p>
                       Email:{" "}
-                      <a href="mailto:info@veritasglobalai.tech" className="text-navy hover:underline font-medium">
-                        info@veritasglobalai.tech
+                      <a href="mailto:info@veritasglobal.tech" className="text-navy hover:underline font-medium">
+                        info@veritasglobal.tech
                       </a>
                       {" "}(please use subject line: &ldquo;{t("securityDisclosure.emailSubjectLine")}&rdquo;)
                     </p>
@@ -106,8 +106,8 @@ export default function SecurityPage() {
                 {i === 9 && (
                   <div className="mt-3 space-y-1">
                     <p>Email:{" "}
-                      <a href="mailto:info@veritasglobalai.tech" className="text-navy hover:underline">
-                        info@veritasglobalai.tech
+                      <a href="mailto:info@veritasglobal.tech" className="text-navy hover:underline">
+                        info@veritasglobal.tech
                       </a>
                     </p>
                     <p>{t("securityDisclosure.websiteLabel")}</p>

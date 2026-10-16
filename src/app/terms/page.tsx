@@ -16,7 +16,7 @@ export default function TermsPage() {
         <LegalSection sectionKey="terms" />
 
         <div className="text-sm text-slate mt-12 pt-8 border-t border-line space-y-1">
-          <p>Email: <a href="mailto:info@veritasglobalai.tech" className="text-navy hover:underline">info@veritasglobalai.tech</a></p>
+          <p>Email: <a href="mailto:info@veritasglobal.tech" className="text-navy hover:underline">info@veritasglobal.tech</a></p>
           <p>{t("terms.websiteLabel")}</p>
         </div>
       </div>
