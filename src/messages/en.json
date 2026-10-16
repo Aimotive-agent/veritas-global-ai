@@ -514,7 +514,7 @@
         "Fully self-hosted on our own hardware"
       ],
       "cta": "Open the Notebook",
-      "ctaUrl": "http://192.168.1.42:8095"
+      "ctaUrl": "https://mininoted.veritasglobalai.com"
     },
     "contact": {
       "eyebrow": "Private Consultation",

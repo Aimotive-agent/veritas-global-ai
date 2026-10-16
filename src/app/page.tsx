@@ -714,7 +714,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link
-                href="http://192.168.1.42:8095"
+                href="https://mininoted.veritasglobalai.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2"

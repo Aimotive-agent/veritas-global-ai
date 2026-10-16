@@ -514,7 +514,7 @@
         "self-hosted บนฮาร์ดแวร์ของเราเองเต็มที่"
       ],
       "cta": "เปิดสมุดบันทึก",
-      "ctaUrl": "http://192.168.1.42:8095"
+      "ctaUrl": "https://mininoted.veritasglobalai.com"
     },
     "contact": {
       "eyebrow": "ปรึกษาส่วนตัว",

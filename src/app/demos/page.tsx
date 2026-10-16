@@ -527,7 +527,7 @@ const demos = [
       "Studio: podcast-style audio & narrated video overviews",
       "Fully self-hosted on our own homelab",
     ],
-    href: "http://192.168.1.42:8095",
+    href: "https://mininoted.veritasglobalai.com",
     tag: "Live — Homelab",
     terminal: "mininotebook",
     q: "Can I ask questions across all my documents at once?",
