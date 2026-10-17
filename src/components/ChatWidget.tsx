@@ -16,13 +16,13 @@ export default function ChatWidget() {
   const chatRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const { t } = useLocale();
-  const initialized = useRef(false);
 
-  useEffect(() => {
-    if (messages.length === 0) {
-      setMessages([{ role: "assistant", content: t("chat.welcome") }]);
-    }
-  }, [t]);
+  /* The greeting is derived, never stored. Seeding it into state on mount
+     captured the raw `chat.welcome` key, because LocaleProvider loads
+     messages/en.json asynchronously — and the old `messages.length === 0`
+     guard meant it could never be re-translated afterwards. Deriving it
+     keeps the bubble showing real text and switching locale live. */
+  const welcomeMsg: Message = { role: "assistant", content: t("chat.welcome") };
 
   useEffect(() => {
     if (open && inputRef.current) inputRef.current.focus();
@@ -45,7 +45,7 @@ export default function ChatWidget() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [...messages, userMsg] }),
+        body: JSON.stringify({ messages: [welcomeMsg, ...messages, userMsg] }),
       });
       const data = await response.json();
       const reply = data.response || t("chat.error");
@@ -101,7 +101,7 @@ export default function ChatWidget() {
 
           {/* Messages */}
           <div ref={chatRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-paper">
-            {messages.map((msg, i) => (
+            {[welcomeMsg, ...messages].map((msg, i) => (
               <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-[85%] px-4 py-2.5 rounded-lg text-sm leading-relaxed ${
