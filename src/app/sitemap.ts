@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const BASE_URL = "https://veritas.ai";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -20,10 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/insights/platform-agnostic-ai-architecture", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/cookies", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/data-policy", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/security", priority: 0.6, changeFrequency: "monthly" as const },
   ];
 
   return routes.map(({ path, priority, changeFrequency }) => ({
-    url: `${BASE_URL}${path}`,
+    url: `${SITE_URL}${path}`,
     lastModified: new Date(),
     changeFrequency,
     priority,

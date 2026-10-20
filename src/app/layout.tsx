@@ -4,13 +4,19 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import Providers from "@/components/Providers";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Veritas Global AI — Enterprise AI Solutions",
   description:
     "Veritas Global AI — Intelligence, Engineered for the Enterprise. From sovereign SaaS platforms to autonomous agent swarms, neural chatbots, intelligent websites, RAG pipelines, and AI-driven marketing. Secured to the standards of global institutions.",
   keywords: ["enterprise AI", "AI solutions", "sovereign AI", "RAG systems", "AI agents", "neural chatbots"],
-  metadataBase: new URL("https://veritas-global-ai.netlify.app"),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    // Relative canonical: Next.js resolves this against each page's own path,
+    // so every route self-canonicalises instead of pointing at the homepage.
+    canonical: "./",
+  },
   openGraph: {
     title: "Veritas Global AI — Enterprise AI Solutions",
     description:
