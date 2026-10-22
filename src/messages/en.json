@@ -1100,7 +1100,10 @@
     "cta": {
       "title": "Want Veritas insights in your inbox?",
       "subtitle": "We publish regular analysis on enterprise AI strategy, governance, and industry transformation. No spam, just signal.",
-      "button": "Get in Touch"
+      "button": "Get in Touch",
+      "emailLabel": "Your work email",
+      "successTitle": "You are on the list.",
+      "successBody": "We will send the next piece of analysis to that address. No spam, and you can leave at any time."
     },
     "backToInsights": "Back to Insights"
   },

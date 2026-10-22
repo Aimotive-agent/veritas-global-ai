@@ -4,6 +4,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import IndustryTabs from "@/components/IndustryTabs";
 import PromoFilm from "@/components/PromoFilm";
+import LeadForm from "@/components/LeadForm";
 import { articleIndex } from "@/app/insights/articles";
 import { promoVideoJsonLd } from "@/lib/seo";
 import { useLocale } from "@/context/LocaleContext";
@@ -848,7 +849,11 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal className="border border-line bg-paper p-8 lg:p-10">
-            <form method="POST" action="/contact" className="block">
+            <LeadForm
+              className="block"
+              submitLabel={t("home.contact.form.submitButton")}
+              source="home"
+            >
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">{t("home.contact.form.nameLabel")} <span className="text-red-700">*</span></label>
@@ -887,13 +892,7 @@ export default function Home() {
                 <input type="checkbox" id="consent" name="consent" required className="mt-1 w-4 h-4 border-line text-navy focus:ring-navy flex-shrink-0" />
                 <label htmlFor="consent" className="text-xs text-muted leading-relaxed">{t("home.contact.form.consentLabel")}</label>
               </div>
-              <div className="mt-8">
-                <button type="submit" className="btn-primary font-medium px-8 py-3.5 text-sm tracking-wide inline-flex items-center gap-2 w-full sm:w-auto justify-center">
-                  {t("home.contact.form.submitButton")}
-                  <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
-                </button>
-              </div>
-            </form>
+            </LeadForm>
           </Reveal>
         </div>
       </section>

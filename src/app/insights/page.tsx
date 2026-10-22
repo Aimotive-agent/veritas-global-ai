@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import LeadForm from "@/components/LeadForm";
 import { useLocale } from "@/context/LocaleContext";
 
 const articles = [
@@ -96,10 +97,29 @@ export default function InsightsPage() {
           <p className="text-slate text-lg max-w-2xl mx-auto mb-10">
             {t("insights.cta.subtitle")}
           </p>
-          <Link href="/contact" className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2">
-            {t("insights.cta.button")}
-            <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </Link>
+          <LeadForm
+            className="max-w-md mx-auto"
+            submitLabel={t("insights.cta.button")}
+            sendingLabel={t("insights.cta.button")}
+            source="newsletter"
+            interest="newsletter"
+            successTitle={t("insights.cta.successTitle")}
+            successBody={t("insights.cta.successBody")}
+          >
+            <div className="flex flex-col sm:flex-row gap-3 text-left">
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="you@company.com"
+                aria-label={t("insights.cta.emailLabel")}
+                className="flex-1 px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors"
+              />
+              <input type="text" name="name" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+              <input type="text" name="company" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+              <input type="text" name="message" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" value="Insights newsletter subscription" readOnly />
+            </div>
+          </LeadForm>
         </div>
       </section>
     </>

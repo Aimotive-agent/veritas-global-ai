@@ -30,7 +30,17 @@ const LABELS: Record<string, Record<string, string>> = {
     architect: "Enterprise Architect",
     other: "Other",
   },
+  source: {
+    home: "Home page",
+    contact: "Contact page",
+    assessment: "AI Readiness Assessment",
+    private: "Private AI Deployment",
+    sovereign: "Sovereign AI",
+    governance: "AI Governance",
+    newsletter: "Insights newsletter",
+  },
   interest: {
+    assessment: "AI Readiness Assessment",
     saas: "Enterprise SaaS",
     agents: "AI Agents",
     chatbots: "Neural Chatbots",
@@ -50,6 +60,7 @@ interface Lead {
   email: string;
   role: string;
   interest: string;
+  source: string;
   message: string;
 }
 
@@ -61,6 +72,7 @@ const summary = (lead: Lead) =>
     `Email: ${lead.email}`,
     `Role: ${(LABELS.role[lead.role] ?? lead.role) || "—"}`,
     `Interest: ${(LABELS.interest[lead.interest] ?? lead.interest) || "—"}`,
+    `Source: ${(LABELS.source[lead.source] ?? lead.source) || "—"}`,
     "",
     lead.message,
   ].join("\n");
@@ -74,6 +86,7 @@ const htmlBody = (lead: Lead) => `
       <tr><td style="padding: 8px 0; font-weight: 600; color: #555;">Email</td><td style="padding: 8px 0;">${escapeHtml(lead.email)}</td></tr>
       <tr><td style="padding: 8px 0; font-weight: 600; color: #555;">Role</td><td style="padding: 8px 0;">${escapeHtml((LABELS.role[lead.role] ?? lead.role) || "—")}</td></tr>
       <tr><td style="padding: 8px 0; font-weight: 600; color: #555;">Interest</td><td style="padding: 8px 0;">${escapeHtml((LABELS.interest[lead.interest] ?? lead.interest) || "—")}</td></tr>
+      <tr><td style="padding: 8px 0; font-weight: 600; color: #555;">Source</td><td style="padding: 8px 0;">${escapeHtml((LABELS.source[lead.source] ?? lead.source) || "—")}</td></tr>
     </table>
     <h3 style="color: #0f1a3a; margin-top: 24px;">Message</h3>
     <p style="background: #f8f9fa; padding: 16px; border-left: 3px solid #c8a54a; white-space: pre-wrap;">${escapeHtml(lead.message)}</p>
@@ -150,26 +163,85 @@ async function viaTelegram(lead: Lead): Promise<string> {
   return "telegram";
 }
 
+/**
+ * The durable delivery path: the lead is written into the Obsidian vault.
+ *
+ * The site is deployed on the same host as the vault
+ * (/mnt/boot/ai-lab/bosua_ai_brain), so an enquiry lands in Chris's inbox in
+ * Obsidian whether or not an email transport is configured.
+ *
+ * This matters more than it looks: with no RESEND/BREVO/SMTP/TELEGRAM key
+ * configured, the API threw on every submission, so EVERY enquiry the site has
+ * ever received failed with "Failed to send message". The forms looked like
+ * they worked and no lead ever arrived.
+ */
+async function viaVault(lead: Lead): Promise<string> {
+  const fs = await import("node:fs/promises");
+  const path = await import("node:path");
+
+  const root = process.env.VAULT_PATH?.trim() || "/mnt/boot/ai-lab/bosua_ai_brain";
+  const dir = path.join(root, "00_Inbox", "Leads");
+
+  try {
+    await fs.access(root);
+  } catch {
+    throw new Error(`vault not available at ${root}`);
+  }
+  await fs.mkdir(dir, { recursive: true });
+
+  const now = new Date();
+  const day = now.toISOString().slice(0, 10);
+  const file = path.join(dir, `${day}.md`);
+
+  try {
+    await fs.access(file);
+  } catch {
+    await fs.writeFile(
+      file,
+      `# Website enquiries — ${day}\n\nEnquiries from veritasglobalai.com, newest first.\n\n`,
+      "utf-8"
+    );
+  }
+
+  const entry = [
+    `## ${now.toISOString().slice(11, 16)} — ${lead.name}${lead.company ? `, ${lead.company}` : ""}`,
+    "",
+    `- **Email:** ${lead.email}`,
+    `- **Role:** ${(LABELS.role[lead.role] ?? lead.role) || "—"}`,
+    `- **Interest:** ${(LABELS.interest[lead.interest] ?? lead.interest) || "—"}`,
+    `- **Source:** ${(LABELS.source[lead.source] ?? lead.source) || "—"}`,
+    "",
+    lead.message,
+    "",
+  ].join("\n");
+
+  await fs.appendFile(file, entry, "utf-8");
+  return `vault:${file}`;
+}
+
 async function deliver(lead: Lead): Promise<string> {
-  const attempts: Array<[string, () => Promise<string>]> = [];
+  // The vault write comes first: it is the transport that always works, and it
+  // leaves a durable record. Email is the nicer channel on top when a key is set.
+  const attempts: Array<[string, () => Promise<string>]> = [["vault", () => viaVault(lead)]];
   if (process.env.RESEND_API_KEY) attempts.push(["resend", () => viaResend(lead)]);
   if (process.env.BREVO_API_KEY) attempts.push(["brevo", () => viaBrevo(lead)]);
   if (process.env.SMTP_PASS) attempts.push(["smtp", () => viaSmtp(lead)]);
   if (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) attempts.push(["telegram", () => viaTelegram(lead)]);
 
-  if (!attempts.length) {
-    throw new Error("No delivery transport configured (RESEND_API_KEY, BREVO_API_KEY, SMTP_PASS or TELEGRAM_BOT_TOKEN)");
-  }
-
   const errors: string[] = [];
+  const delivered: string[] = [];
   for (const [name, attempt] of attempts) {
     try {
-      return await attempt();
+      await attempt();
+      delivered.push(name);
     } catch (error) {
       errors.push(`${name}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
-  throw new Error(errors.join(" | "));
+  if (!delivered.length) {
+    throw new Error(errors.join(" | ") || "no delivery transport succeeded");
+  }
+  return delivered.join("+");
 }
 
 export async function POST(request: Request) {
@@ -181,6 +253,7 @@ export async function POST(request: Request) {
       email: String(body.get("email") ?? "").trim(),
       role: String(body.get("role") ?? ""),
       interest: String(body.get("interest") ?? ""),
+      source: String(body.get("source") ?? "").trim(),
       message: String(body.get("message") ?? "").trim(),
     };
 

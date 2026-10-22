@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Reveal from "@/components/Reveal";
+import LeadForm from "@/components/LeadForm";
 import { useLocale } from "@/context/LocaleContext";
 
 export default function AssessmentPage() {
@@ -75,7 +76,12 @@ export default function AssessmentPage() {
             <div>
               <Reveal className="border border-line bg-paper p-8 lg:p-10 lg:sticky lg:top-28">
                 <h2 className="font-serif font-semibold text-2xl text-ink mb-6">{t("assessment.requestTitle")}</h2>
-                <form method="POST" action="/contact" className="space-y-5">
+                <LeadForm
+                  className="space-y-5"
+                  submitLabel={t("assessment.submitButton")}
+                  source="assessment"
+                  interest="assessment"
+                >
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="first-name" className="block text-sm font-medium text-ink mb-2">{t("assessment.nameLabel")} <span className="text-red-700">*</span></label>
@@ -91,16 +97,13 @@ export default function AssessmentPage() {
                     <input type="email" id="email" name="email" required placeholder="jane@enterprise.com" className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors" />
                   </div>
                   <div>
-                    <label htmlFor="context" className="block text-sm font-medium text-ink mb-2">{t("assessment.contextLabel")}</label>
-                    <textarea id="context" name="message" rows={4} className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors resize-none" placeholder={t("assessment.contextPlaceholder")}></textarea>
+                    <label htmlFor="context" className="block text-sm font-medium text-ink mb-2">{t("assessment.contextLabel")} <span className="text-red-700">*</span></label>
+                    <textarea id="context" name="message" rows={4} required placeholder={t("assessment.contextPlaceholder")} className="w-full px-4 py-3 bg-white border border-line text-ink placeholder-muted text-sm focus:border-navy transition-colors resize-none"></textarea>
                   </div>
-                  <button type="submit" className="w-full btn-primary font-medium px-8 py-3.5 text-sm tracking-wide">
-                    {t("assessment.submitButton")}
-                  </button>
                   <p className="text-xs text-muted text-center">
                     {t("assessment.confidentialNote")}
                   </p>
-                </form>
+                </LeadForm>
               </Reveal>
             </div>
           </div>
