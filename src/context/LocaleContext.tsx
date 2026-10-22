@@ -1,10 +1,22 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import enMessages from "../messages/en.json";
 
 export type Locale = 'en' | 'th';
 
 export type Translations = Record<string, unknown>;
+
+/**
+ * English is imported STATICALLY so the server-rendered HTML contains the real
+ * copy. Translations used to be fetched in an effect, which meant the HTML a
+ * crawler receives contained translation KEYS — the <h1> on 14 of 19 pages read
+ * literally "solutions.title" and the pages had no indexable body text.
+ *
+ * Thai stays a dynamic import: it is only needed when a visitor explicitly
+ * picks it, and it is 172 KB.
+ */
+const EN = enMessages as unknown as Translations;
 
 type LocaleContextType = {
   locale: Locale;
@@ -24,7 +36,7 @@ function getInitialLocale(): Locale {
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('en');
-  const [translations, setTranslations] = useState<Translations>({});
+  const [translations, setTranslations] = useState<Translations>(EN);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -46,20 +58,26 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!mounted) return;
-    async function loadTranslations() {
+    let cancelled = false;
+    // The load is deferred to a task so the state update is not a synchronous
+    // setState inside the effect body.
+    const id = window.setTimeout(async () => {
       try {
+        if (locale === 'en') {
+          setTranslations(EN);
+          return;
+        }
         const data = await import(`../messages/${locale}.json`);
-        setTranslations(data.default);
+        if (!cancelled) setTranslations(data.default as Translations);
       } catch (error) {
         console.error(`Failed to load translations for ${locale}:`, error);
-        if (locale !== 'en') {
-          const fallbackData = await import(`../messages/en.json`);
-          setTranslations(fallbackData.default);
-        }
+        if (!cancelled) setTranslations(EN);
       }
-    }
-
-    loadTranslations();
+    }, 0);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(id);
+    };
   }, [locale, mounted]);
 
   const setLocale = (newLocale: Locale) => {

@@ -4,6 +4,8 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import IndustryTabs from "@/components/IndustryTabs";
 import PromoFilm from "@/components/PromoFilm";
+import { articleIndex } from "@/app/insights/articles";
+import { promoVideoJsonLd } from "@/lib/seo";
 import { useLocale } from "@/context/LocaleContext";
 
 const trustMark = (
@@ -175,6 +177,10 @@ export default function Home() {
   return (
     <>
       {/* BRAND FILM — autoplays muted on landing */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(promoVideoJsonLd()) }}
+      />
       <PromoFilm />
 
       {/* HERO */}
@@ -254,6 +260,56 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* LATEST INSIGHTS — links the articles from the home page. They used to
+          be linked only from /insights, which left the site's best content in
+          a silo that Google could not crawl into. */}
+      <section className="py-16 md:py-20 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-wrap items-baseline justify-between gap-4 mb-10">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-3">
+                Insights
+              </p>
+              <h2 className="font-serif text-2xl md:text-3xl text-ink leading-tight">
+                Read before you decide
+              </h2>
+            </div>
+            <Link
+              href="/insights"
+              className="text-sm font-semibold text-navy hover:underline inline-flex items-center gap-2"
+            >
+              All insights
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-x-10 gap-y-8">
+            {articleIndex.slice(0, 3).map((a) => (
+              <article key={a.slug} className="border-t border-line pt-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gold">
+                    {a.category}
+                  </span>
+                  <span className="text-xs text-muted">{a.readingTime}</span>
+                </div>
+                <h3 className="font-serif text-lg leading-snug text-ink mb-3">
+                  <Link href={`/insights/${a.slug}`} className="hover:underline">
+                    {a.title}
+                  </Link>
+                </h3>
+                <p className="text-sm text-slate leading-relaxed mb-4">{a.summary}</p>
+                <Link
+                  href={`/insights/${a.slug}`}
+                  className="text-sm font-semibold text-navy hover:underline inline-flex items-center gap-2"
+                >
+                  Read more
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

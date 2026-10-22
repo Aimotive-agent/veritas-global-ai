@@ -222,6 +222,56 @@ export default function SolutionsPage() {
           </Reveal>
         </div>
       </section>
+      {/* DEEP DIVES — the long-tail service pages. */}
+      <section className="py-20 md:py-28 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="max-w-3xl mb-12">
+            <div className="section-rule mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">
+              Deep dives
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl text-ink mb-5 leading-tight">
+              The three questions every regulated buyer asks first
+            </h2>
+            <p className="text-slate text-lg leading-relaxed">
+              How the data stays inside, how jurisdiction is handled, and how
+              the system stays defensible to an auditor. Each has a page of its
+              own.
+            </p>
+          </Reveal>
+          <Reveal className="grid md:grid-cols-3 gap-px bg-line border border-line">
+            {[
+              {
+                href: "/private-ai-deployment",
+                label: "Private AI deployment",
+                body: "Four deployment models, six controls that make the boundary real, and eight weeks to first production workload.",
+              },
+              {
+                href: "/sovereign-ai",
+                label: "Sovereign AI",
+                body: "Jurisdiction, control, operability and evidence — and four things that look sovereign but are not.",
+              },
+              {
+                href: "/ai-governance",
+                label: "AI governance & compliance",
+                body: "Model change control, grounded answers, immutable audit trails and the evidence packs your auditor asks for.",
+              },
+            ].map((d) => (
+              <Link
+                key={d.href}
+                href={d.href}
+                className="bg-white p-8 lg:p-9 hover:bg-paper transition-colors block"
+              >
+                <h3 className="font-serif text-xl font-semibold text-ink mb-3">{d.label}</h3>
+                <p className="text-slate leading-relaxed mb-4">{d.body}</p>
+                <span className="text-sm font-semibold text-navy inline-flex items-center gap-2">
+                  Read more <span aria-hidden="true">→</span>
+                </span>
+              </Link>
+            ))}
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }

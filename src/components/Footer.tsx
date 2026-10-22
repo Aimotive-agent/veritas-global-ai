@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { articleIndex } from "@/app/insights/articles";
 import { useLocale } from "@/context/LocaleContext";
 
 export default function Footer() {
@@ -26,12 +27,10 @@ export default function Footer() {
           <div>
             <h4 className="font-serif font-semibold text-sm text-white mb-4">{t("footer.solutionsTitle")}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.0.title")}</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.1.title")}</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.2.title")}</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.3.title")}</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.4.title")}</Link></li>
-              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("home.solutions.pillars.5.title")}</Link></li>
+              <li><Link href="/private-ai-deployment" className="hover:text-white transition-colors">{t("footer.privateAIDeployment")}</Link></li>
+              <li><Link href="/sovereign-ai" className="hover:text-white transition-colors">{t("footer.sovereignAI")}</Link></li>
+              <li><Link href="/ai-governance" className="hover:text-white transition-colors">{t("footer.aiGovernance")}</Link></li>
+              <li><Link href="/solutions" className="hover:text-white transition-colors">{t("footer.sixPillars")}</Link></li>
             </ul>
           </div>
 
@@ -71,6 +70,24 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        <div className="pt-8 border-t border-white/10">
+          <h4 className="font-serif font-semibold text-sm text-white mb-4">
+            {t("footer.latestInsights")}
+          </h4>
+          <ul className="space-y-2 text-sm text-gray-400">
+            {articleIndex.map((a) => (
+              <li key={a.slug}>
+                <Link
+                  href={`/insights/${a.slug}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {a.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">

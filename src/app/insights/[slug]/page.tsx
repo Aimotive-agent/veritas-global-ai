@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllArticleSlugs, getArticle } from "../articles";
+import { getAllArticleSlugs, getArticle, articleIndex, articleDateISO } from "../articles";
+import { pageMeta, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 interface Params {
   slug: string;
@@ -19,15 +20,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return {};
-  return {
-    title: `${article.title} — Veritas Global AI Insights`,
+  return pageMeta({
+    title: article.title,
     description: article.summary,
-    openGraph: {
-      title: article.title,
-      description: article.summary,
-      type: "article",
-    },
-  };
+    path: `/insights/${article.slug}`,
+    ogType: "article",
+    publishedTime: articleDateISO[article.slug],
+    modifiedTime: articleDateISO[article.slug],
+  });
 }
 
 function renderBody(paragraphs: string[]) {
@@ -80,6 +80,33 @@ export default async function ArticlePage({
 
   return (
     <article className="pt-32 md:pt-40 pb-20 md:pb-28 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            articleJsonLd({
+              title: article.title,
+              description: article.summary,
+              slug: article.slug,
+              date: article.date,
+              dateISO: articleDateISO[article.slug],
+              category: article.category,
+            })
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Insights", path: "/insights" },
+              { name: article.title, path: `/insights/${article.slug}` },
+            ])
+          ),
+        }}
+      />
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <div className="flex items-center gap-4 mb-6">
           <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gold">{article.category}</span>
@@ -102,6 +129,63 @@ export default async function ArticlePage({
           >
             <span className="mr-1">←</span> Back to Insights
           </Link>
+        </div>
+
+        {/* RELATED — contextual internal links. Each article used to link out
+            only to the insights index, which left the whole cluster with a
+            single internal link. */}
+        <div className="mt-14 pt-8 border-t border-line">
+          <h2 className="font-serif text-xl font-semibold text-ink mb-6">
+            Related reading
+          </h2>
+          <ul className="space-y-5 mb-12">
+            {articleIndex
+              .filter((a) => a.slug !== article.slug)
+              .map((a) => (
+                <li key={a.slug}>
+                  <Link
+                    href={`/insights/${a.slug}`}
+                    className="font-serif text-lg text-ink hover:underline leading-snug block mb-1"
+                  >
+                    {a.title}
+                  </Link>
+                  <p className="text-sm text-muted">{a.category} · {a.readingTime}</p>
+                </li>
+              ))}
+          </ul>
+          <h2 className="font-serif text-xl font-semibold text-ink mb-5">
+            Put it into practice
+          </h2>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                href: "/private-ai-deployment",
+                label: "Private AI deployment",
+                body: "The architecture behind a data boundary you actually control.",
+              },
+              {
+                href: "/sovereign-ai",
+                label: "Sovereign AI",
+                body: "Jurisdiction, control, operability and evidence.",
+              },
+              {
+                href: "/assessment",
+                label: "AI readiness assessment",
+                body: "A confidential, structured evaluation of where you stand.",
+              },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="block border border-line p-5 hover:border-navy transition-colors"
+              >
+                <span className="font-serif text-base font-semibold text-ink block mb-2">
+                  {l.label}
+                </span>
+                <span className="text-sm text-slate leading-relaxed block">{l.body}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </article>

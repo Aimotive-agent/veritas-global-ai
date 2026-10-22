@@ -149,6 +149,32 @@ export function getAllArticleSlugs(): string[] {
   return articles.map((a) => a.slug);
 }
 
+/**
+ * Metadata-only view of the articles, without the bodies.
+ *
+ * The home page and the footer link to the articles; they do not need the
+ * full text in the client bundle to do it.
+ */
+export const articleIndex: Omit<Article, "body">[] = articles.map(
+  ({ slug, title, category, date, readingTime, summary }) => ({
+    slug,
+    title,
+    category,
+    date,
+    readingTime,
+    summary,
+  })
+);
+
+/** ISO date for each article, derived from its published month. */
+export const articleDateISO: Record<string, string> = {
+  "mid-market-ai-gap": "2026-08-01",
+  "fixed-price-ai": "2026-08-01",
+  "truth-first-ai-governance": "2026-08-01",
+  "insurance-ai-2026": "2026-08-01",
+  "platform-agnostic-ai-architecture": "2026-08-01",
+};
+
 export function getArticle(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
 }

@@ -21,7 +21,12 @@
     "termsOfService": "ข้อกำหนดการให้บริการ",
     "cookiePolicy": "นโยบายคุกกี้",
     "dataPolicy": "นโยบายข้อมูล",
-    "security": "ความปลอดภัย"
+    "security": "ความปลอดภัย",
+    "privateAIDeployment": "Private AI Deployment",
+    "sovereignAI": "Sovereign AI",
+    "aiGovernance": "AI Governance",
+    "sixPillars": "AI หกเสาหลัก",
+    "latestInsights": "บทความล่าสุด"
   },
   "chat": {
     "welcome": "สวัสดี! ฉันคือ Veritas AI ถามฉันได้ทุกเรื่องเกี่ยวกับแพลตฟอร์ม AI สำหรับองค์กรของเรา — การติดตั้ง ความปลอดภัย ความสามารถ หรือวิธีที่เราทำงานร่วมกับโครงสร้างพื้นฐานของคุณ",

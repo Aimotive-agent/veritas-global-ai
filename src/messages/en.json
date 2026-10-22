@@ -21,7 +21,12 @@
     "termsOfService": "Terms of Service",
     "cookiePolicy": "Cookie Policy",
     "dataPolicy": "Data Policy",
-    "security": "Security"
+    "security": "Security",
+    "privateAIDeployment": "Private AI Deployment",
+    "sovereignAI": "Sovereign AI",
+    "aiGovernance": "AI Governance",
+    "sixPillars": "Six AI Pillars",
+    "latestInsights": "Latest insights"
   },
   "chat": {
     "welcome": "Hello! I'm Veritas AI. Ask me anything about our enterprise AI platform — deployment, security, capabilities, or how we work with your infrastructure.",
