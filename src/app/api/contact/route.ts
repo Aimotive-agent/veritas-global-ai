@@ -175,7 +175,7 @@ async function viaTelegram(lead: Lead): Promise<string> {
  * ever received failed with "Failed to send message". The forms looked like
  * they worked and no lead ever arrived.
  */
-async function viaVault(lead: Lead): Promise<string> {
+async function viaVault(lead: Lead, emailTransport: string | null): Promise<string> {
   const fs = await import("node:fs/promises");
   const path = await import("node:path");
 
@@ -210,6 +210,7 @@ async function viaVault(lead: Lead): Promise<string> {
     `- **Role:** ${(LABELS.role[lead.role] ?? lead.role) || "—"}`,
     `- **Interest:** ${(LABELS.interest[lead.interest] ?? lead.interest) || "—"}`,
     `- **Source:** ${(LABELS.source[lead.source] ?? lead.source) || "—"}`,
+    `- **Delivery:** ${emailTransport ? `email sent via ${emailTransport}` : "EMAIL FAILED — the auto-reply did not fire"}`,
     "",
     lead.message,
     "",
@@ -220,28 +221,54 @@ async function viaVault(lead: Lead): Promise<string> {
 }
 
 async function deliver(lead: Lead): Promise<string> {
-  // The vault write comes first: it is the transport that always works, and it
-  // leaves a durable record. Email is the nicer channel on top when a key is set.
-  const attempts: Array<[string, () => Promise<string>]> = [["vault", () => viaVault(lead)]];
-  if (process.env.RESEND_API_KEY) attempts.push(["resend", () => viaResend(lead)]);
-  if (process.env.BREVO_API_KEY) attempts.push(["brevo", () => viaBrevo(lead)]);
-  if (process.env.SMTP_PASS) attempts.push(["smtp", () => viaSmtp(lead)]);
-  if (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) attempts.push(["telegram", () => viaTelegram(lead)]);
+  // The email to the contact address is what triggers the Activepieces
+  // auto-reply, so when an email transport is configured it MUST succeed for
+  // the submission to count as delivered. Telegram is an extra notification
+  // on top, never a replacement. The vault write is a durable record of every
+  // enquiry and never masks a failed email.
+  const emailAttempts: Array<[string, () => Promise<string>]> = [];
+  if (process.env.RESEND_API_KEY) emailAttempts.push(["resend", () => viaResend(lead)]);
+  if (process.env.BREVO_API_KEY) emailAttempts.push(["brevo", () => viaBrevo(lead)]);
+  if (process.env.SMTP_PASS) emailAttempts.push(["smtp", () => viaSmtp(lead)]);
 
   const errors: string[] = [];
-  const delivered: string[] = [];
-  for (const [name, attempt] of attempts) {
+  let emailTransport: string | null = null;
+  for (const [name, attempt] of emailAttempts) {
     try {
       await attempt();
-      delivered.push(name);
+      emailTransport = name;
+      break;
     } catch (error) {
       errors.push(`${name}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
-  if (!delivered.length) {
-    throw new Error(errors.join(" | ") || "no delivery transport succeeded");
+
+  if (emailAttempts.length && !emailTransport) {
+    throw new Error(`email delivery failed: ${errors.join(" | ")}`);
   }
-  return delivered.join("+");
+
+  let telegram = false;
+  if (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) {
+    try {
+      await viaTelegram(lead);
+      telegram = true;
+    } catch (error) {
+      console.warn("telegram notification failed:", error);
+    }
+  }
+
+  let vaulted = false;
+  try {
+    await viaVault(lead, emailTransport);
+    vaulted = true;
+  } catch (error) {
+    console.warn("vault record failed:", error);
+  }
+
+  if (!emailTransport && !vaulted) {
+    throw new Error(errors.join(" | ") || "no delivery path succeeded");
+  }
+  return [emailTransport, telegram && "telegram", vaulted && "vault"].filter(Boolean).join("+");
 }
 
 export async function POST(request: Request) {
