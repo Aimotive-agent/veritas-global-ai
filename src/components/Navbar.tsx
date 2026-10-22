@@ -3,9 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLocale } from "../context/LocaleContext";
+import { useLocale, type Locale } from "../context/LocaleContext";
 
-const languages = [
+const languages: { code: Locale; label: string; flag: string }[] = [
   { code: "en", label: "EN", flag: "🇺🇸" },
   { code: "th", label: "TH", flag: "🇹🇭" },
 ];
@@ -90,7 +90,7 @@ export default function Navbar() {
                   <button
                     key={lang.code}
                     className={`w-full text-left px-3 py-2 text-sm hover:bg-paper transition-colors flex items-center gap-2 ${locale === lang.code ? "font-semibold text-ink" : "text-slate"}`}
-                    onClick={() => { setLocale(lang.code as any); setLangOpen(false); }}
+                    onClick={() => { setLocale(lang.code); setLangOpen(false); }}
                   >
                     <span className="text-base leading-none">{lang.flag}</span>
                     {lang.label}
@@ -148,7 +148,7 @@ export default function Navbar() {
                 <button
                   key={lang.code}
                   className={`px-2 py-1 text-xs rounded-sm flex items-center gap-1 ${locale === lang.code ? "bg-navy text-paper" : "text-slate hover:text-ink"}`}
-                  onClick={() => setLocale(lang.code as any)}
+                  onClick={() => setLocale(lang.code)}
                 >
                   <span className="text-xs leading-none">{lang.flag}</span>
                   {lang.label}

@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 
 export type Locale = 'en' | 'th';
 
-export type Translations = Record<string, any>;
+export type Translations = Record<string, unknown>;
 
 type LocaleContextType = {
   locale: Locale;
@@ -28,8 +28,14 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setLocaleState(getInitialLocale());
-    setMounted(true);
+    // localStorage does not exist during SSR, so the stored locale can only be
+    // read after mount. The state update is deferred to a task so it is not a
+    // synchronous setState inside the effect body.
+    const id = window.setTimeout(() => {
+      setLocaleState(getInitialLocale());
+      setMounted(true);
+    }, 0);
+    return () => window.clearTimeout(id);
   }, []);
 
   useEffect(() => {
@@ -62,16 +68,16 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let result: any = translations;
-    
+    let result: unknown = translations;
+
     for (const k of keys) {
       if (result && typeof result === 'object' && k in result) {
-        result = result[k];
+        result = (result as Record<string, unknown>)[k];
       } else {
         return key;
       }
     }
-    
+
     return typeof result === 'string' ? result : key;
   };
 
