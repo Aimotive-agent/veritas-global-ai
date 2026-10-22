@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import IndustryTabs from "@/components/IndustryTabs";
+import PromoFilm from "@/components/PromoFilm";
 import { useLocale } from "@/context/LocaleContext";
 
 const trustMark = (
@@ -173,8 +174,11 @@ export default function Home() {
 
   return (
     <>
+      {/* BRAND FILM — autoplays muted on landing */}
+      <PromoFilm />
+
       {/* HERO */}
-      <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 px-6 lg:px-10 bg-white border-b border-line">
+      <section className="relative pt-16 md:pt-24 pb-20 md:pb-28 px-6 lg:px-10 bg-white border-b border-line">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <Reveal className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-6">{t("home.hero.eyebrow")}</p>
