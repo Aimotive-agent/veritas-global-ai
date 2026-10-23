@@ -5,7 +5,7 @@ import { pageMeta, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "How to Choose a Private AI Consultancy — The Five Questions That Matter",
   description:
-    "The five questions that separate serious private AI firms from the rest — where inference runs, the audit log, the eval suite, the off-ramp, and how a wrong answer gets caught.",
+    "The five questions that separate serious private AI firms from the rest — the audit log, the eval suite, the off-ramp, and how a wrong answer gets caught.",
   path: "/choosing-an-ai-consultant",
 });
 

@@ -5,7 +5,7 @@ import { pageMeta, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Private AI Deployment Cost — What It Really Costs in 2026",
   description:
-    "What a private AI deployment really costs: the three commercial models and their price ranges, what moves the price, the five costs nobody quotes, and an honest comparison against a hosted API.",
+    "What private AI deployment really costs: the three commercial models and their price ranges, what moves the price, and the five costs nobody quotes.",
   path: "/private-ai-cost",
 });
 
