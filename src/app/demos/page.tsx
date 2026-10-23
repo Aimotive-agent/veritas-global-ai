@@ -5,30 +5,72 @@ import Reveal from "@/components/Reveal";
 import SocialLinks from "@/components/SocialLinks";
 import { useLocale } from "@/context/LocaleContext";
 
-const demos = [
+type Demo = {
+  title: string;
+  category: string;
+  description: string;
+  features: string[];
+  href: string;
+  repo: string | null;
+  film?: string;
+  tag: string;
+  terminal: string;
+  q: string;
+  a: string;
+  metric1: string;
+  metric1Label: string;
+  metric2: string;
+  metric2Label: string;
+};
+
+const demos: Demo[] = [
   {
-    title: "miniNotebook — Grounded AI Notebooks",
-    category: "Private AI Notebook · Self-Hosted",
+    title: "MiniNotebook — Self-Hosted AI Notebook",
+    category: "AI Notebook · RAG Workspace",
     description:
-      "Ask your own documents. Every answer is drafted only from the sources you upload, cited to the exact passage, and backed by a fact-check report \u2014 with chat, notes and a studio of artifacts all running on your own machine. The two-minute film is the real application, recorded end to end on a single 6 GB GPU.",
+      "Turn a pile of documents into a private research workspace. Build notebooks, drop in PDFs and text, then chat with an AI that answers only from your sources — with automatic summaries, related-source discovery, and a full-corpus analysis mode that reads every indexed chunk instead of a lucky few. Studio turns any notebook into a two-host podcast overview or a narrated video slideshow.",
     features: [
-      "Grounded chat with inline citations you can open",
-      "Paste notes or upload PDF, DOCX, PPTX, EPUB, scanned archives",
-      "Fact-check report on every answer",
-      "Mind maps, slide decks, study guides, reports, flashcards",
-      "Local model + local embeddings \u2014 no external API calls",
-      "Runs on a 6 GB workstation; sovereign, hybrid or air-gapped",
+      "Notebooks with PDF, DOCX, TXT & text sources",
+      "Grounded chat that answers only from your sources",
+      "Full-corpus analysis across every indexed chunk",
+      "Automatic summaries & related-source discovery",
+      "Studio: podcast-style audio & narrated video overviews",
+      "Fully self-hosted on our own homelab",
     ],
-    href: "/mininotebook",
-    repo: "",
-    tag: "Film + Product",
+    href: "https://mininoted.veritasglobalai.com",
+    repo: "https://github.com/Aimotive-agent/mininotebook",
+    film: "/mininotebook",
+    tag: "Live — Homelab",
     terminal: "mininotebook",
-    q: "What did the pilot achieve in week two, and what did it cost per query?",
-    a: "In week two the pilot answered 4,120 queries at about $0.0021 per query in power cost, with 98.2% citation coverage, a 0.4% unsupported-answer rate, and zero escapes in a 40-sample audit \u2014 all measured locally, with no outbound calls.",
-    metric1: "98.2%",
-    metric1Label: "Cited answers",
-    metric2: "0",
-    metric2Label: "Outbound calls",
+    q: "Can I ask questions across all my documents at once?",
+    a: "Yes. MiniNotebook indexes every source into vector chunks, then a full-corpus analysis mode reads across the whole collection instead of just the top few. It answers only from what you gave it — and Studio can turn the result into a podcast or a narrated video.",
+    metric1: "6862",
+    metric1Label: "Chunks",
+    metric2: "Audio",
+    metric2Label: "& Video",
+  },
+  {
+    title: "Veritas OS — Agent-Native Desktop Shell",
+    category: "Desktop Platform · Multi-Agent",
+    description:
+      "A full desktop environment built around AI agents. Run Hermes, OpenCode, and any CLI agent side by side — control and monitor every one of them from the same shell. Dock, windows, spaces, files, canvas, terminal, and a multi-agent hub.",
+    features: [
+      "Multi-Agent Hub with live agent cards",
+      "Embedded agent UIs (OpenCode in native view)",
+      "Add any agent via JSON spec",
+      "Windows, dock, spaces, files, canvas, terminal",
+      "Themes, plugins, voice, memory & missions",
+    ],
+    href: "https://github.com/Aimotive-agent/veritas-os",
+    repo: "https://github.com/Aimotive-agent/veritas-os",
+    tag: "Flagship",
+    terminal: "veritas-os",
+    q: "What makes Veritas OS different?",
+    a: "Veritas OS turns one agent into a control room for all of them. Run Hermes, OpenCode, and any CLI agent side by side — with a real shell: dock, windows, spaces, files, canvas, and terminal.",
+    metric1: "Multi",
+    metric1Label: "Agent",
+    metric2: "Full",
+    metric2Label: "Desktop",
   },
   {
     title: "DocuCon — AI Document Conversation",
@@ -207,28 +249,6 @@ const demos = [
     metric1Label: "Templates",
     metric2: "DeepSeek",
     metric2Label: "AI Powered",
-  },
-  {
-    title: "NeuroNest AI",
-    category: "AI Social Platform",
-    description:
-      "A social network for developers and tech professionals with AI-powered features — code assistance, AI lab, content generation, and image creation. Built on React and DeepSeek.",
-    features: [
-      "AI code assistant & pair programming",
-      "AI image generation lab",
-      "Developer social network & feed",
-      "Code explanation & optimization",
-    ],
-    href: "https://neuronest-ai-401.netlify.app",
-    repo: "https://github.com/Aimotive-agent/synth-social-space",
-    tag: "Live Demo",
-    terminal: "neuronest-ai",
-    q: "How does NeuroNest help developers?",
-    a: "NeuroNest provides AI-powered code analysis, explanations, optimization, and a social feed — all in a developer-focused community platform.",
-    metric1: "DeepSeek",
-    metric1Label: "AI Engine",
-    metric2: "Social",
-    metric2Label: "Platform",
   },
   {
     title: "AI Horizon Ecosystem",
@@ -517,53 +537,6 @@ const demos = [
     metric2Label: "Powered",
   },
   {
-    title: "Veritas OS — Agent-Native Desktop Shell",
-    category: "Desktop Platform · Multi-Agent",
-    description:
-      "A full desktop environment built around AI agents. Run Hermes, OpenCode, and any CLI agent side by side — control and monitor every one of them from the same shell. Dock, windows, spaces, files, canvas, terminal, and a multi-agent hub.",
-    features: [
-      "Multi-Agent Hub with live agent cards",
-      "Embedded agent UIs (OpenCode in native view)",
-      "Add any agent via JSON spec",
-      "Windows, dock, spaces, files, canvas, terminal",
-      "Themes, plugins, voice, memory & missions",
-    ],
-    href: "https://github.com/Aimotive-agent/veritas-os",
-    repo: "https://github.com/Aimotive-agent/veritas-os",
-    tag: "Flagship",
-    terminal: "veritas-os",
-    q: "What makes Veritas OS different?",
-    a: "Veritas OS turns one agent into a control room for all of them. Run Hermes, OpenCode, and any CLI agent side by side — with a real shell: dock, windows, spaces, files, canvas, and terminal.",
-    metric1: "Multi",
-    metric1Label: "Agent",
-    metric2: "Full",
-    metric2Label: "Desktop",
-  },
-  {
-    title: "MiniNotebook — Self-Hosted AI Notebook",
-    category: "AI Notebook · RAG Workspace",
-    description:
-      "Turn a pile of documents into a private research workspace. Build notebooks, drop in PDFs and text, then chat with an AI that answers only from your sources — with automatic summaries, related-source discovery, and a full-corpus analysis mode that reads every indexed chunk instead of a lucky few. Studio turns any notebook into a two-host podcast overview or a narrated video slideshow.",
-    features: [
-      "Notebooks with PDF, DOCX, TXT & text sources",
-      "Grounded chat that answers only from your sources",
-      "Full-corpus analysis across every indexed chunk",
-      "Automatic summaries & related-source discovery",
-      "Studio: podcast-style audio & narrated video overviews",
-      "Fully self-hosted on our own homelab",
-    ],
-    href: "https://mininoted.veritasglobalai.com",
-    repo: "https://github.com/Aimotive-agent/mininotebook",
-    tag: "Live — Homelab",
-    terminal: "mininotebook",
-    q: "Can I ask questions across all my documents at once?",
-    a: "Yes. MiniNotebook indexes every source into vector chunks, then a full-corpus analysis mode reads across the whole collection instead of just the top few. It answers only from what you gave it — and Studio can turn the result into a podcast or a narrated video.",
-    metric1: "6862",
-    metric1Label: "Chunks",
-    metric2: "Audio",
-    metric2Label: "& Video",
-  },
-  {
     title: "AI Local File Search",
     category: "AI File System · Semantic Search",
     description:
@@ -670,6 +643,17 @@ export default function DemosPage() {
                           {t("demos.viewSource")}
                           <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a9 9 0 00-2.85 17.54c.45.08.62-.2.62-.44v-1.72c-2.52.55-3.05-1.09-3.05-1.09-.41-1.05-1-1.33-1-1.33-.82-.56.06-.55.06-.55.91.06 1.39.94 1.39.94.81 1.38 2.12.98 2.64.75.08-.59.32-.98.57-1.21-1.99-.23-4.09-1-4.09-4.42 0-.98.35-1.78.92-2.4-.09-.23-.4-1.15.09-2.39 0 0 .75-.24 2.45.92a8.53 8.53 0 014.46 0c1.7-1.16 2.45-.92 2.45-.92.49 1.24.18 2.16.09 2.39.57.62.92 1.42.92 2.4 0 3.43-2.1 4.18-4.1 4.4.32.28.61.83.61 1.67v2.48c0 .24.17.52.62.44A9 9 0 0012 3z" />
+                          </svg>
+                        </Link>
+                      )}
+                      {demo.film && (
+                        <Link
+                          href={demo.film}
+                          className="btn-secondary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2"
+                        >
+                          Watch the walkthrough
+                          <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8 5l11 7-11 7V5z" />
                           </svg>
                         </Link>
                       )}
