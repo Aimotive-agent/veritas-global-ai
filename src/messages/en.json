@@ -26,7 +26,9 @@
     "sovereignAI": "Sovereign AI",
     "aiGovernance": "AI Governance",
     "sixPillars": "Six AI Pillars",
-    "latestInsights": "Latest insights"
+    "latestInsights": "Latest insights",
+    "costPage": "What It Costs",
+    "chooseConsultant": "How to Choose"
   },
   "chat": {
     "welcome": "Hello! I'm Veritas AI. Ask me anything about our enterprise AI platform — deployment, security, capabilities, or how we work with your infrastructure.",

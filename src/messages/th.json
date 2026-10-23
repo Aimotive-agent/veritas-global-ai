@@ -26,7 +26,9 @@
     "sovereignAI": "Sovereign AI",
     "aiGovernance": "AI Governance",
     "sixPillars": "AI หกเสาหลัก",
-    "latestInsights": "บทความล่าสุด"
+    "latestInsights": "บทความล่าสุด",
+    "costPage": "What It Costs",
+    "chooseConsultant": "How to Choose"
   },
   "chat": {
     "welcome": "สวัสดี! ฉันคือ Veritas AI ถามฉันได้ทุกเรื่องเกี่ยวกับแพลตฟอร์ม AI สำหรับองค์กรของเรา — การติดตั้ง ความปลอดภัย ความสามารถ หรือวิธีที่เราทำงานร่วมกับโครงสร้างพื้นฐานของคุณ",

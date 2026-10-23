@@ -21,6 +21,8 @@ const routes: {
   { path: "/private-ai-deployment", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-22" },
   { path: "/sovereign-ai", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-22" },
   { path: "/ai-governance", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-22" },
+  { path: "/private-ai-cost", priority: 0.95, changeFrequency: "monthly", lastModified: "2026-10-23" },
+  { path: "/choosing-an-ai-consultant", priority: 0.95, changeFrequency: "monthly", lastModified: "2026-10-23" },
   { path: "/assessment", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-22" },
   { path: "/solutions", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-22" },
   { path: "/why-veritas", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-10-22" },

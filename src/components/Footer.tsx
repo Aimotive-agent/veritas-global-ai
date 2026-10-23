@@ -30,6 +30,8 @@ export default function Footer() {
               <li><Link href="/private-ai-deployment" className="hover:text-white transition-colors">{t("footer.privateAIDeployment")}</Link></li>
               <li><Link href="/sovereign-ai" className="hover:text-white transition-colors">{t("footer.sovereignAI")}</Link></li>
               <li><Link href="/ai-governance" className="hover:text-white transition-colors">{t("footer.aiGovernance")}</Link></li>
+              <li><Link href="/private-ai-cost" className="hover:text-white transition-colors">{t("footer.costPage")}</Link></li>
+              <li><Link href="/choosing-an-ai-consultant" className="hover:text-white transition-colors">{t("footer.chooseConsultant")}</Link></li>
               <li><Link href="/solutions" className="hover:text-white transition-colors">{t("footer.sixPillars")}</Link></li>
             </ul>
           </div>
