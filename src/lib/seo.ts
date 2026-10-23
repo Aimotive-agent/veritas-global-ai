@@ -130,6 +130,24 @@ export function promoVideoJsonLd() {
   };
 }
 
+export function mininotebookVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "miniNotebook — full product walkthrough",
+    description:
+      "A screen-recorded walkthrough of miniNotebook, the grounded AI notebook that runs entirely inside your perimeter: creating a notebook, adding sources, grounded chat with inline citations and a fact-check report, and generating studio artifacts on the same machine.",
+    thumbnailUrl: [`${SITE_URL}/mininotebook-demo-poster.jpg`],
+    uploadDate: "2026-10-23",
+    duration: "PT2M7S",
+    contentUrl: `${SITE_URL}/mininotebook-demo.mp4`,
+    embedUrl: `${SITE_URL}/mininotebook`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",

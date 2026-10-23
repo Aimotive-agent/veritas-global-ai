@@ -22,7 +22,15 @@ function getReducedMotion() {
  * Honours `prefers-reduced-motion`: if the visitor asked for less motion we
  * pause on the poster and let them start it themselves.
  */
-export default function PromoFilm() {
+export default function PromoFilm({
+  src = "/veritas-promo.mp4",
+  poster = "/veritas-promo-poster.jpg",
+  ariaLabel = "Veritas Global AI brand film",
+}: {
+  src?: string;
+  poster?: string;
+  ariaLabel?: string;
+} = {}) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [playing, setPlaying] = useState(true);
@@ -78,13 +86,13 @@ export default function PromoFilm() {
   return (
     // The top padding clears the fixed navbar, which is transparent until you
     // scroll — so that strip has to stay light or the nav links vanish.
-    <section className="relative bg-paper pt-16 md:pt-20" aria-label="Veritas Global AI brand film">
+    <section className="relative bg-paper pt-16 md:pt-20" aria-label={ariaLabel}>
       <div className="relative bg-navy-deep">
         <video
           ref={videoRef}
           className="block w-full max-h-[76vh] object-contain mx-auto bg-navy-deep"
-          src="/veritas-promo.mp4"
-          poster="/veritas-promo-poster.jpg"
+          src={src}
+          poster={poster}
           autoPlay={!reducedMotion}
           muted={muted}
           loop

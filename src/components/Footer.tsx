@@ -21,6 +21,30 @@ export default function Footer() {
             <p className="text-sm text-gray-400 leading-relaxed">
               {t("footer.tagline")}
             </p>
+            <div className="flex items-center gap-3 mt-5">
+              <Link
+                href="https://www.youtube.com/@VeritasaiGlobal"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Veritas Global AI on YouTube"
+                className="flex items-center justify-center w-9 h-9 border border-white/15 text-gray-300 hover:text-white hover:border-white/40 transition-colors"
+              >
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z" />
+                </svg>
+              </Link>
+              <Link
+                href="https://www.facebook.com/profile.php?id=61595818258637"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Veritas Global AI on Facebook"
+                className="flex items-center justify-center w-9 h-9 border border-white/15 text-gray-300 hover:text-white hover:border-white/40 transition-colors"
+              >
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
           {/* Solutions */}
