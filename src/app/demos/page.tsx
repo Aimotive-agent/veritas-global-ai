@@ -2,9 +2,34 @@
 
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import SocialLinks from "@/components/SocialLinks";
 import { useLocale } from "@/context/LocaleContext";
 
 const demos = [
+  {
+    title: "miniNotebook — Grounded AI Notebooks",
+    category: "Private AI Notebook · Self-Hosted",
+    description:
+      "Ask your own documents. Every answer is drafted only from the sources you upload, cited to the exact passage, and backed by a fact-check report \u2014 with chat, notes and a studio of artifacts all running on your own machine. The two-minute film is the real application, recorded end to end on a single 6 GB GPU.",
+    features: [
+      "Grounded chat with inline citations you can open",
+      "Paste notes or upload PDF, DOCX, PPTX, EPUB, scanned archives",
+      "Fact-check report on every answer",
+      "Mind maps, slide decks, study guides, reports, flashcards",
+      "Local model + local embeddings \u2014 no external API calls",
+      "Runs on a 6 GB workstation; sovereign, hybrid or air-gapped",
+    ],
+    href: "/mininotebook",
+    repo: "",
+    tag: "Film + Product",
+    terminal: "mininotebook",
+    q: "What did the pilot achieve in week two, and what did it cost per query?",
+    a: "In week two the pilot answered 4,120 queries at about $0.0021 per query in power cost, with 98.2% citation coverage, a 0.4% unsupported-answer rate, and zero escapes in a 40-sample audit \u2014 all measured locally, with no outbound calls.",
+    metric1: "98.2%",
+    metric1Label: "Cited answers",
+    metric2: "0",
+    metric2Label: "Outbound calls",
+  },
   {
     title: "DocuCon — AI Document Conversation",
     category: "Document AI · Voice Interface",
@@ -625,11 +650,12 @@ export default function DemosPage() {
                     <div className="flex flex-wrap items-center gap-3">
                       <Link
                         href={demo.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(demo.href.startsWith("http")
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
                         className="btn-primary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2"
                       >
-                        {t("demos.launchDemo")}
+                        {demo.href.startsWith("http") ? t("demos.launchDemo") : "Watch the walkthrough"}
                         <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
                         </svg>
@@ -698,6 +724,16 @@ export default function DemosPage() {
               {t("demos.moreToCome.subtitle")}
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="py-14 px-6 lg:px-10 bg-paper border-t border-line">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-2">Elsewhere</p>
+            <p className="text-slate text-lg">Product films, deployments and field notes.</p>
+          </div>
+          <SocialLinks variant="light" />
         </div>
       </section>
 

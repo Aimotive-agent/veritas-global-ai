@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
 import Reveal from "@/components/Reveal";
 import { useLocale } from "@/context/LocaleContext";
 
@@ -116,6 +117,12 @@ export default function AboutPage() {
             {t("about.cta.button")}
             <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
           </Link>
+          <div className="mt-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">
+              Follow the work
+            </p>
+            <SocialLinks variant="light" className="justify-center" />
+          </div>
         </div>
       </section>
     </>

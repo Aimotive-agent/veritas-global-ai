@@ -77,6 +77,10 @@ export function organizationJsonLd() {
       "Retrieval-augmented generation",
       "AI agent orchestration",
     ],
+    sameAs: [
+      "https://www.youtube.com/@VeritasaiGlobal",
+      "https://www.facebook.com/profile.php?id=61595818258637",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",

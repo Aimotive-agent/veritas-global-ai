@@ -2,6 +2,7 @@
 
 import Reveal from "@/components/Reveal";
 import LeadForm from "@/components/LeadForm";
+import SocialLinks from "@/components/SocialLinks";
 import { useLocale } from "@/context/LocaleContext";
 
 
@@ -21,6 +22,15 @@ export default function ContactPage() {
               {t("contact.subtitle")}
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="py-10 px-6 lg:px-10 bg-white border-b border-line">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="text-sm text-slate">
+            Prefer to look first? The walkthroughs live on YouTube and the page.
+          </p>
+          <SocialLinks variant="light" />
         </div>
       </section>
 

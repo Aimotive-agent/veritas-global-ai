@@ -75,6 +75,30 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3 mr-1">
+            <a
+              href="https://www.youtube.com/@VeritasaiGlobal"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Veritas Global AI on YouTube"
+              className="text-slate hover:text-ink transition-colors"
+            >
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61595818258637"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Veritas Global AI on Facebook"
+              className="text-slate hover:text-ink transition-colors"
+            >
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z" />
+              </svg>
+            </a>
+          </div>
           <div className="relative" ref={langRef}>
             <button
               className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate hover:text-ink transition-colors border border-line rounded-sm"
@@ -135,6 +159,22 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="flex items-center gap-4 pt-2 border-t border-line">
+              <a href="https://www.youtube.com/@VeritasaiGlobal" target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 text-slate hover:text-ink transition-colors">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z" />
+                </svg>
+                YouTube
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61595818258637" target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 text-slate hover:text-ink transition-colors">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z" />
+                </svg>
+                Facebook
+              </a>
+            </div>
             <Link
               href="/contact"
               className="btn-primary text-center px-5 py-2.5 font-medium mt-2"

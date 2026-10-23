@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PromoFilm from "@/components/PromoFilm";
+import SocialLinks from "@/components/SocialLinks";
 import {
   pageMeta,
   breadcrumbJsonLd,
@@ -259,6 +260,12 @@ export default function MiniNotebookPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>
+            <div className="mt-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-4">
+                Watch, follow, or send it to a colleague
+              </p>
+              <SocialLinks variant="dark" />
+            </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8 border-t border-white/10 pt-10 mt-14">
             <div>
