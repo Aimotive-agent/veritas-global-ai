@@ -142,6 +142,7 @@ export function mininotebookVideoJsonLd() {
     duration: "PT2M7S",
     contentUrl: `${SITE_URL}/mininotebook-demo.mp4`,
     embedUrl: `${SITE_URL}/mininotebook`,
+    sameAs: ["https://youtu.be/QNF0hW4EzkE"],
     inLanguage: "en",
     isFamilyFriendly: true,
     publisher: { "@id": `${SITE_URL}/#organization` },
