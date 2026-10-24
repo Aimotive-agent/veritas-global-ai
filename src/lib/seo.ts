@@ -220,6 +220,7 @@ export function mindvaultVideoJsonLd() {
     duration: "PT2M9S",
     contentUrl: `${SITE_URL}/mindvault-demo.mp4`,
     embedUrl: `${SITE_URL}/mindvault`,
+    sameAs: ["https://youtu.be/JBKcGjelLbQ"],
     inLanguage: "en",
     isFamilyFriendly: true,
     publisher: { "@id": `${SITE_URL}/#organization` },
