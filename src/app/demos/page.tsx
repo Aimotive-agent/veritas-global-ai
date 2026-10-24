@@ -63,6 +63,7 @@ const demos: Demo[] = [
     ],
     href: "https://github.com/Aimotive-agent/veritas-os",
     repo: "https://github.com/Aimotive-agent/veritas-os",
+    film: "/veritas-os",
     tag: "Flagship",
     terminal: "veritas-os",
     q: "What makes Veritas OS different?",

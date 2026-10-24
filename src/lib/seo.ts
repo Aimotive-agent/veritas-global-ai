@@ -153,6 +153,24 @@ export function mininotebookVideoJsonLd() {
   };
 }
 
+export function veritasOsVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Veritas OS — an agent-native desktop shell (full demo)",
+    description:
+      "A screen-recorded walkthrough of Veritas OS: the overview, Hermes in conversation, the Agent Hub, adding an agent from a JSON spec, missions, files, automations, themes, connections, and the rest of the shell.",
+    thumbnailUrl: [`${SITE_URL}/veritas-os-demo-poster.jpg`],
+    uploadDate: "2026-10-24",
+    duration: "PT4M29S",
+    contentUrl: `${SITE_URL}/veritas-os-demo.mp4`,
+    embedUrl: `${SITE_URL}/veritas-os`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
