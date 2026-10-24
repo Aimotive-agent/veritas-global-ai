@@ -199,6 +199,7 @@ const demos: Demo[] = [
     ],
     href: "https://ai-pawsitive-care-v2.netlify.app",
     repo: "https://github.com/Aimotive-agent/ai-pawsitive-care",
+    film: "/ai-pawsitive-care",
     tag: "Live Demo",
     terminal: "ai-pawsitive-care",
     q: "Is my dog's lethargy something to worry about?",

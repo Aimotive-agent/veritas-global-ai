@@ -190,6 +190,24 @@ export function aiWiseVideoJsonLd() {
   };
 }
 
+export function pawsitiveVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "AI Pawsitive Care — private pet health companion (full demo)",
+    description:
+      "A screen-recorded walkthrough of AI Pawsitive Care: the AI veterinary assistant answering from a pet's own record, pets, health records, medications, appointments, the photo library and the emergency checker.",
+    thumbnailUrl: [`${SITE_URL}/ai-pawsitive-demo-poster.jpg`],
+    uploadDate: "2026-10-24",
+    duration: "PT3M26S",
+    contentUrl: `${SITE_URL}/ai-pawsitive-demo.mp4`,
+    embedUrl: `${SITE_URL}/ai-pawsitive-care`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
