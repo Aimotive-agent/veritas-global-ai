@@ -227,6 +227,24 @@ export function mindvaultVideoJsonLd() {
   };
 }
 
+export function taxAiVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Veritas Tax AI — cross-border tax compliance in one workspace",
+    description:
+      "A walkthrough of Veritas Tax AI: creating a company, tax overview, the AI assistant answering a deduction question, invoices and receipts, and country-specific tax forms across six jurisdictions.",
+    thumbnailUrl: [`${SITE_URL}/taxai-demo-poster.jpg`],
+    uploadDate: "2026-10-24",
+    duration: "PT2M38S",
+    contentUrl: `${SITE_URL}/taxai-demo.mp4`,
+    embedUrl: `${SITE_URL}/taxai`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
