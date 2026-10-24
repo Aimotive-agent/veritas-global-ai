@@ -155,6 +155,7 @@ const demos: Demo[] = [
     ],
     href: "https://ai-mindvault-538.netlify.app",
     repo: "https://github.com/Aimotive-agent/mindvault-digital-nexus",
+    film: "/mindvault",
     tag: "Live Demo",
     terminal: "mindvault",
     q: "Never lose your knowledge again?",

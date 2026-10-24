@@ -208,6 +208,24 @@ export function pawsitiveVideoJsonLd() {
   };
 }
 
+export function mindvaultVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "MindVault — your digital brain, anywhere (product walkthrough)",
+    description:
+      "A walkthrough of the MindVault product line: portable AI storage hardware, the desktop software tiers, the security model, the knowledge graph and the performance specifications.",
+    thumbnailUrl: [`${SITE_URL}/mindvault-demo-poster.jpg`],
+    uploadDate: "2026-10-24",
+    duration: "PT2M9S",
+    contentUrl: `${SITE_URL}/mindvault-demo.mp4`,
+    embedUrl: `${SITE_URL}/mindvault`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
