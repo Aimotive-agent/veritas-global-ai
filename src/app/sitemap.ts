@@ -30,6 +30,7 @@ const routes: {
   { path: "/demos", priority: 0.9, changeFrequency: "weekly", lastModified: "2026-10-22" },
   { path: "/mininotebook", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-23" },
   { path: "/veritas-os", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-24" },
+  { path: "/ai-wise-health", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-24" },
   { path: "/industries", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-16" },
   { path: "/about", priority: 0.7, changeFrequency: "monthly", lastModified: "2026-10-16" },
   { path: "/contact", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-10-16" },

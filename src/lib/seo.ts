@@ -172,6 +172,24 @@ export function veritasOsVideoJsonLd() {
   };
 }
 
+export function aiWiseVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "AI Wise Health Companion — private health assistant (full demo)",
+    description:
+      "A screen-recorded walkthrough of AI Wise Health Companion: the AI medical assistant answering from the user's own record with a medical disclaimer, document upload and analysis, calendar, tasks, medications, cases, dashboard and reports.",
+    thumbnailUrl: [`${SITE_URL}/ai-wise-health-demo-poster.jpg`],
+    uploadDate: "2026-10-24",
+    duration: "PT3M26S",
+    contentUrl: `${SITE_URL}/ai-wise-health-demo.mp4`,
+    embedUrl: `${SITE_URL}/ai-wise-health`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",

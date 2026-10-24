@@ -110,6 +110,7 @@ const demos: Demo[] = [
     ],
     href: "https://ai-wise-health-companion-v2.netlify.app",
     repo: "https://github.com/Aimotive-agent/ai-wise-health-companion",
+    film: "/ai-wise-health",
     tag: "Live Demo",
     terminal: "ai-wise-health",
     q: "What does my latest blood panel suggest?",
