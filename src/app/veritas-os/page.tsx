@@ -138,6 +138,17 @@ export default function VeritasOsPage() {
               </svg>
             </Link>
             <Link
+              href="https://youtu.be/PUomY6isd8I"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary font-medium px-7 py-3.5 text-sm tracking-wide inline-flex items-center gap-2"
+            >
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z" />
+              </svg>
+              Watch on YouTube
+            </Link>
+            <Link
               href="https://github.com/Aimotive-agent/veritas-os"
               target="_blank"
               rel="noopener noreferrer"

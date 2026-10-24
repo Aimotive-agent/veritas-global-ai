@@ -165,6 +165,7 @@ export function veritasOsVideoJsonLd() {
     duration: "PT4M29S",
     contentUrl: `${SITE_URL}/veritas-os-demo.mp4`,
     embedUrl: `${SITE_URL}/veritas-os`,
+    sameAs: ["https://youtu.be/PUomY6isd8I"],
     inLanguage: "en",
     isFamilyFriendly: true,
     publisher: { "@id": `${SITE_URL}/#organization` },
