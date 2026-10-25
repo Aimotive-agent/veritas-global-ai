@@ -245,6 +245,24 @@ export function taxAiVideoJsonLd() {
   };
 }
 
+export function synapseVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Veritas SynapseCore — AI agent + vector vault (product walkthrough)",
+    description:
+      "A walkthrough of Veritas SynapseCore: MCP tool servers as agent capabilities, the vector vault with locally embedded knowledge bases, the dashboard, chat and workspace settings.",
+    thumbnailUrl: [`${SITE_URL}/vvault-demo-poster.jpg`],
+    uploadDate: "2026-10-25",
+    duration: "PT2M5S",
+    contentUrl: `${SITE_URL}/vvault-demo.mp4`,
+    embedUrl: `${SITE_URL}/synapsecore`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
