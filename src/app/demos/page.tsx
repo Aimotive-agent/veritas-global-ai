@@ -246,6 +246,7 @@ const demos: Demo[] = [
     ],
     href: "https://ai-lawyer-assistant.netlify.app",
     repo: "https://github.com/Aimotive-agent/smart-law-workbench",
+    film: "/smart-law",
     tag: "Live Demo",
     terminal: "ai-lawyer-assistant",
     q: "How does the AI Lawyer Assistant help with case management?",

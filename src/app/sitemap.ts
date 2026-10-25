@@ -36,6 +36,7 @@ const routes: {
   { path: "/taxai", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-24" },
   { path: "/synapsecore", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-25" },
   { path: "/vector-garden", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-25" },
+  { path: "/smart-law", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-25" },
   { path: "/industries", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-10-16" },
   { path: "/about", priority: 0.7, changeFrequency: "monthly", lastModified: "2026-10-16" },
   { path: "/contact", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-10-16" },

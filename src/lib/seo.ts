@@ -281,6 +281,24 @@ export function vectorGardenVideoJsonLd() {
   };
 }
 
+export function smartLawVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Smart Law Workbench — legal case workspace (full demo)",
+    description:
+      "A walkthrough of Smart Law Workbench: the case list, a matter's documents, notes and timeline, and the legal assistant answering a set-off argument with the clause and document it relied on.",
+    thumbnailUrl: [`${SITE_URL}/smartlaw-demo-poster.jpg`],
+    uploadDate: "2026-10-25",
+    duration: "PT2M35S",
+    contentUrl: `${SITE_URL}/smartlaw-demo.mp4`,
+    embedUrl: `${SITE_URL}/smart-law`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
