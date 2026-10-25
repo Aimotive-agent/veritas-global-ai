@@ -263,6 +263,24 @@ export function synapseVideoJsonLd() {
   };
 }
 
+export function vectorGardenVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Vector Garden — private vector knowledge base + AI chat",
+    description:
+      "A walkthrough of Vector Garden: the workspace sign-in, vector bases, the documents inside a base with their chunk counts, and the AI chat answering from those documents with the source named.",
+    thumbnailUrl: [`${SITE_URL}/vectorgarden-demo-poster.jpg`],
+    uploadDate: "2026-10-25",
+    duration: "PT2M21S",
+    contentUrl: `${SITE_URL}/vectorgarden-demo.mp4`,
+    embedUrl: `${SITE_URL}/vector-garden`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
